@@ -1,0 +1,31 @@
+{
+    "products": [
+        {
+            "id": "1",
+            "name": "Product 1",
+            "price": 5.99,
+            "category": "Electronics",
+            "image": "",
+            "description": ""
+        },
+        {
+            "id": "2",
+            "name": "Product 2",
+            "price": 5.99,
+            "category": "Electronics",
+            "image": "",
+            "description": ""
+        }
+    ],
+    "users": [
+        {
+            "id": "1",
+            "name": "user 1",
+            "surname": "",
+            "email": "user@mail.com",
+            "password": "password",
+            "image": "",
+            "description": ""
+        }
+    ]
+}
