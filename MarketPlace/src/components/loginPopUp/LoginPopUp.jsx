@@ -2,8 +2,8 @@ import Modal from 'react-bootstrap/Modal';
 import Button from 'react-bootstrap/Button';
 import React, { useState } from 'react';
 import { userService } from '../../service/userService';
-import { useNavigate } from 'react-router-dom'; // Importamos useNavigate desde react-router-dom
-
+import { useNavigate } from 'react-router-dom'; 
+import Validate from './Validate';
 
 const LoginPopUp = ({ closeModal }) => {
   const [user, setUser] = useState({
@@ -15,18 +15,25 @@ const LoginPopUp = ({ closeModal }) => {
 
 
   const handleLogin = async () => {
+
+  let flag = Validate(user);
+  if (!flag) {return}
+
+  else {
     try {
-      const allUsers = await userService.getAllUser();
-      const foundUser = allUsers.find(u => u.useremail === user.useremail && u.userpassword === user.userpassword);
-      if (foundUser) {
-        navigate('/admin');
-      } else {
-        alert('Tu pasword es caca :c');
+        const allUsers = await userService.getAllUser();
+        const foundUser = allUsers.find(u => u.useremail === user.useremail && u.userpassword === user.userpassword);
+        if (foundUser) {
+          navigate('/admin');
+        } else {
+          alert('Tu pasword es caca :c');
+        }
+      } catch (error) {
+        console.error('Error:', error);
+        alert('Hubo un error al intentar loguearte');
       }
-    } catch (error) {
-      console.error('Error:', error);
-      alert('Hubo un error al intentar loguearte');
-    }
+  }
+
   };
 
 function handleUserChange(e) {
