@@ -8,6 +8,10 @@ import Form from "react-bootstrap/Form";
 import * as formik from "formik";
 import * as yup from "yup";
 import React, { useState } from 'react';
+import { productService } from "../../service/productService";
+import Swal from 'sweetalert2'
+
+
 
 function FormAddProduct() {
   const { Formik } = formik;
@@ -21,9 +25,6 @@ function FormAddProduct() {
     file: yup.mixed().required("La imagen es requerida"),
   });
 
-
-  
-
   return (
     <Container className="d-flex justify-content-center mt-5 mb-5">
       <Row>
@@ -33,10 +34,17 @@ function FormAddProduct() {
               <Card.Title className="text-center">Agregar Productos</Card.Title>
               <Formik
                 validationSchema={schema}
-                onSubmit={(values, { setSubmitting }) => {
+                
+                onSubmit={(values, { setSubmitting, resetForm }) => {
                   // Aquí debes manejar la subida del producto
-                  console.log(values);
+                  productService.submitProduct(values);
                   setSubmitting(false);
+                  resetForm();
+                  Swal.fire({
+                    title: "Good job!",
+                    text: "You clicked the button!",
+                    icon: "success"
+                  });
                 }}
                 initialValues={{
                   firstName: "",
@@ -78,7 +86,6 @@ function FormAddProduct() {
                         {errors.firstName}
                       </Form.Control.Feedback>
                     </Form.Group>
-                    {/* ... */}
                     <Form.Group
                       as={Col}
                       md="6" sm="4"
