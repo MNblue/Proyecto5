@@ -5,7 +5,7 @@
       "name": "Product 1",
       "price": 5.99,
       "category": "Electronics",
-      "image": "",
+      "file": "",
       "description": ""
     },
     {
@@ -13,7 +13,7 @@
       "name": "Product 2",
       "price": 5.99,
       "category": "caca",
-      "image": "",
+      "file": "",
       "description": ""
     }
   ],
