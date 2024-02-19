@@ -17,7 +17,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
 
 
         <Route path="/" element={<CardOne/>} />
-        <Route path="/CardDetail/:productSelected" element={<CardDetail/>} />
+        <Route path="/CardDetail" element={<CardDetail/>} />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>,

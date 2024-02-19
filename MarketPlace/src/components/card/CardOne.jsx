@@ -9,11 +9,13 @@ import Col from 'react-bootstrap/Col';
 import { productService } from '../../service/productService';
 import CardDetail from './CardDetail';
 import { Link } from 'react-router-dom';
-
+import { Navigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 
 function CardOne() {
 
+    const navigate = useNavigate();
     const [productList, setProductList] = useState([]);
     const [productSelected, setProductSelected] = useState(null);
     //esta es la función que carga los datos almacenados en el json
@@ -38,7 +40,7 @@ function CardOne() {
         // alert(btn.id);
         const findedProduct = productList.find(product => product.id === id);
         setProductSelected(findedProduct);
-
+        navigate('/CardDetail', { state: { findedProduct } });
     }
 
 
@@ -66,9 +68,11 @@ function CardOne() {
                                         <span style={{ margin: '0 2px' }}></span>
                                         {/* <Button variant="primary" onClick={() => handleDetail(product, index)}>Ver más</Button> */}
 
-                                        <Link to={`${encodeURIComponent(JSON.stringify(productSelected))}`} style={{ color: 'inherit', textDecoration: 'none' }}>
-                <Button variant="primary" id={product.id} onClick={() => handleClick(product.id)}>ver mm</Button>
-            </Link>
+                                        {/* <Link to={`${encodeURIComponent(JSON.stringify(productSelected))}`} style={{ color: 'inherit', textDecoration: 'none' }}> */}
+                                        <Button variant="primary" id={product.id} onClick={() => handleClick(product.id)}>ver mm</Button>
+                                        {/* {productSelected && <Navigate to="/CardDetail" state={{ findedProduct }}/>} */}
+
+                                        {/* </Link> */}
 
 
                                     </div>
