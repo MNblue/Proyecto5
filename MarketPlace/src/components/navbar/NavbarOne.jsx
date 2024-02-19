@@ -6,7 +6,7 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 
-function NavbarOne (){
+function NavbarOne ({openModal}){
     return (
         <Navbar expand="lg" className="bg-body-tertiary ">
       <Container fluid>
@@ -39,7 +39,7 @@ function NavbarOne (){
               aria-label="Search"
             />
             <Button variant="outline-success">Search</Button>
-            <Button variant="outline-success ms-5 me-3 fw-bold">Login</Button>
+            <Button variant="outline-success ms-5 me-3 fw-bold" onClick={openModal}>Login</Button>
           </Form>
         </Navbar.Collapse>
       </Container>
