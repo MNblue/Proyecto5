@@ -69,7 +69,7 @@ function CardOne() {
                                         {/* <Button variant="primary" onClick={() => handleDetail(product, index)}>Ver más</Button> */}
 
                                         {/* <Link to={`${encodeURIComponent(JSON.stringify(productSelected))}`} style={{ color: 'inherit', textDecoration: 'none' }}> */}
-                                        <Button variant="primary" id={product.id} onClick={() => handleClick(product.id)}>ver mm</Button>
+                                        <Button variant="primary" id={product.id} onClick={() => handleClick(product.id)}>ver más</Button>
                                         {/* {productSelected && <Navigate to="/CardDetail" state={{ findedProduct }}/>} */}
 
                                         {/* </Link> */}
