@@ -82,11 +82,11 @@ El ayuntamiento de la ciudad quiere poner en línea un market place que conecte 
 
 #### Miembras del equipo:
 
-[María](https://github.com/MNblue))
-[Yamila17 Yamila Robles](https://github.com/Yamila17))
-[Hache](https://github.com/hacheproud))
-[Yuliia](https://github.com/YuliiaBi1a))
-[Lorena ](https://github.com/Lorena-Rodriguez))
-[Elle-FullStack](https://github.com/Elle-FullStack) 
+[María](https://github.com/MNblue)
+[Yamila](https://github.com/Yamila17)
+[Hache](https://github.com/hacheproud)
+[Yuliia](https://github.com/YuliiaBi1a)
+[Lorena](https://github.com/Lorena-Rodriguez)
+[Elle](https://github.com/Elle-FullStack) 
 
 ### ¡Contribuciones y sugerencias son bienvenidas para mejorar este proyecto!
