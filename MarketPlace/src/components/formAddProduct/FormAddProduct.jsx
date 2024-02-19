@@ -7,6 +7,7 @@ import Col from "react-bootstrap/Col";
 import Form from "react-bootstrap/Form";
 import * as formik from "formik";
 import * as yup from "yup";
+import React, { useState } from 'react';
 
 function FormAddProduct() {
   const { Formik } = formik;
@@ -15,10 +16,13 @@ function FormAddProduct() {
     firstName: yup.string().required("El nombre es requerido"),
     lastName: yup.string().required("El apellido es requerido"),
     category: yup.string().required("La categoría es requerida"),
-    price: yup.string().required("El precio es requerido"),
+    price: yup.number().required("Solo valores numéricos"),
     description: yup.string().required("La descripción es requerida"),
     file: yup.mixed().required("La imagen es requerida"),
   });
+
+
+  
 
   return (
     <Container className="d-flex justify-content-center mt-5 mb-5">
@@ -53,9 +57,10 @@ function FormAddProduct() {
                   isSubmitting,
                 }) => (
                   <Form noValidate onSubmit={handleSubmit}>
+                    <Row className="mb-3">
                     <Form.Group
                       as={Col}
-                      md="4"
+                      md="6"  sm="4"
                       controlId="validationFormik101"
                       className="position-relative"
                     >
@@ -76,7 +81,7 @@ function FormAddProduct() {
                     {/* ... */}
                     <Form.Group
                       as={Col}
-                      md="4"
+                      md="6" sm="4"
                       controlId="validationFormik102"
                       className="position-relative"
                     >
@@ -94,13 +99,17 @@ function FormAddProduct() {
                         {errors.lastName}
                       </Form.Control.Feedback>
                     </Form.Group>
+                    </Row>
+                    <Row className="mb-3">
                     <Form.Group
                       as={Col}
                       md="6"
                       controlId="validationFormik103"
-                      className="position-relative"
-                    >
-                      <Form.Label>Categoría</Form.Label>
+                      className="position-relative">
+
+
+                      
+                      <Form.Label>Selecciona tu Categoría</Form.Label>
                       <Form.Select
                         name="category"
                         value={values.category}
@@ -108,7 +117,7 @@ function FormAddProduct() {
                         onBlur={handleBlur}
                         isInvalid={touched.category && !!errors.category}
                       >
-                        <option>Selecciona tu categoría</option>
+                        <option>Categoría</option>
                         <option value="De la huerta a la mesa">
                           De la huerta a la mesa
                         </option>
@@ -119,15 +128,16 @@ function FormAddProduct() {
                         {errors.category}
                       </Form.Control.Feedback>
                     </Form.Group>
+                   
                     <Form.Group
                       as={Col}
-                      md="3"
+                      md="4"
                       controlId="validationFormik104"
                       className="position-relative">
                     
                       <Form.Label>Precio</Form.Label>
                       <Form.Control
-                        type="text"
+                        type="number"
                         placeholder="price"
                         name="price"
                         value={values.price}
@@ -139,7 +149,7 @@ function FormAddProduct() {
                         {errors.price}
                       </Form.Control.Feedback>
                     </Form.Group>
-
+                    </Row>
                     <Form.Group
                       className="mb-3"
                       controlId="exampleForm.ControlTextarea1">
