@@ -7,13 +7,15 @@ import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import { productService } from '../../service/productService';
+import CardDetail from './CardDetail';
+import { Link } from 'react-router-dom';
 
 
 
 function CardOne() {
 
     const [productList, setProductList] = useState([]);
-
+    const [productSelected, setProductSelected] = useState({});
     //esta es la función que carga los datos almacenados en el json
     async function getData() {
         try {
@@ -30,6 +32,14 @@ function CardOne() {
     useEffect(() => {
         getData();
     }, []); // Pasa un arreglo vacío como segundo argumento para asegurar que getData solo se ejecute una vez
+
+    function handleClick(id) {
+// let btn=document.getElementById(id);
+        // alert(btn.id);
+        const findedProduct = productList.find(product => product.id === id);
+        setProductSelected(findedProduct);
+  
+    }
 
 
 
@@ -51,10 +61,16 @@ function CardOne() {
                                         {product.description}<br></br>
                                         <span className="precioDestacado">{product.price}</span>
                                     </Card.Text>
-                                    <div style={{ textAlign: 'center'}}>
+                                    <div style={{ textAlign: 'center' }}>
                                         <Button variant="primary">Comprar</Button>
-                                        <span style={{ margin: '0 10px' }}></span> {/* Espacio adicional */}
-                                        <Button variant="primary" disabled>Editar</Button>
+                                        <span style={{ margin: '0 2px' }}></span>
+                                        {/* <Button variant="primary" onClick={() => handleDetail(product, index)}>Ver más</Button> */}
+                                        <Button variant="primary" id={product.id} onClick={() => handleClick(product.id)}>
+                                        <Link to={`/CardDetail/${productSelected}` } style={{ color: 'inherit', textDecoration: 'none' }}>
+                    Ver más
+                </Link>
+                                        </Button>
+                                        
                                     </div>
                                 </Card.Body>
                             </Card>
