@@ -171,6 +171,15 @@
       "price": 100000,
       "description": "casa nueva",
       "file": "C:\\fakepath\\1174949_js_react js_logo_react_react native_icon.png"
+    },
+    {
+      "id": "82af",
+      "firstName": "lore",
+      "lastName": "cor",
+      "category": "Artesanía local",
+      "price": 50,
+      "description": "alñsjlsdkjf",
+      "file": "C:\\fakepath\\album_2024-02-16_15-52-32.gif"
     }
   ],
   "users": [

@@ -41,8 +41,8 @@ function FormAddProduct() {
                   setSubmitting(false);
                   resetForm();
                   Swal.fire({
-                    title: "Good job!",
-                    text: "You clicked the button!",
+                    title: "Gracias!",
+                    text: "Se añadio tu artículo correctamente!",
                     icon: "success"
                   });
                 }}
