@@ -11,9 +11,11 @@ import CardDetail from './CardDetail';
 import { Link } from 'react-router-dom';
 import { Navigate } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
+import Tooltip from 'react-bootstrap/Tooltip';
+import OverlayTrigger from 'react-bootstrap/OverlayTrigger';
 
 
-function CardOne() {
+function CardOne({ isLogged }) {
 
     const navigate = useNavigate();
     const [productList, setProductList] = useState([]);
@@ -40,7 +42,7 @@ function CardOne() {
         // alert(btn.id);
         const findedProduct = productList.find(product => product.id === id);
         setProductSelected(findedProduct);
-        navigate('/CardDetail', { state: { findedProduct } });
+        navigate('/CardDetail', { state: { findedProduct, isLogged } });
     }
 
 
@@ -64,16 +66,31 @@ function CardOne() {
                                         <span className="precioDestacado">{product.price}</span>
                                     </Card.Text>
                                     <div style={{ textAlign: 'center' }}>
-                                        <Button variant="primary">Comprar</Button>
+
+                                        {/* {isLogged ? (<Button variant="primary" disabled ={!isLogged}>Comprar</Button>):
+                                        ((<Button variant="primary" disabled ={!isLogged} >Comprar2222</Button>))
+                                        }
+                                         */}
+
+                                        {isLogged ? (
+                                            <Button variant="primary" disabled={!isLogged}>Comprar</Button>
+                                        ) : (
+                                            <OverlayTrigger
+                                                placement="top"
+                                                overlay={<Tooltip id="tooltip-disabled">Debes Logearte para poder comprar</Tooltip>}
+                                                trigger={['hover', 'focus']} // Muestra el tooltip en el hover y el foco
+                                            >
+                                                <span className="d-inline-block">
+                                                    <Button variant="primary" disabled={!isLogged}>Comprar2222</Button>
+                                                </span>
+                                            </OverlayTrigger>
+                                        )}
+
+
+
                                         <span style={{ margin: '0 2px' }}></span>
-                                        {/* <Button variant="primary" onClick={() => handleDetail(product, index)}>Ver más</Button> */}
 
-                                        {/* <Link to={`${encodeURIComponent(JSON.stringify(productSelected))}`} style={{ color: 'inherit', textDecoration: 'none' }}> */}
                                         <Button variant="primary" id={product.id} onClick={() => handleClick(product.id)}>ver más</Button>
-                                        {/* {productSelected && <Navigate to="/CardDetail" state={{ findedProduct }}/>} */}
-
-                                        {/* </Link> */}
-
 
                                     </div>
                                 </Card.Body>
