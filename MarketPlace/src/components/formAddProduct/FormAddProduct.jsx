@@ -10,11 +10,12 @@ import * as yup from "yup";
 import React, { useState } from 'react';
 import { productService } from "../../service/productService";
 import Swal from 'sweetalert2'
-
+import {Cloudinary} from "@cloudinary/url-gen";
 
 
 function FormAddProduct() {
   const { Formik } = formik;
+  
 
   const schema = yup.object().shape({
     firstName: yup.string().required("El nombre es requerido"),
@@ -24,6 +25,36 @@ function FormAddProduct() {
     description: yup.string().required("La descripción es requerida"),
     file: yup.mixed().required("La imagen es requerida"),
   });
+  // const cld = new Cloudinary({cloud: {cloudName: 'dgusxuq9j'}});
+  // const { image } = useLoaderData();
+  // const [updatedImage, setUpdatedImage] = useState(image[0]);
+  const [imageUrl, setImageUrl] = useState('');
+
+  // const handleFieldChange = (event) => {
+  //   const { name, value } = event.target;
+  //   setUpdatedImage({
+  //     ...updatedImage,
+  //     [name]: value,
+  //   });
+  // };
+
+  const handleUploadClick = () => {
+    const widget = window.cloudinary.createUploadWidget({
+         cloudName: 'dgusxuq9j',
+         uploadPreset: 'nfmirk0o'
+     }, (error, result) => {
+         if (result.event === "success") {
+             const url = result.info.secure_url;
+             console.log(url);
+             setImageUrl(url);
+          //    setUpdatedImage(prev => ({
+          //      ...prev,
+          //      imageSource: url
+          //  }))
+         }
+     })
+     widget.open();
+   };
 
   return (
     <Container className="d-flex justify-content-center mt-5 mb-5">
@@ -178,11 +209,13 @@ function FormAddProduct() {
                     <Form.Group className="position-relative mb-3">
                       <Form.Label>Imagen </Form.Label>
                       <Form.Control
-                        type="file"
+                        // type="file"
+                        value={imageUrl}
                         name="file"
                         onChange={handleChange}
                         onBlur={handleBlur}
                         isInvalid={touched.file && !!errors.file}/>
+                        <Button onClick={handleUploadClick()}>Select image</Button>
                       
                       <Form.Control.Feedback type="invalid">
                         {errors.file}
@@ -191,6 +224,7 @@ function FormAddProduct() {
                     <Button type="submit" disabled={isSubmitting}>
                       Enviar
                     </Button>
+                    {/* <img src="https://collection.cloudinary.com/dgusxuq9j/fcffb2300e2917ade45f0af45aba0cea"/> */}
                   </Form>
                 )}
               </Formik>
