@@ -44,12 +44,8 @@
   "users": [
     {
       "id": "1",
-      "name": "user 1",
-      "surname": "",
-      "email": "user@mail.com",
-      "password": "password",
-      "image": "",
-      "description": ""
+      "useremail": "user@mail.com",
+      "userpassword": "password"
     }
   ]
 }
