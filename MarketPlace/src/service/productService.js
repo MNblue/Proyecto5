@@ -61,6 +61,7 @@ export const productService = {
             }
     },
 
+    
 
     async updateProduct(product,index) {
 

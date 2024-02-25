@@ -9,6 +9,7 @@ button:where(.swal2-styled).swal2-confirm {
     box-shadow: 0 0 10px #fffb02d5 !important;
 }
 
+
 img:where(.swal2-image){
     height: 100px;
 }

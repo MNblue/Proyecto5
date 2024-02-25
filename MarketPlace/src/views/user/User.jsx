@@ -14,6 +14,7 @@ function User (){
   const openModal = () => {
     setIsModalOpen(true);
   };
+  
 
   const closeModal = () => {
     setIsModalOpen(false);

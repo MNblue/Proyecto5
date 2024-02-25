@@ -30,6 +30,7 @@ export const userService = {
         //retornamos esta variable que contiene "data". Al ejecutar esta función obtenemos esta "data"
         return allUser;
 
+        
     },
 
 }

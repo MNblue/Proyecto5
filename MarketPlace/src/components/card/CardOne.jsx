@@ -50,6 +50,7 @@ function CardOne({ isLogged }) {
 
     return (
         <>
+        
             <Container>
                 <Row>
                     {productList.map((product, index) => (
