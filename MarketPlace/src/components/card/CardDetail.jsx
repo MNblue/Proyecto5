@@ -11,6 +11,7 @@ import { productService } from '../../service/productService';
 
 
 
+
 function CardDetail() {
   const location = useLocation();
   const product = location.state?.findedProduct;

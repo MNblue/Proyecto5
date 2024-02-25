@@ -8,6 +8,7 @@ import CardOne from './components/card/CardOne';
 import CardDetail from './components/card/CardDetail';
 import Admin from './views/admin/Admin';
 
+
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <BrowserRouter>
