@@ -14,6 +14,8 @@ function CardDetail() {
   const location = useLocation();
   const product = location.state?.findedProduct;
 
+  const isLogged = location.state?.isLogged;
+
 
   const [editable, setEditable] = useState(false);
   const [editedProduct, setEditedProduct] = useState({ ...product });
@@ -67,9 +69,9 @@ function CardDetail() {
             </span>
           </Card.Text>
           <div style={{ textAlign: 'center' }}>
-            {editable
-              ? <Button variant="success" onClick={handleSaveClick}>Guardar</Button>
-              : <Button variant="primary" onClick={handleEditClick}>Editar</Button>
+            {editable 
+              ? <Button variant="success" onClick={handleSaveClick} >Guardar</Button>
+              : <Button variant="primary" onClick={handleEditClick} style={{ display: isLogged? 'inline' : 'none' }}>Editar</Button>
             }
           </div>
         </Card.Body>
