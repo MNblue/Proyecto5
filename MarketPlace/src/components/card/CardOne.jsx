@@ -37,6 +37,10 @@ function CardOne({ isLogged }) {
         getData();
     }, []); // Pasa un arreglo vacío como segundo argumento para asegurar que getData solo se ejecute una vez
 
+    useEffect(() => {
+        getData();
+    }, [productList]);
+
     function handleClick(id) {
         // let btn=document.getElementById(id);
         // alert(btn.id);
@@ -58,7 +62,7 @@ function CardOne({ isLogged }) {
                                 <Card.Text style={{ color: 'green', textAlign: 'center', backgroundColor: 'lightgray' }}>
                                     {product.category}
                                 </Card.Text>
-                                <Card.Img variant="top" src={product.image} />
+                                <Card.Img variant="top" src={product.file} />
                                 <Card.Body>
                                     <Card.Title style={{ color: 'green' }}>{product.name}</Card.Title>
                                     <Card.Text>

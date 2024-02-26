@@ -16,7 +16,7 @@ function FormAddProduct() {
 
   const schema = yup.object().shape({
     firstName: yup.string().required("El nombre es requerido"),
-    lastName: yup.string().required("El apellido es requerido"),
+    // lastName: yup.string().required("El apellido es requerido"),
     category: yup.string().required("La categoría es requerida"),
     price: yup.number().required("Solo valores numéricos"),
     description: yup.string().required("La descripción es requerida"),
@@ -79,7 +79,7 @@ function FormAddProduct() {
                 }}
                 initialValues={{
                   firstName: "",
-                  lastName: "",
+                  // lastName: "",
                   category: "",
                   price: "",
                   description: "",
@@ -128,7 +128,7 @@ function FormAddProduct() {
                         controlId="validationFormik102"
                         className="position-relative"
                       >
-                        <Form.Label>Apellido</Form.Label>
+                        {/* <Form.Label>Apellido</Form.Label>
                         <Form.Control
                           type="text"
                           name="lastName"
@@ -140,7 +140,7 @@ function FormAddProduct() {
                         />
                         <Form.Control.Feedback type="invalid">
                           {errors.lastName}
-                        </Form.Control.Feedback>
+                        </Form.Control.Feedback> */}
                       </Form.Group>
                     </Row>
                     <Row className="mb-3">

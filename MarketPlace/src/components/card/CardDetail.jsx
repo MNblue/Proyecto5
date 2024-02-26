@@ -58,7 +58,7 @@ function CardDetail() {
             <option value="elaborados">Productos Elaborados</option>
           </select>
         </div>
-        <Card.Img variant="top" src={editedProduct.image || product.image} />
+        <Card.Img variant="top" src={editedProduct.file || product.file} />
         <Card.Body>
           <Card.Title style={{ color: 'green' }}>
             <input type="text" name="name" value={editedProduct.name} onChange={handleInputChange} disabled={!editable} style={{ border: 'none', outline: 'none' }} />
