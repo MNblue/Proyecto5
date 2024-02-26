@@ -31,6 +31,15 @@
       "category": "caca",
       "image": "",
       "description": ""
+    },
+    {
+      "id": "c4fe",
+      "firstName": "María",
+      "lastName": "Gonzalez",
+      "category": "Elaborados",
+      "price": 8,
+      "description": "vcxcv",
+      "file": " ://res.cloudinary.com/dgusxuq9j/image/upload/v1708938808/rqkvgmi71o72ned7dh5d.png"
     }
   ],
   "users": [
