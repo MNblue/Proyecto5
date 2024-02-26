@@ -14,12 +14,17 @@ import { useNavigate } from 'react-router-dom';
 import Tooltip from 'react-bootstrap/Tooltip';
 import OverlayTrigger from 'react-bootstrap/OverlayTrigger';
 import swal from 'sweetalert';
+import Swal from 'sweetalert2';
+// import withReactContent from '@sweetalert2/react-content';
 
 function CardOne({ isLogged }) {
 
+    //const MySwal = withReactContent(Swal);
     const navigate = useNavigate();
     const [productList, setProductList] = useState([]);
     const [productSelected, setProductSelected] = useState(null);
+
+
     //esta es la función que carga los datos almacenados en el json
     async function getData() {
         try {
@@ -59,13 +64,14 @@ function CardOne({ isLogged }) {
         }
     };
 
-    function handleClickDelete(id) {
-        deleteData(id);
-    }
+    // function handleClickDelete(id) {
+    //     
+    //     //deleteData(id);
+    // }
 
     function handleClickUpdateStock(product) {
 
-        solicitarCantidad(parseInt(product.stock)) 
+        solicitarCantidad(parseInt(product.stock))
             .then((cantidad) => {
                 // La cantidad se recupera aquí 
                 const nuevoStock = parseInt(product.stock) - cantidad;
@@ -82,7 +88,7 @@ function CardOne({ isLogged }) {
 
 
     const actualizarStock = (productoActualizado) => {
-        updateProduct(productoActualizado,productoActualizado.id);
+        updateProduct(productoActualizado, productoActualizado.id);
     };
 
     async function updateProduct(id) {
@@ -96,42 +102,94 @@ function CardOne({ isLogged }) {
     };
 
 
+    // function solicitarCantidad(maxCantidad) {
+    //     return new Promise((resolve, reject) => {
+    //         swal({
+    //             text: "Ingrese la cantidad que desea comprar:",
+    //             content: "input",
+    //             buttons: {
+    //                 cancel: "Cancelar",
+    //                 confirm: "Aceptar"
+    //             },
+    //         })
+    //             .then((value) => {
+    //                 // Verificar si se ingresó un número válido
+    //                 if (value === null || isNaN(value) || value.trim() === "") {
+    //                     swal("Error", "Por favor ingrese una cantidad válida", "error");
+    //                     reject("Cantidad inválida");
+    //                 } else {
+    //                     // Convertir la cantidad a número entero
+    //                     const cantidad = parseInt(value);
+    //                     // Verificar si la cantidad está dentro del rango permitido
+    //                     if (cantidad > 0 && cantidad <= maxCantidad) {
+    //                         swal("Éxito", "Has comprado " + cantidad + " productos", "success");
+    //                         resolve(cantidad);
+
+    //                     } else {
+    //                         swal("Error", "La cantidad debe ser mayor que cero y menor o igual que " + maxCantidad, "error");
+    //                         reject("Cantidad fuera de rango");
+    //                     }
+    //                 }
+    //             })
+    //             .catch(error => {
+    //                 console.error("Error en la solicitud de cantidad:", error);
+    //                 reject(error);
+    //             });
+    //     });
+    // }
+
     function solicitarCantidad(maxCantidad) {
         return new Promise((resolve, reject) => {
-            swal({
-                text: "Ingrese la cantidad que desea comprar:",
-                content: "input",
-                buttons: {
-                    cancel: "Cancelar",
-                    confirm: "Aceptar"
+            Swal.fire({
+                title: 'Ingrese la cantidad que desea comprar:',
+                input: 'text',
+                inputAttributes: {
+                    autocapitalize: 'off'
                 },
-            })
-                .then((value) => {
-                    // Verificar si se ingresó un número válido
-                    if (value === null || isNaN(value) || value.trim() === "") {
-                        swal("Error", "Por favor ingrese una cantidad válida", "error");
-                        reject("Cantidad inválida");
+                showCancelButton: true,
+                confirmButtonText: 'Aceptar',
+                cancelButtonText: 'Cancelar',
+                showLoaderOnConfirm: true,
+                preConfirm: (cantidad) => {
+                    if (!cantidad || isNaN(cantidad) || cantidad.trim() === "") {
+                        Swal.showValidationMessage('Por favor ingrese una cantidad válida');
                     } else {
-                        // Convertir la cantidad a número entero
-                        const cantidad = parseInt(value);
-                        // Verificar si la cantidad está dentro del rango permitido
-                        if (cantidad > 0 && cantidad <= maxCantidad) {
-                            swal("Éxito", "Has comprado " + cantidad + " productos", "success");
-                            resolve(cantidad);
-
+                        const cantidadNum = parseInt(cantidad);
+                        if (cantidadNum > 0 && cantidadNum <= maxCantidad) {
+                            return cantidadNum;
                         } else {
-                            swal("Error", "La cantidad debe ser mayor que cero y menor o igual que " + maxCantidad, "error");
-                            reject("Cantidad fuera de rango");
+                            Swal.showValidationMessage(`La cantidad debe ser mayor que cero y menor o igual que ${maxCantidad}`);
                         }
                     }
-                })
-                .catch(error => {
-                    console.error("Error en la solicitud de cantidad:", error);
-                    reject(error);
-                });
+                },
+                allowOutsideClick: () => !Swal.isLoading()
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    resolve(result.value);
+                } else {
+                    reject('Operación cancelada');
+                }
+            });
         });
     }
 
+
+    const handleClickDelete = async (id) => {
+        const result = await Swal.fire({
+            title: '¿Estás seguro de eliminar este elemento?',
+            text: "Esta acción no se puede deshacer.",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Confirmar',
+            cancelButtonText: 'Rechazar'
+        });
+
+        if (result.isConfirmed) {
+            deleteData(id);
+        }
+    };
 
     return (
         <>
@@ -140,18 +198,18 @@ function CardOne({ isLogged }) {
                 <Row>
                     {productList.map((product, index) => (
                         <Col key={index} md={3} className="mb-2">
-                            <Card className="sombreado" style={{ width: '14rem' }}>
+                            <Card className="sombreado" style={{ width: '18rem' }}>
                                 <Card.Text style={{ color: 'green', textAlign: 'center', backgroundColor: 'lightgray' }}>
                                     {product.category}
                                 </Card.Text>
                                 <Card.Img variant="top" src={product.file} />
                                 <Card.Body>
                                     <Card.Title style={{ color: 'green' }}>{product.name}</Card.Title>
-                                    <Card.Text>
+                                    <Card.Text className="descripcion">
                                         {product.description}<br></br>
-                                        <span className="precioDestacado">{product.price}</span> €<br></br>
-                                        Stock <span>{product.stock}</span>
                                     </Card.Text>
+                                    <span className="precioDestacado">{product.price}</span> €<br></br>
+                                    Stock <span>{product.stock}</span>
                                     <div style={{ textAlign: 'center' }}>
 
                                         {/* {isLogged ? (<Button variant="primary" disabled ={!isLogged}>Comprar</Button>):

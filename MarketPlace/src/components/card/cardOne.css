@@ -6,4 +6,16 @@
 
   .sombreado {
     box-shadow: 0px 0px 10px rgba(95, 95, 95, 0.774);
+  
+    border-radius: 15px;
+    border: 2px solid #73AD21;
+    padding: 10px;
+    margin: 10px;
+    /* height: 550px;  */
+    overflow: hidden; /* Oculta el contenido que exceda la altura definida */
+  }
+  
+  .descripcion {
+    max-height: 40px; /* Establece una altura máxima para la descripción */
+    overflow-y: auto; /* Agrega un scroll vertical cuando el contenido excede la altura máxima */
   }
