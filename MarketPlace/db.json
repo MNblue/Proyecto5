@@ -5,18 +5,36 @@
       "name": "Product 3",
       "price": "5.994",
       "category": "artesanias",
-      "file": "https://i.postimg.cc/4ymGWXxt/cat1.png",
+      "file": "https://res.cloudinary.com/dgusxuq9j/image/upload/v1708955066/cck61ftl3ir8ifvbn4qt.png",
       "description": "descripcion444 del producto primero bla bla bla bluuuuu",
-      "stock": "75"
+      "stock": "80"
     },
     {
       "id": "7e1c",
       "firstName": "Gato",
-      "stock": "3",
+      "stock": "5",
       "category": "Artesanía local",
-      "price": 0,
+      "price": "28",
       "description": "Gatitos 4",
-      "file": "https://res.cloudinary.com/dgusxuq9j/image/upload/v1708944760/spsrblasjiwary3whquk.png "
+      "file": "https://res.cloudinary.com/dgusxuq9j/image/upload/v1708955189/b4qrj15nnfo98mxlfcgs.png"
+    },
+    {
+      "id": "777d",
+      "firstName": "cucu",
+      "stock": 32,
+      "category": "Elaborados",
+      "price": 23,
+      "description": "cuucu cucu blb albubu eiei aooa",
+      "file": " https://res.cloudinary.com/dgusxuq9j/image/upload/v1708955336/ccrg9khabby9iib8mgpe.png"
+    },
+    {
+      "id": "58ce",
+      "firstName": "articulooo",
+      "stock": 234,
+      "category": "Artesanía local",
+      "price": 234,
+      "description": "dfasdf asdfery n kneojirow oowijeor poiwer",
+      "file": " https://res.cloudinary.com/dgusxuq9j/image/upload/v1708955378/yavqxcqhhx01nfhewode.png"
     }
   ],
   "users": [
