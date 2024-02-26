@@ -7,12 +7,12 @@
       "category": "artesanias",
       "file": "https://i.postimg.cc/4ymGWXxt/cat1.png",
       "description": "descripcion444 del producto primero bla bla bla bluuuuu",
-      "stock": "80"
+      "stock": "75"
     },
     {
       "id": "7e1c",
       "firstName": "Gato",
-      "stock": "5",
+      "stock": "3",
       "category": "Artesanía local",
       "price": 0,
       "description": "Gatitos 4",

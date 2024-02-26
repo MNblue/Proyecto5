@@ -42,8 +42,6 @@ function CardOne({ isLogged }) {
     }, [productList]);
 
     function handleClick(id) {
-        // let btn=document.getElementById(id);
-        // alert(btn.id);
         const findedProduct = productList.find(product => product.id === id);
         setProductSelected(findedProduct);
         navigate('/CardDetail', { state: { findedProduct, isLogged } });
@@ -53,62 +51,49 @@ function CardOne({ isLogged }) {
         try {
             // Accedo a productService, en concreto a su método GET. 
             const products = await productService.deleteProduct(id);
-            
             const newList = productList.filter(producto => producto.id !== id);
-    // Actualizar el estado con la nueva lista de productos
-    setProductList(newList);
+            // Actualizar el estado con la nueva lista de productos
+            setProductList(newList);
         } catch (error) {
             console.error('Error al eliminar los datos:', error);
         }
     };
 
-    function handleClickDelete(id){
+    function handleClickDelete(id) {
         deleteData(id);
     }
-    function handleClickUpdateStock(product){
-    //  let count= solicitarCantidad (product.stock);
 
-     solicitarCantidad(parseInt(product.stock)) // Ejemplo de llamada con un máximo de 10 productos
-    .then((cantidad) => {
-        // La cantidad se recupera aquí y puedes hacer lo que necesites con ella
-        // console.log("Cantidad seleccionada:", cantidad);
-        // Por ejemplo, puedes usar la cantidad para actualizar algún valor en tu aplicación
+    function handleClickUpdateStock(product) {
 
-        const nuevoStock = parseInt(product.stock) - cantidad;
-
-     product.stock = nuevoStock.toString();
-            // Llamar a la función para actualizar el stock
-            actualizarStock(product);
-
-    })
-    .catch((error) => {
-        // Manejo de errores, si es necesario
-        console.error("Error:", error);
-    });
-
-     
-
-    //  const productoExistente = productList.find(producto => producto.id === product.id);
-        // if (productoExistente) {
-        //     // Si el producto ya existe, actualizar su información en la lista
-        //     const nuevaLista = productList.map(product =>
-        //         product.id === productoExistente.id ? productoExistente : product
-        //     );
-            // setProductList(nuevaLista);
+        solicitarCantidad(parseInt(product.stock)) 
+            .then((cantidad) => {
+                // La cantidad se recupera aquí 
+                const nuevoStock = parseInt(product.stock) - cantidad;
+                product.stock = nuevoStock.toString();
+                // Llamar a la función para actualizar el stock
+                actualizarStock(product);
+            })
+            .catch((error) => {
+                // Manejo de errores, si es necesario
+                console.error("Error:", error);
+            });
     }
-    
-    
+
+
 
     const actualizarStock = (productoActualizado) => {
-        // Actualizar el stock del producto en la lista
-        const nuevaLista = productList.map(producto =>
-            producto.id === productoActualizado.id ? productoActualizado : producto
-        );
-        // Actualizar la lista de productos con el stock actualizado
-        setProductList(nuevaLista);
+        updateProduct(productoActualizado,productoActualizado.id);
     };
 
-
+    async function updateProduct(id) {
+        try {
+            // Accedo a productService, en concreto a su método GET. 
+            const products = await productService.updateProduct(id);
+            getData();
+        } catch (error) {
+            console.error('Error al actualizar los datos:', error);
+        }
+    };
 
 
     function solicitarCantidad(maxCantidad) {
@@ -121,37 +106,37 @@ function CardOne({ isLogged }) {
                     confirm: "Aceptar"
                 },
             })
-            .then((value) => {
-                // Verificar si se ingresó un número válido
-                if (value === null || isNaN(value) || value.trim() === "") {
-                    swal("Error", "Por favor ingrese una cantidad válida", "error");
-                    reject("Cantidad inválida");
-                } else {
-                    // Convertir la cantidad a número entero
-                    const cantidad = parseInt(value);
-                    // Verificar si la cantidad está dentro del rango permitido
-                    if (cantidad > 0 && cantidad <= maxCantidad) {
-                        swal("Éxito", "Ha seleccionado comprar " + cantidad + " productos", "success");
-                        resolve(cantidad);
-                        // Aquí puedes hacer lo que necesites con la cantidad ingresada
-                        // Por ejemplo, puedes enviarla a un servidor para procesar la compra
+                .then((value) => {
+                    // Verificar si se ingresó un número válido
+                    if (value === null || isNaN(value) || value.trim() === "") {
+                        swal("Error", "Por favor ingrese una cantidad válida", "error");
+                        reject("Cantidad inválida");
                     } else {
-                        swal("Error", "La cantidad debe ser mayor que cero y menor o igual que " + maxCantidad, "error");
-                        reject("Cantidad fuera de rango");
+                        // Convertir la cantidad a número entero
+                        const cantidad = parseInt(value);
+                        // Verificar si la cantidad está dentro del rango permitido
+                        if (cantidad > 0 && cantidad <= maxCantidad) {
+                            swal("Éxito", "Has comprado " + cantidad + " productos", "success");
+                            resolve(cantidad);
+                            // Aquí puedes hacer lo que necesites con la cantidad ingresada
+                            // Por ejemplo, puedes enviarla a un servidor para procesar la compra
+                        } else {
+                            swal("Error", "La cantidad debe ser mayor que cero y menor o igual que " + maxCantidad, "error");
+                            reject("Cantidad fuera de rango");
+                        }
                     }
-                }
-            })
-            .catch(error => {
-                console.error("Error en la solicitud de cantidad:", error);
-                reject(error);
-            });
+                })
+                .catch(error => {
+                    console.error("Error en la solicitud de cantidad:", error);
+                    reject(error);
+                });
         });
     }
-    
+
 
     return (
         <>
-        
+
             <Container>
                 <Row>
                     {productList.map((product, index) => (
@@ -177,8 +162,8 @@ function CardOne({ isLogged }) {
 
                                         {isLogged ? (
                                             <span>
-                                            <Button variant="primary" disabled={!isLogged} onClick={() => handleClickUpdateStock(product)} >Comprar</Button> 
-                                            <Button variant="primary" disabled={!isLogged} onClick={() => handleClickDelete(product.id)}>Eliminar</Button>
+                                                <Button variant="primary" disabled={!isLogged} onClick={() => handleClickUpdateStock(product)} >Comprar</Button>
+                                                <Button variant="primary" disabled={!isLogged} onClick={() => handleClickDelete(product.id)}>Eliminar</Button>
                                             </span>
                                         ) : (
                                             <OverlayTrigger
@@ -197,7 +182,7 @@ function CardOne({ isLogged }) {
                                         <span style={{ margin: '0 2px' }}></span>
 
                                         <Button variant="primary" id={product.id} onClick={() => handleClick(product.id)}>ver más</Button>
-                                        
+
                                     </div>
                                 </Card.Body>
                             </Card>
