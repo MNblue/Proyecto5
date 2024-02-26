@@ -13,6 +13,20 @@ import { FaLock } from "react-icons/fa";
 const LoginPopUp = ({ closeModal }) => {
 
   ////////////////-STYLE-///////////////////
+const styleModalShow = {
+  
+    display: 'block',
+    position: 'initial',
+    backgroundColor: 'rgba(0, 0, 0, 0.700)',
+    // backdropFilter: 'blur(5px)',
+    position: 'fixed',
+    top: '50%',
+    left: '50%',
+    transform: 'translate(-50%, -50%)',
+    zIndex: 1000,
+  
+}
+
   const customStylesLogin = {
     backgroundColor: '#fff',
     color: '#00DFF0',
@@ -21,6 +35,7 @@ const LoginPopUp = ({ closeModal }) => {
     border: 'none',
     borderRadius: '20px',
     boxShadow: '0 0 10px #e9e0e9',
+    
 
   };
   const stylesCloseBtn = {
@@ -33,11 +48,12 @@ const LoginPopUp = ({ closeModal }) => {
 
   const stylesModalDialog = {
     backgroundColor: '#7e90e6',
+    backdropFilter: 'none',
     color: '',
     height: '',
     border: '',
     boxShadow: '0 0 10px #e9e0e9',
-  };
+    };
   ///////////////////////////////////
 
 
@@ -77,18 +93,8 @@ const LoginPopUp = ({ closeModal }) => {
   return (
     <div
       className="modal show"
-      style={{
-        display: 'block',
-        position: 'initial',
-        backgroundColor: 'rgba(0, 0, 0, 0.600)',
-        backdropFilter: 'blur(5px)',
-        position: 'fixed',
-        top: '50%',
-        left: '50%',
-        transform: 'translate(-50%, -50%)',
-        zIndex: 1000,
-      }}
-    >
+      style={styleModalShow}>
+
       <Modal.Dialog style={stylesModalDialog}>
         <Modal.Header style={stylesModalDialog}>
           <Modal.Title>Iniciar Sesión</Modal.Title>
