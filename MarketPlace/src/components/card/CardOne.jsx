@@ -13,7 +13,7 @@ import { Navigate } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 import Tooltip from 'react-bootstrap/Tooltip';
 import OverlayTrigger from 'react-bootstrap/OverlayTrigger';
-
+import swal from 'sweetalert';
 
 function CardOne({ isLogged }) {
 
@@ -65,7 +65,89 @@ function CardOne({ isLogged }) {
     function handleClickDelete(id){
         deleteData(id);
     }
+    function handleClickUpdateStock(product){
+    //  let count= solicitarCantidad (product.stock);
 
+     solicitarCantidad(parseInt(product.stock)) // Ejemplo de llamada con un máximo de 10 productos
+    .then((cantidad) => {
+        // La cantidad se recupera aquí y puedes hacer lo que necesites con ella
+        // console.log("Cantidad seleccionada:", cantidad);
+        // Por ejemplo, puedes usar la cantidad para actualizar algún valor en tu aplicación
+
+        const nuevoStock = parseInt(product.stock) - cantidad;
+
+     product.stock = nuevoStock.toString();
+            // Llamar a la función para actualizar el stock
+            actualizarStock(product);
+
+    })
+    .catch((error) => {
+        // Manejo de errores, si es necesario
+        console.error("Error:", error);
+    });
+
+     
+
+    //  const productoExistente = productList.find(producto => producto.id === product.id);
+        // if (productoExistente) {
+        //     // Si el producto ya existe, actualizar su información en la lista
+        //     const nuevaLista = productList.map(product =>
+        //         product.id === productoExistente.id ? productoExistente : product
+        //     );
+            // setProductList(nuevaLista);
+    }
+    
+    
+
+    const actualizarStock = (productoActualizado) => {
+        // Actualizar el stock del producto en la lista
+        const nuevaLista = productList.map(producto =>
+            producto.id === productoActualizado.id ? productoActualizado : producto
+        );
+        // Actualizar la lista de productos con el stock actualizado
+        setProductList(nuevaLista);
+    };
+
+
+
+
+    function solicitarCantidad(maxCantidad) {
+        return new Promise((resolve, reject) => {
+            swal({
+                text: "Ingrese la cantidad que desea comprar:",
+                content: "input",
+                buttons: {
+                    cancel: "Cancelar",
+                    confirm: "Aceptar"
+                },
+            })
+            .then((value) => {
+                // Verificar si se ingresó un número válido
+                if (value === null || isNaN(value) || value.trim() === "") {
+                    swal("Error", "Por favor ingrese una cantidad válida", "error");
+                    reject("Cantidad inválida");
+                } else {
+                    // Convertir la cantidad a número entero
+                    const cantidad = parseInt(value);
+                    // Verificar si la cantidad está dentro del rango permitido
+                    if (cantidad > 0 && cantidad <= maxCantidad) {
+                        swal("Éxito", "Ha seleccionado comprar " + cantidad + " productos", "success");
+                        resolve(cantidad);
+                        // Aquí puedes hacer lo que necesites con la cantidad ingresada
+                        // Por ejemplo, puedes enviarla a un servidor para procesar la compra
+                    } else {
+                        swal("Error", "La cantidad debe ser mayor que cero y menor o igual que " + maxCantidad, "error");
+                        reject("Cantidad fuera de rango");
+                    }
+                }
+            })
+            .catch(error => {
+                console.error("Error en la solicitud de cantidad:", error);
+                reject(error);
+            });
+        });
+    }
+    
 
     return (
         <>
@@ -83,7 +165,8 @@ function CardOne({ isLogged }) {
                                     <Card.Title style={{ color: 'green' }}>{product.name}</Card.Title>
                                     <Card.Text>
                                         {product.description}<br></br>
-                                        <span className="precioDestacado">{product.price}</span>
+                                        <span className="precioDestacado">{product.price}</span> €<br></br>
+                                        Stock <span>{product.stock}</span>
                                     </Card.Text>
                                     <div style={{ textAlign: 'center' }}>
 
@@ -94,7 +177,7 @@ function CardOne({ isLogged }) {
 
                                         {isLogged ? (
                                             <span>
-                                            <Button variant="primary" disabled={!isLogged}>Comprar</Button>
+                                            <Button variant="primary" disabled={!isLogged} onClick={() => handleClickUpdateStock(product)} >Comprar</Button> 
                                             <Button variant="primary" disabled={!isLogged} onClick={() => handleClickDelete(product.id)}>Eliminar</Button>
                                             </span>
                                         ) : (
