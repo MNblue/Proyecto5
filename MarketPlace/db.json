@@ -1,14 +1,6 @@
 {
   "products": [
     {
-      "id": "2",
-      "name": "Product 2",
-      "price": 9.99,
-      "category": "cacajjkjjk",
-      "file": "https://i.postimg.cc/tJLKDPfQ/cat2.png",
-      "description": "otra description para el segundo producto y no se que puedo poner"
-    },
-    {
       "id": "3",
       "name": "Product 3",
       "price": "5.994",
@@ -23,22 +15,6 @@
       "price": 4,
       "description": "efffff",
       "file": "https://res.cloudinary.com/dgusxuq9j/image/upload/v1708938808/rqkvgmi71o72ned7dh5d.png"
-    },
-    {
-      "id": "d036",
-      "firstName": "maripos",
-      "category": "Elaborados",
-      "price": 66,
-      "description": "BLA BLA",
-      "file": "https://res.cloudinary.com/dgusxuq9j/image/upload/v1708939457/kuabsvwtxu7vsc5lxm4r.png"
-    },
-    {
-      "id": "a816",
-      "firstName": "cucuc",
-      "category": "artesanias",
-      "price": "11",
-      "description": "cucucuc skdflkjslkdjflkjskdfjlskjdkfjskjdflkjslkdfjsl",
-      "file": " https://res.cloudinary.com/dgusxuq9j/image/upload/v1708939636/vumiicsoffjf06cvk0xp.png"
     }
   ],
   "users": [

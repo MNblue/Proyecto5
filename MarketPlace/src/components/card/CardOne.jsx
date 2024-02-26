@@ -49,6 +49,22 @@ function CardOne({ isLogged }) {
         navigate('/CardDetail', { state: { findedProduct, isLogged } });
     }
 
+    async function deleteData(id) {
+        try {
+            // Accedo a productService, en concreto a su método GET. 
+            const products = await productService.deleteProduct(id);
+            
+            const newList = productList.filter(producto => producto.id !== id);
+    // Actualizar el estado con la nueva lista de productos
+    setProductList(newList);
+        } catch (error) {
+            console.error('Error al eliminar los datos:', error);
+        }
+    };
+
+    function handleClickDelete(id){
+        deleteData(id);
+    }
 
 
     return (
@@ -77,7 +93,10 @@ function CardOne({ isLogged }) {
                                          */}
 
                                         {isLogged ? (
+                                            <span>
                                             <Button variant="primary" disabled={!isLogged}>Comprar</Button>
+                                            <Button variant="primary" disabled={!isLogged} onClick={() => handleClickDelete(product.id)}>Eliminar</Button>
+                                            </span>
                                         ) : (
                                             <OverlayTrigger
                                                 placement="top"
@@ -85,7 +104,7 @@ function CardOne({ isLogged }) {
                                                 trigger={['hover', 'focus']} // Muestra el tooltip en el hover y el foco
                                             >
                                                 <span className="d-inline-block">
-                                                    <Button variant="primary" disabled={!isLogged}>Comprar2222</Button>
+                                                    <Button variant="primary" disabled={!isLogged}>Comprar</Button>
                                                 </span>
                                             </OverlayTrigger>
                                         )}
@@ -95,7 +114,7 @@ function CardOne({ isLogged }) {
                                         <span style={{ margin: '0 2px' }}></span>
 
                                         <Button variant="primary" id={product.id} onClick={() => handleClick(product.id)}>ver más</Button>
-
+                                        
                                     </div>
                                 </Card.Body>
                             </Card>
