@@ -2,11 +2,11 @@
   "products": [
     {
       "id": "1",
-      "name": "Product 1 prueba",
-      "price": "59.98",
-      "category": "elaborados",
-      "image": "https://i.postimg.cc/4ymGWXxt/cat1.png",
-      "description": "descripcion del producto primujhkhkjhkjhero bla bla bla bluuuuu prueba"
+      "name": "Product 1",
+      "price": 5.99,
+      "category": "Electronics",
+      "file": "",
+      "description": ""
     },
     {
       "id": "2",
@@ -29,16 +29,8 @@
       "name": "Product 4",
       "price": 6.5,
       "category": "caca",
-      "image": "https://i.postimg.cc/tJLKDPfQ/cat2.png",
-      "description": "otra description para el segundo producto y no se que puedo poner"
-    },
-    {
-      "id": "5",
-      "name": "Product 5",
-      "price": 7.99,
-      "category": "Electronics",
-      "image": "https://i.postimg.cc/4ymGWXxt/cat1.png",
-      "description": "descripcion del producto primero bla bla bla bluuuuu"
+      "image": "",
+      "description": ""
     }
   ],
   "users": [
