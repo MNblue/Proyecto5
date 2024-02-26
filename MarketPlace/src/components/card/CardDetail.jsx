@@ -7,7 +7,8 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import { useLocation } from 'react-router-dom';
 import { productService } from '../../service/productService';
-
+import * as formik from "formik";
+import * as yup from "yup";
 
 
 
@@ -15,9 +16,10 @@ import { productService } from '../../service/productService';
 function CardDetail() {
   const location = useLocation();
   const product = location.state?.findedProduct;
-
+  const { Formik } = formik;
   const isLogged = location.state?.isLogged;
-
+  const [imageUrl, setImageUrl] = useState(product.file);
+  
 
   const [editable, setEditable] = useState(false);
   const [editedProduct, setEditedProduct] = useState({ ...product });
@@ -47,6 +49,54 @@ function CardDetail() {
     }
   };
 
+    // Función para cambiar la imagen
+    const changeImage = () => {
+      // const newImageUrl = 'nueva/ruta/imagen.jpg';
+      // setImageUrl(newImageUrl);
+
+
+
+    };
+  
+    const handleUploadClick = (setFieldValue, setFieldTouched) => {
+      const widget = window.cloudinary.createUploadWidget(
+        {
+          cloudName: "dgusxuq9j",
+          uploadPreset: "nfmirk0o",
+        },
+        (error, result) => {
+           // Comprobar si el widget se cerró sin cargar una imagen
+           if (error && error.event === 'widget.closed') {
+            // Marcar el campo como tocado para mostrar el error de validación
+           // setFieldTouched ('file', true);
+           console.log("error al cargar la imagen");
+          }
+          // Comprueba si el evento es 'success'
+          if (result.event === "success") {
+            console.log("La imagen se ha cargado con éxito");
+            const url = result.info.secure_url;
+            setImageUrl(url);
+            // formik.setFieldValue("file", imageUrl);
+            // setFieldTouched ('file', true);
+            setEditedProduct({ ...editedProduct, file: url });
+            updateData();
+            
+            
+
+          } 
+        }
+      );
+      widget.open();
+    };
+  
+    // const ImageUpload = () => {
+    //   const handleSubmit = async (values) => {
+    //     // Obtener la URL de la imagen del estado
+    //     const imageUrl = values.file;
+    //     // Hacer algo con la URL, como enviarla a otro servicio o mostrarla en la interfaz
+    //   };
+    // }
+
   return (
     <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
       <Card className="sombreado" style={{ width: '44rem' }}>
@@ -58,7 +108,10 @@ function CardDetail() {
             <option value="elaborados">Productos Elaborados</option>
           </select>
         </div>
-        <Card.Img variant="top" src={editedProduct.image || product.image} />
+        <Card.Img variant="top" src={imageUrl} />
+
+        {editable && <Button  variant="success" onClick={handleUploadClick}>Cambiar imagen</Button>}
+       
         <Card.Body>
           <Card.Title style={{ color: 'green' }}>
             <input type="text" name="name" value={editedProduct.name} onChange={handleInputChange} disabled={!editable} style={{ border: 'none', outline: 'none' }} />
@@ -67,7 +120,10 @@ function CardDetail() {
             <textarea name="description" value={editedProduct.description} onChange={handleInputChange} disabled={!editable} style={{ border: 'none', outline: 'none', width: '100%', overflowX: 'auto' }} />
             <br />
             <span className="precioDestacado">
-              <input type="number" name="price" value={editedProduct.price} onChange={handleInputChange} disabled={!editable} style={{ border: 'none', outline: 'none' }} />
+              <input type="number" name="price" value={editedProduct.price} onChange={handleInputChange} disabled={!editable} style={{ border: 'none', outline: 'none' }} /> €
+            </span><br></br> Stock 
+            <span className="stock">
+              <input type="number" name="stock" value={editedProduct.stock} onChange={handleInputChange} disabled={!editable} style={{ border: 'none', outline: 'none' }} />
             </span>
           </Card.Text>
           <div style={{ textAlign: 'center' }}>

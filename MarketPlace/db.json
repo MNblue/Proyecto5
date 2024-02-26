@@ -1,36 +1,22 @@
 {
   "products": [
     {
-      "id": "1",
-      "name": "Product 1",
-      "price": 5.99,
-      "category": "Electronics",
-      "file": "",
-      "description": ""
-    },
-    {
-      "id": "2",
-      "name": "Product 2",
-      "price": 9.99,
-      "category": "cacajjkjjk",
-      "image": "https://i.postimg.cc/tJLKDPfQ/cat2.png",
-      "description": "otra description para el segundo producto y no se que puedo poner"
-    },
-    {
       "id": "3",
       "name": "Product 3",
       "price": "5.994",
       "category": "artesanias",
-      "image": "https://i.postimg.cc/4ymGWXxt/cat1.png",
-      "description": "descripcion444 del producto primero bla bla bla bluuuuu"
+      "file": "https://res.cloudinary.com/dgusxuq9j/image/upload/v1708955066/cck61ftl3ir8ifvbn4qt.png",
+      "description": "descripcion444 del producto primero bla bla bla bluuuuu",
+      "stock": "80"
     },
     {
-      "id": "4",
-      "name": "Product 4",
-      "price": 6.5,
-      "category": "caca",
-      "image": "",
-      "description": ""
+      "id": "001d",
+      "firstName": "duud",
+      "stock": 3,
+      "category": "De la huerta a la mesa",
+      "price": 3,
+      "description": "dudu dudud ududu",
+      "file": "https://res.cloudinary.com/dgusxuq9j/image/upload/v1708958512/febqx6o2tkuoto7gnskj.png"
     }
   ],
   "users": [
