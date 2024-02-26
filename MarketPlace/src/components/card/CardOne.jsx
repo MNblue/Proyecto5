@@ -118,8 +118,7 @@ function CardOne({ isLogged }) {
                         if (cantidad > 0 && cantidad <= maxCantidad) {
                             swal("Éxito", "Has comprado " + cantidad + " productos", "success");
                             resolve(cantidad);
-                            // Aquí puedes hacer lo que necesites con la cantidad ingresada
-                            // Por ejemplo, puedes enviarla a un servidor para procesar la compra
+
                         } else {
                             swal("Error", "La cantidad debe ser mayor que cero y menor o igual que " + maxCantidad, "error");
                             reject("Cantidad fuera de rango");
