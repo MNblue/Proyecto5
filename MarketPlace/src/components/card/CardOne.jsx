@@ -23,6 +23,16 @@ function CardOne({ isLogged }) {
     const navigate = useNavigate();
     const [productList, setProductList] = useState([]);
     const [productSelected, setProductSelected] = useState(null);
+    //indice para recorrer el slider
+    const [startIndex, setStartIndex] = useState(0);
+    //para el boton izquierdo llevar la cuenta
+    const handleClickLeft = () => {
+        setStartIndex(startIndex > 0 ? startIndex - 1 : startIndex);
+    };
+    //para el boton derecho llevar la cuenta
+    const handleClickRight = () => {
+        setStartIndex(startIndex + 1);
+    };
 
 
     //esta es la función que carga los datos almacenados en el json
@@ -192,62 +202,122 @@ function CardOne({ isLogged }) {
     };
 
     return (
-        <>
+        //      <>
 
-            <Container>
-                <Row>
-                    {productList.map((product, index) => (
-                        <Col key={index} md={3} className="mb-2">
-                            <Card className="sombreado" style={{ width: '18rem' }}>
-                                <Card.Text style={{ color: 'green', textAlign: 'center', backgroundColor: 'lightgray' }}>
-                                    {product.category}
-                                </Card.Text>
-                                <Card.Img variant="top" src={product.file} />
-                                <Card.Body>
-                                    <Card.Title style={{ color: 'green' }}>{product.name}</Card.Title>
-                                    <Card.Text className="descripcion">
-                                        {product.description}<br></br>
+        //    </> //     <Container>
+        //         <Row>
+        //             {productList.map((product, index) => (
+        //                 <Col key={index} md={3} className="mb-2">
+        //                     <Card className="sombreado" style={{ width: '18rem' }}>
+        //                         <Card.Text style={{ color: 'green', textAlign: 'center', backgroundColor: 'lightgray' }}>
+        //                             {product.category}
+        //                         </Card.Text>
+        //                         <Card.Img variant="top" src={product.file} />
+        //                         <Card.Body>
+        //                             <Card.Title style={{ color: 'green' }}>{product.name}</Card.Title>
+        //                             <Card.Text className="descripcion">
+        //                                 {product.description}<br></br>
+        //                             </Card.Text>
+        //                             <span className="precioDestacado">{product.price}</span> €<br></br>
+        //                             Stock <span>{product.stock}</span>
+        //                             <div style={{ textAlign: 'center' }}>
+
+        //                                 {/* {isLogged ? (<Button variant="primary" disabled ={!isLogged}>Comprar</Button>):
+        //                                 ((<Button variant="primary" disabled ={!isLogged} >Comprar2222</Button>))
+        //                                 }
+        //                                  */}
+
+        //                                 {isLogged ? (
+        //                                     <span>
+        //                                         <Button variant="primary" disabled={!isLogged} onClick={() => handleClickUpdateStock(product)} >Comprar</Button>
+        //                                         <Button variant="primary" disabled={!isLogged} onClick={() => handleClickDelete(product.id)}>Eliminar</Button>
+        //                                     </span>
+        //                                 ) : (
+        //                                     <OverlayTrigger
+        //                                         placement="top"
+        //                                         overlay={<Tooltip id="tooltip-disabled">Debes Logearte para poder comprar</Tooltip>}
+        //                                         trigger={['hover', 'focus']} // Muestra el tooltip en el hover y el foco
+        //                                     >
+        //                                         <span className="d-inline-block">
+        //                                             <Button variant="primary" disabled={!isLogged}>Comprar</Button>
+        //                                         </span>
+        //                                     </OverlayTrigger>
+        //                                 )}
+
+
+
+        //                                 <span style={{ margin: '0 2px' }}></span>
+
+        //                                 <Button variant="primary" id={product.id} onClick={() => handleClick(product.id)}>ver más</Button>
+
+        //                             </div>
+        //                         </Card.Body>
+        //                     </Card>
+        //                 </Col>
+        //             ))}
+        //         </Row>
+        //     </Container>
+        // </>
+
+
+        // <>
+        //     return (
+            <>
+                <Container>
+                    <Row>
+                        {productList.slice(startIndex, startIndex + 4).map((product, index) => (
+                            <Col key={index} md={3} className="mb-2">
+                                <Card className="sombreado" style={{ width: '14rem' }}>
+                                    <Card.Text style={{ color: 'green', textAlign: 'center', backgroundColor: 'lightgray' }}>
+                                        {product.category}
                                     </Card.Text>
-                                    <span className="precioDestacado">{product.price}</span> €<br></br>
-                                    Stock <span>{product.stock}</span>
-                                    <div style={{ textAlign: 'center' }}>
+                                    <Card.Img variant="top" src={product.file} />
+                                    <Card.Body>
+                                        <Card.Title style={{ color: 'green' }}>{product.name}</Card.Title>
+                                        <Card.Text>
+                                            {product.description}<br></br>
+                                            <span className="precioDestacado">{product.price}</span>
+                                        </Card.Text>
+                                        <div style={{ textAlign: 'center' }}>
+                                            {isLogged ? (
+                                                <Button variant="primary" disabled={!isLogged}>Comprar</Button>
+                                            ) : (
+                                                <OverlayTrigger
+                                                    placement="top"
+                                                    overlay={<Tooltip id="tooltip-disabled">Debes Logearte para poder
 
-                                        {/* {isLogged ? (<Button variant="primary" disabled ={!isLogged}>Comprar</Button>):
-                                        ((<Button variant="primary" disabled ={!isLogged} >Comprar2222</Button>))
-                                        }
-                                         */}
+                                                        comprar</Tooltip>}
 
-                                        {isLogged ? (
-                                            <span>
-                                                <Button variant="primary" disabled={!isLogged} onClick={() => handleClickUpdateStock(product)} >Comprar</Button>
-                                                <Button variant="primary" disabled={!isLogged} onClick={() => handleClickDelete(product.id)}>Eliminar</Button>
-                                            </span>
-                                        ) : (
-                                            <OverlayTrigger
-                                                placement="top"
-                                                overlay={<Tooltip id="tooltip-disabled">Debes Logearte para poder comprar</Tooltip>}
-                                                trigger={['hover', 'focus']} // Muestra el tooltip en el hover y el foco
-                                            >
-                                                <span className="d-inline-block">
-                                                    <Button variant="primary" disabled={!isLogged}>Comprar</Button>
-                                                </span>
-                                            </OverlayTrigger>
-                                        )}
+                                                    trigger={['hover', 'focus']}
+                                                >
+                                                    <span className="d-inline-block">
+                                                        <Button variant="primary" disabled={!isLogged}>Comprar2222</Button>
+                                                    </span>
+                                                </OverlayTrigger>
+                                            )}
+                                            <span style={{ margin: '0 2px' }}></span>
 
+                                            <Button variant="primary" id={product.id} onClick={() =>
 
+                                                handleClick(product.id)}>ver más</Button>
 
-                                        <span style={{ margin: '0 2px' }}></span>
-
-                                        <Button variant="primary" id={product.id} onClick={() => handleClick(product.id)}>ver más</Button>
-
-                                    </div>
-                                </Card.Body>
-                            </Card>
-                        </Col>
-                    ))}
-                </Row>
-            </Container>
+                                        </div>
+                                    </Card.Body>
+                                </Card>
+                            </Col>
+                        ))}
+                    </Row>
+                </Container>
+                <div style={{ textAlign: 'center', marginTop: '10px' }}>
+                    <Button variant="secondary" onClick={handleClickLeft} disabled={startIndex === 0}>Anterior</Button>{' '}
+                    <Button variant="secondary" onClick={handleClickRight} disabled={startIndex + 4 >= productList.length}>Siguiente</Button>
+                </div>
+            </>
+            );
         </>
+
+
+
     );
 }
 export default CardOne;

@@ -17,6 +17,78 @@
       "price": 3,
       "description": "dudu dudud ududu",
       "file": "https://res.cloudinary.com/dgusxuq9j/image/upload/v1708958512/febqx6o2tkuoto7gnskj.png"
+    },
+    {
+      "id": "9bc0",
+      "firstName": "ddd",
+      "stock": 4,
+      "category": "De la huerta a la mesa",
+      "price": 8,
+      "description": "dddd",
+      "file": " https://res.cloudinary.com/dgusxuq9j/image/upload/v1709054639/n0dzpecd2bbcb7rttyxt.png"
+    },
+    {
+      "id": "52c6",
+      "firstName": "eeerer",
+      "stock": 5,
+      "category": "De la huerta a la mesa",
+      "price": 45,
+      "description": "dfsdgadg",
+      "file": " https://res.cloudinary.com/dgusxuq9j/image/upload/v1709054665/fbcjlik6pxn02vyj2ll9.png"
+    },
+    {
+      "id": "5c0c",
+      "firstName": "ksndflklsd",
+      "stock": 4,
+      "category": "Artesanía local",
+      "price": 5,
+      "description": "sadfasdf",
+      "file": " https://res.cloudinary.com/dgusxuq9j/image/upload/v1709054693/oqtefqhrdxgvvpeyrcv2.png"
+    },
+    {
+      "id": "3r",
+      "name": "Product 3",
+      "price": "5.994",
+      "category": "artesanias",
+      "file": "https://res.cloudinary.com/dgusxuq9j/image/upload/v1708955066/cck61ftl3ir8ifvbn4qt.png",
+      "description": "descripcion444 del producto primero bla bla bla bluuuuu",
+      "stock": "80"
+    },
+    {
+      "id": "001dr",
+      "firstName": "duud",
+      "stock": 3,
+      "category": "De la huerta a la mesa",
+      "price": 3,
+      "description": "dudu dudud ududu",
+      "file": "https://res.cloudinary.com/dgusxuq9j/image/upload/v1708958512/febqx6o2tkuoto7gnskj.png"
+    },
+    {
+      "id": "9bc0r",
+      "firstName": "ddd",
+      "stock": 4,
+      "category": "De la huerta a la mesa",
+      "price": 8,
+      "description": "dddd",
+      "file": " https://res.cloudinary.com/dgusxuq9j/image/upload/v1709054639/n0dzpecd2bbcb7rttyxt.png"
+    },
+    {
+      "id": "52c6r",
+      "firstName": "eeerer",
+      "stock": 5,
+      "category": "De la huerta a la mesa",
+      "price": 45,
+      "description": "dfsdgadg",
+      "file": " https://res.cloudinary.com/dgusxuq9j/image/upload/v1709054665/fbcjlik6pxn02vyj2ll9.png"
+    },
+    {
+      "id": "5c0rc",
+      "firstName": "ksndflklsd",
+      "stock": 4,
+      "category": "Artesanía local",
+      "price": 5,
+      "description": "sadfasdf",
+      "file": " https://res.cloudinary.com/dgusxuq9j/image/upload/v1709054693/oqtefqhrdxgvvpeyrcv2.png"
     }
   ],
   "users": [
