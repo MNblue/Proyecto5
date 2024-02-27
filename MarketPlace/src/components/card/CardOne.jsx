@@ -314,10 +314,10 @@ function CardOne({ isLogged }) {
                 </div>
             </>
             );
-        </>
+    //     </>
 
 
 
-    );
+    // );
 }
 export default CardOne;
