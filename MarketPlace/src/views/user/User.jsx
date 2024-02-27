@@ -26,7 +26,7 @@ function User (){
         <>
         <NavbarOne openModal={openModal} />
         {isModalOpen && <LoginPopUp closeModal={closeModal} />}
-
+        {/*AQUI IRA EL FILTRADO Y SE DEBERÁN PASAR LAS PROPS A CARDONE PARA EL FILTRADO*/}
         <CardOne isLogged={isLogged}/>
         </>
     )

@@ -98,6 +98,8 @@ function CardDetail() {
     // }
 
   return (
+    <>
+    <main>
     <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
       <Card className="sombreado" style={{ width: '44rem' }}>
         <div style={{ color: 'green', textAlign: 'center', backgroundColor: 'lightgray' }}>
@@ -135,6 +137,8 @@ function CardDetail() {
         </Card.Body>
       </Card>
     </div>
+    </main>
+    </>
   );
 }
 
