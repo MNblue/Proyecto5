@@ -34,6 +34,18 @@ function CardOne({ isLogged }) {
         setStartIndex(startIndex + 1);
     };
 
+    const handlePrevious = () => {
+        if (startIndex > 0) {
+            setStartIndex(startIndex - 1);
+        }
+    };
+
+    const handleNext = () => {
+        if (startIndex < productList.length - 4) {
+            setStartIndex(startIndex + 1);
+        }
+    };
+
 
     //esta es la función que carga los datos almacenados en el json
     async function getData() {
@@ -111,42 +123,6 @@ function CardOne({ isLogged }) {
         }
     };
 
-
-    // function solicitarCantidad(maxCantidad) {
-    //     return new Promise((resolve, reject) => {
-    //         swal({
-    //             text: "Ingrese la cantidad que desea comprar:",
-    //             content: "input",
-    //             buttons: {
-    //                 cancel: "Cancelar",
-    //                 confirm: "Aceptar"
-    //             },
-    //         })
-    //             .then((value) => {
-    //                 // Verificar si se ingresó un número válido
-    //                 if (value === null || isNaN(value) || value.trim() === "") {
-    //                     swal("Error", "Por favor ingrese una cantidad válida", "error");
-    //                     reject("Cantidad inválida");
-    //                 } else {
-    //                     // Convertir la cantidad a número entero
-    //                     const cantidad = parseInt(value);
-    //                     // Verificar si la cantidad está dentro del rango permitido
-    //                     if (cantidad > 0 && cantidad <= maxCantidad) {
-    //                         swal("Éxito", "Has comprado " + cantidad + " productos", "success");
-    //                         resolve(cantidad);
-
-    //                     } else {
-    //                         swal("Error", "La cantidad debe ser mayor que cero y menor o igual que " + maxCantidad, "error");
-    //                         reject("Cantidad fuera de rango");
-    //                     }
-    //                 }
-    //             })
-    //             .catch(error => {
-    //                 console.error("Error en la solicitud de cantidad:", error);
-    //                 reject(error);
-    //             });
-    //     });
-    // }
 
     function solicitarCantidad(maxCantidad) {
         return new Promise((resolve, reject) => {
@@ -262,58 +238,79 @@ function CardOne({ isLogged }) {
 
         // <>
         //     return (
-            <>
-                <Container>
-                    <Row>
-                        {productList.slice(startIndex, startIndex + 4).map((product, index) => (
-                            <Col key={index} md={3} className="mb-2">
-                                <Card className="sombreado" style={{ width: '14rem' }}>
-                                    <Card.Text style={{ color: 'green', textAlign: 'center', backgroundColor: 'lightgray' }}>
-                                        {product.category}
-                                    </Card.Text>
-                                    <Card.Img variant="top" src={product.file} />
-                                    <Card.Body>
-                                        <Card.Title style={{ color: 'green' }}>{product.name}</Card.Title>
-                                        <Card.Text>
-                                            {product.description}<br></br>
-                                            <span className="precioDestacado">{product.price}</span>
+        <>
+            <Container>
+                <Row xs="auto">
+                    <Col xs="auto" className="d-flex align-items-center justify-content-center">
+                        <button onClick={handlePrevious} disabled={startIndex === 0} className='btnArrow' style={{ visibility: startIndex === 0 ? 'hidden' : 'visible' }} ><img src='/src/components/card/atras.png' style={{ width: '16px', height: '16px' }} /></button>
+                    </Col>
+                    <Col>
+                        <Row>
+                            {productList.slice(startIndex, startIndex + 4).map((product, index) => (
+
+                                <Col key={index} md={3} className="mb-2">
+                                    <Card className="classCategory" style={{ width: '10rem', display: 'flex', flexDirection: 'column' }}>
+                                        <Card.Text style={{ textAlign: 'center', marginTop: '5px', paddingBottom: '0px', marginBottom: '0px', fontSize: '12px' }}>
+                                            {product.category}
                                         </Card.Text>
-                                        <div style={{ textAlign: 'center' }}>
-                                            {isLogged ? (
-                                                <Button variant="primary" disabled={!isLogged}>Comprar</Button>
-                                            ) : (
-                                                <OverlayTrigger
-                                                    placement="top"
-                                                    overlay={<Tooltip id="tooltip-disabled">Debes Logearte para poder
-
-                                                        comprar</Tooltip>}
-
-                                                    trigger={['hover', 'focus']}
-                                                >
-                                                    <span className="d-inline-block">
-                                                        <Button variant="primary" disabled={!isLogged}>Comprar2222</Button>
-                                                    </span>
-                                                </OverlayTrigger>
-                                            )}
-                                            <span style={{ margin: '0 2px' }}></span>
-
-                                            <Button variant="primary" id={product.id} onClick={() =>
-
-                                                handleClick(product.id)}>ver más</Button>
-
+                                        <div style={{ display: 'flex', flexDirection: 'column', paddingTop: '0px', gap: '20px', textAlign: 'center', position: 'relative' }}>
+                                            <Card.Img variant="top" src={product.file} className='imgCard' />
+                                            <div className='boxSmallPrice'>
+                                                {product.price} €
+                                            </div>
                                         </div>
-                                    </Card.Body>
-                                </Card>
-                            </Col>
-                        ))}
-                    </Row>
-                </Container>
-                <div style={{ textAlign: 'center', marginTop: '10px' }}>
-                    <Button variant="secondary" onClick={handleClickLeft} disabled={startIndex === 0}>Anterior</Button>{' '}
-                    <Button variant="secondary" onClick={handleClickRight} disabled={startIndex + 4 >= productList.length}>Siguiente</Button>
-                </div>
-            </>
-            );
+                                        <Card.Body style={{ flex: '1', padding: '0px' }}>
+                                            <div style={{ textAlign: 'right', paddingBottom: '5px' }}><span className='boxSmall'>Stock: {product.stock}</span></div>
+
+                                            <div style={{ display: 'flex', flexDirection: 'column', gap: '15px' }}>
+                                                <div style={{ padding: '8px' }}>
+                                                    <Card.Title className='text1'>{product.name}</Card.Title>
+                                                    <Card.Text className="descripcion">
+                                                        {product.description}<br></br>
+                                                    </Card.Text>
+                                                </div>
+                                                <div style={{ marginTop: 'auto', display: 'flex', justifyContent: 'center', gap: '10px' }}>
+                                                    {isLogged ? (
+                                                        <button disabled={!isLogged} className='btn2'><img src='/src/components/card/carrito1.png' style={{ width: '16px', height: '16px' }} /> Comprar</button>
+                                                    ) : (
+                                                        <OverlayTrigger
+                                                            placement="top"
+                                                            overlay={<Tooltip className="custom-tooltip">Debes Logearte para poder comprar</Tooltip>}
+                                                            trigger={['hover', 'focus']}
+                                                        >
+                                                            <button disabled={!isLogged} className='btn1'> <img src='/src/components/card/carrito1.png' style={{ width: '16px', height: '16px' }} /> Comprar</button>
+                                                        </OverlayTrigger>
+                                                    )}
+                                                    <button id={product.id} onClick={() => handleClick(product.id)} className='btn2'><img src='/src/components/card/mas.png' style={{ width: '14px', height: '14px' }} /> Ver más</button>
+                                                </div>
+                                            </div>
+
+
+                                        </Card.Body>
+                                    </Card>
+                                </Col>
+                            ))}
+                        </Row>
+                    </Col>
+                    <Col xs="auto" className="d-flex align-items-center justify-content-center">
+                        <button onClick={handleNext} disabled={startIndex >= productList.length - 4} className='btnArrow' style={{ visibility: startIndex === productList.length - 4 ? 'hidden' : 'visible' }}><img src='/src/components/card/sig.png' style={{ width: '16px', height: '16px'}} /></button>
+                    </Col>
+                </Row>
+            </Container>
+            {/* 
+            <div style={{ textAlign: 'center', marginTop: '10px' }}>
+                <Button variant="secondary" onClick={handleClickLeft} disabled={startIndex === 0}>Anterior</Button>{' '}
+                <Button variant="secondary" onClick={handleClickRight} disabled={startIndex + 4 >= productList.length}>Siguiente</Button>
+            </div> */}
+
+            {/* <div style={{ display: 'flex', justifyContent: 'space-between', marginTop: '20px' }}>
+                <Button onClick={handlePrevious} disabled={startIndex === 0}>Anterior</Button>
+                <Button onClick={handleNext} disabled={startIndex >= productList.length - 4}>Siguiente</Button>
+            </div> */}
+
+
+        </>
+    );
     //     </>
 
 
