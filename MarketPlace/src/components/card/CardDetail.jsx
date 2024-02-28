@@ -102,7 +102,7 @@ function CardDetail() {
     <main>
     <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
       <Card className="sombreado" style={{ width: '44rem' }}>
-        <div style={{ color: 'green', textAlign: 'center', backgroundColor: 'lightgray' }}>
+        <div style={{ color: 'green', textAlign: 'center', backgroundColor: 'lightcolor' }}>
           {/* <input type="text" name="category" value={editable ? editedProduct.category : product.category} onChange={handleInputChange} disabled={!editable}  style={{ border: 'none', outline: 'none' }}/> */}
           <select name="category" value={editable ? editedProduct.category : product.category} onChange={handleInputChange} disabled={!editable} style={{ border: 'none', outline: 'none' }}>
             <option value="huerta">De la huerta a la mesa</option>
