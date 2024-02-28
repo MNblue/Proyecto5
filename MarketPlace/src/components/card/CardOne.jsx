@@ -17,7 +17,7 @@ import swal from 'sweetalert';
 import Swal from 'sweetalert2';
 // import withReactContent from '@sweetalert2/react-content';
 
-function CardOne({ isLogged }) {
+function CardOne({ isLogged, selectOpt }) {
 
     //const MySwal = withReactContent(Swal);
     const navigate = useNavigate();
@@ -46,17 +46,40 @@ function CardOne({ isLogged }) {
         }
     };
 
+    function filterData(){
+        //si la opcion seleccionada es la 1 no hacemos nada ya que mostramos Todos los elementos sin filtrar
+
+        console.log("selectoOpt:  "+selectOpt);
+
+        if (selectOpt !== 'option1' ) {
+         
+            let auxSelectOpt;
+            if (selectOpt === 'option2'){
+                auxSelectOpt = 'De la huerta a la mesa';
+            }else if(selectOpt === 'option3'){
+                auxSelectOpt = 'Elaborados';
+            }else if(selectOpt === 'option4'){
+                auxSelectOpt = 'Artesanía locals';
+            }
+
+            console.log("aux: "+auxSelectOpt);
+            // filtrar la lista por la opción seleccionada
+            setProductList(prevList => prevList.filter(product => product.category === auxSelectOpt));
+          }
+    };
 
     //esta es la función que carga los datos almacenados en el json
     async function getData() {
-        try {
+         try {
             // Accedo a productService, en concreto a su método GET. 
             const products = await productService.getAllProducts();
+            
             // Ahora actualizo el estado de userList con esta variable (usuarios)
             setProductList(products);
-        } catch (error) {
-            console.error('Error al obtener los datos:', error);
-        }
+
+         } catch (error) {
+             console.error('Error al obtener los datos:', error);
+         }
     };
 
     // Llamo a getData() para traer los datos una vez que el componente se ha montado
@@ -64,9 +87,16 @@ function CardOne({ isLogged }) {
         getData();
     }, []); // Pasa un arreglo vacío como segundo argumento para asegurar que getData solo se ejecute una vez
 
+    // useEffect(() => {
+    //     getData();
+    // }, [productList]);
+
     useEffect(() => {
-        getData();
-    }, [productList]);
+       // getData();
+        filterData();
+        console.log("datos...............");
+        console.log(productList);
+    }, [selectOpt]);
 
     function handleClick(id) {
         const findedProduct = productList.find(product => product.id === id);
