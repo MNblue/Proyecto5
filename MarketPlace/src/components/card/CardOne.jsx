@@ -239,7 +239,7 @@ function CardOne({ isLogged }) {
         // <>
         //     return (
         <>
-            <Container>
+            <Container className="text-center">
                 <Row xs="auto">
                     <Col xs="auto" className="d-flex align-items-center justify-content-center">
                         <button onClick={handlePrevious} disabled={startIndex === 0} className='btnArrow' style={{ visibility: startIndex === 0 ? 'hidden' : 'visible' }} ><img src='/src/components/card/atras.png' style={{ width: '16px', height: '16px' }} /></button>
@@ -249,7 +249,7 @@ function CardOne({ isLogged }) {
                             {productList.slice(startIndex, startIndex + 4).map((product, index) => (
 
                                 <Col key={index} md={3} className="mb-2">
-                                    <Card className="classCategory" style={{ width: '10rem', display: 'flex', flexDirection: 'column' }}>
+                                    <Card className="classCategory" style={{ width: '10rem', display: 'flex', flexDirection: 'column',boxShadow:' 1px 12px 16px -1px rgba(174,187,209,0.81)' }}>
                                         <Card.Text style={{ textAlign: 'center', marginTop: '5px', paddingBottom: '0px', marginBottom: '0px', fontSize: '12px' }}>
                                             {product.category}
                                         </Card.Text>
