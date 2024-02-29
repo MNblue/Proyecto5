@@ -1,4 +1,5 @@
 import NavbarOne from '../../components/navbar/NavbarOne';
+import Footer from '../../components/footer/Footer.jsx';
 import LoginPopUp from '../../components/loginPopUp/LoginPopUp';
 import React, { useState } from 'react';
 import CardOne from '../../components/card/CardOne'
@@ -28,6 +29,7 @@ function User (){
         {isModalOpen && <LoginPopUp closeModal={closeModal} />}
         {/*AQUI IRA EL FILTRADO Y SE DEBERÁN PASAR LAS PROPS A CARDONE PARA EL FILTRADO*/}
         <CardOne isLogged={isLogged}/>
+        <Footer />
         </>
     )
 }

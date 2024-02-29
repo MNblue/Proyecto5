@@ -80,6 +80,15 @@
       "price": 4,
       "description": "prueba",
       "file": " https://res.cloudinary.com/dgusxuq9j/image/upload/v1709195307/fy3sgs9w8kuqtq6mfddw.png"
+    },
+    {
+      "id": "a2d4",
+      "name": "naranjas",
+      "stock": 10,
+      "category": "De la huerta a la mesa",
+      "price": 30,
+      "description": "naranjas",
+      "file": " https://res.cloudinary.com/dgusxuq9j/image/upload/v1709225127/zfnzbhzzpgd6ujw9itb2.png"
     }
   ],
   "users": [

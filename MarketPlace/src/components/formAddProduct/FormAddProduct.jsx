@@ -10,6 +10,8 @@ import * as yup from "yup";
 import React, { useState } from "react";
 import { productService } from "../../service/productService";
 import Swal from "sweetalert2";
+import plusIconForm from '/src/components/formAddProduct/images/plusIconForm.svg';
+
 
 function FormAddProduct() {
   const { Formik } = formik;
@@ -32,10 +34,10 @@ function FormAddProduct() {
         uploadPreset: "nfmirk0o",
       },
       (error, result) => {
-         // Comprobar si el widget se cerró sin cargar una imagen
-         if (error && error.event === 'widget.closed') {
+        // Comprobar si el widget se cerró sin cargar una imagen
+        if (error && error.event === 'widget.closed') {
           // Marcar el campo como tocado para mostrar el error de validación
-          setFieldTouched ('file', true);
+          setFieldTouched('file', true);
         }
         // Comprueba si el evento es 'success'
         if (result.event === "success") {
@@ -43,8 +45,8 @@ function FormAddProduct() {
           const url = result.info.secure_url;
           setImageUrl(url);
           formik.setFieldValue("file", imageUrl);
-          setFieldTouched ('file', true);
-        } 
+          setFieldTouched('file', true);
+        }
       }
     );
     widget.open();
@@ -59,12 +61,14 @@ function FormAddProduct() {
   }
 
   return (
-    <Container className="d-flex justify-content-center mt-5 mb-5">
-      <Row>
-        <Col>
-          <Card style={{ width: "30rem" }}>
+<>
+<p>Hola</p>
+    <Container className="d-flex justify-content-center mt-5 mb-5 form-container">
+      <Row >
+        <Col >
+          <Card style={{ width: "50rem" }} className="form-container">
             <Card.Body>
-              <Card.Title className="text-center">Agregar Productos</Card.Title>
+              <Card.Title className="text-center">Rincón Rural • Valle de la Comarca</Card.Title>
               <Formik
                 onSubmit={(values, { setSubmitting, resetForm }) => {
                   // Aquí debes manejar la subida del producto
@@ -98,12 +102,12 @@ function FormAddProduct() {
                   errors,
                   isSubmitting,
                 }) => (
-                  <Form noValidate onSubmit={handleSubmit}>
+                  <Form noValidate onSubmit={handleSubmit} >
                     <Row className="mb-3">
                       <Form.Group
                         as={Col}
                         md="6"
-                        sm="4"
+                        // sm="4"
                         controlId="validationFormik101"
                         className="position-relative"
                       >
@@ -111,7 +115,7 @@ function FormAddProduct() {
                         <Form.Control
                           type="text"
                           name="name"
-                          placeholder="Nombre"
+                          placeholder="Nombre del producto"
                           value={values.name}
                           onChange={handleChange}
                           onBlur={handleBlur}
@@ -123,12 +127,33 @@ function FormAddProduct() {
                       </Form.Group>
                       <Form.Group
                         as={Col}
-                        md="6"
-                        sm="4"
+                        md="3"
+                        controlId="validationFormik104"
+                        className="position-relative"
+                      >
+                        <Form.Label>Precio</Form.Label>
+                        <Form.Control
+                          type="number"
+                          placeholder="Precio"
+                          name="price"
+                          value={values.price}
+                          onChange={handleChange}
+                          onBlur={handleBlur}
+                          isInvalid={touched.price && !!errors.price}
+                        />
+
+                        <Form.Control.Feedback type="invalid">
+                          {errors.price}
+                        </Form.Control.Feedback>
+                      </Form.Group>
+                      <Form.Group
+                        as={Col}
+                        md="3"
+                        // sm="4"
                         controlId="validationFormik102"
                         className="position-relative"
                       >
-                        <Form.Label>Stock</Form.Label>
+                        <Form.Label>Unidades</Form.Label>
                         <Form.Control
                           type="number"
                           name="stock"
@@ -143,109 +168,111 @@ function FormAddProduct() {
                         </Form.Control.Feedback>
                       </Form.Group>
                     </Row>
+
+                   
                     <Row className="mb-3">
-                      <Form.Group
-                        as={Col}
-                        md="6"
-                        controlId="validationFormik103"
-                        className="position-relative"
-                      >
-                        <Form.Label>Selecciona tu Categoría</Form.Label>
-                        <Form.Select
-                          name="category"
-                          value={values.category}
-                          onChange={handleChange}
-                          onBlur={handleBlur}
-                          isInvalid={touched.category && !!errors.category}
+                      <Col>
+                        <Form.Group
+                          as={Col}
+                          md= "12"
+                          // sm="4"
+                          controlId="validationFormik103"
+                          className="position-relative"
                         >
-                          <option>Categoría</option>
-                          <option value="De la huerta a la mesa">
-                            De la huerta a la mesa
-                          </option>
-                          <option value="Elaborados">Elaborados</option>
-                          <option value="Artesanía local">
-                            Artesanía local
-                          </option>
-                        </Form.Select>
-                        <Form.Control.Feedback type="invalid">
-                          {errors.category}
-                        </Form.Control.Feedback>
-                      </Form.Group>
+                          <Form.Label>Categoría</Form.Label>
+                          <Form.Select
+                            name="category"
+                            value={values.category}
+                            onChange={handleChange}
+                            onBlur={handleBlur}
+                            isInvalid={touched.category && !!errors.category}
+                          >
+                            <option>Categoría</option>
+                            <option value="De la huerta a la mesa">
+                              De la huerta a la mesa
+                            </option>
+                            <option value="Elaborados">Elaborados</option>
+                            <option value="Artesanía local">
+                              Artesanía local
+                            </option>
+                          </Form.Select>
+                          <Form.Control.Feedback type="invalid">
+                            {errors.category}
+                          </Form.Control.Feedback>
+                        </Form.Group>
 
-                      <Form.Group
-                        as={Col}
-                        md="4"
-                        controlId="validationFormik104"
-                        className="position-relative"
-                      >
-                        <Form.Label>Precio</Form.Label>
-                        <Form.Control
-                          type="number"
-                          placeholder="price"
-                          name="price"
-                          value={values.price}
-                          onChange={handleChange}
-                          onBlur={handleBlur}
-                          isInvalid={touched.price && !!errors.price}
-                        />
+                        <Form.Group className="position-relative mb-3"
+                          // as={Col}
+                          // md="6"
+                          >
+                          <Form.Label className="imageField">Imagen </Form.Label>
+                          <Form.Control
+                            //type="file
+                            value={imageUrl}
+                            name="file"
+                            onChange={(event) => {
+                              // Asegúrate de que el evento esté configurado para actualizar imageUrl
+                              const newImageUrl = event.target.value;
+                              setFieldValue('file', newImageUrl);
+                            }}
+                            onBlur={handleBlur}
+                            placeholder="Imagen del Producto"
+                            isInvalid={touched.file && !!errors.file}
+                          />
+                          <Form.Label htmlFor="fileInput">
+                            <Button onClick={handleUploadClick} className="formButtonSelect">
+                              <img src={plusIconForm} className="iconButton" />
+                              Seleccionar Imagen
+                            </Button>
+                          </Form.Label>
+                          <Form.Control.Feedback type="invalid">
+                            {errors.file}
+                          </Form.Control.Feedback>
+                        </Form.Group>
+                      </Col>
 
-                        <Form.Control.Feedback type="invalid">
-                          {errors.price}
-                        </Form.Control.Feedback>
-                      </Form.Group>
-                    </Row>
-                    <Form.Group
-                      className="mb-3"
-                      controlId="exampleForm.ControlTextarea1"
-                    >
-                      <Form.Label>Descripción de artículo</Form.Label>
-                      <Form.Control
-                        as="textarea"
-                        rows={3}
-                        name="description"
-                        value={values.description}
-                        onChange={handleChange}
-                        onBlur={handleBlur}
-                        isInvalid={touched.description && !!errors.description}
-                      />
-                      <Form.Control.Feedback type="invalid">
-                        {errors.description}
-                      </Form.Control.Feedback>
-                    </Form.Group>
-                    <Form.Group className="position-relative mb-3">
-                      <Form.Label>Imagen </Form.Label>
-                      <Form.Control
-                        //type="file
-                        value={imageUrl}
-                        name="file"
-                        onChange={(event) => {
-                          // Asegúrate de que el evento esté configurado para actualizar imageUrl
-                          const newImageUrl = event.target.value;
-                          setFieldValue('file', newImageUrl);
-                        }}
-                        onBlur={handleBlur}
-                        isInvalid={touched.file && !!errors.file}
-                      />
-                      <Form.Label htmlFor="fileInput">
-                        <Button onClick={handleUploadClick}>
-                          Select image
-                        </Button>
-                      </Form.Label>
-                      <Form.Control.Feedback type="invalid">
-                        {errors.file}
-                      </Form.Control.Feedback>
-                    </Form.Group>
-                    <Button type="submit" disabled={isSubmitting}>
-                      Enviar
+
+                     <Col md={6}>
+                        <Form.Group
+                          as={Col}                      
+                          className="mb-3"
+                          controlId="exampleForm.ControlTextarea1"
+                        >
+                          <Form.Label>Descripción del artículo</Form.Label>
+                          <Form.Control
+                            as="textarea"
+                            rows={4}
+                            name="description"
+                            value={values.description}
+                            onChange={handleChange}
+                            onBlur={handleBlur}
+                            placeholder="Introduce una descripción del producto"
+                            isInvalid={touched.description && !!errors.description}
+                            className="fixed-textarea"
+                          />
+                          <Form.Control.Feedback type="invalid">
+                            {errors.description}
+                          </Form.Control.Feedback>
+                        </Form.Group>
+                    
+                  
+                    <Button type="submit" disabled={isSubmitting} className="formButton">
+                      <img src={plusIconForm} />
+                      Subir Producto
                     </Button>
-                  </Form>
+                  </Col>
+                  </Row> 
+                </Form>
+               
+                  
                 )}
-              </Formik>
-            </Card.Body>
-          </Card>
-        </Col>
-      </Row>
-    </Container>
+            </Formik>
+          </Card.Body>
+        </Card>
+      </Col>
+    </Row>
+    </Container >
+    </>
   );
 }
 
