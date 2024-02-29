@@ -55,15 +55,6 @@
       "stock": "80"
     },
     {
-      "id": "001dr",
-      "name": "producto 7",
-      "stock": 3,
-      "category": "De la huerta a la mesa",
-      "price": 3,
-      "description": "dudu dudud ududu",
-      "file": "https://res.cloudinary.com/dgusxuq9j/image/upload/v1708958512/febqx6o2tkuoto7gnskj.png"
-    },
-    {
       "id": "52c6r",
       "name": "producto 9",
       "stock": 5,
