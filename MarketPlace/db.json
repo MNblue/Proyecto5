@@ -71,6 +71,15 @@
       "price": 1,
       "description": "Las cards van adaptando su tamaño según el tamaño de las fotos o del largo de la descripción. Y las fotos al guardarlas ya modificadas se han hecho más pequeñas y no se porque",
       "file": "https://res.cloudinary.com/dgusxuq9j/image/upload/v1709116940/cxumjmsav0idb3uie0g2.jpg "
+    },
+    {
+      "id": "c0d2",
+      "name": "prueba name",
+      "stock": 3,
+      "category": "De la huerta a la mesa",
+      "price": 4,
+      "description": "prueba",
+      "file": " https://res.cloudinary.com/dgusxuq9j/image/upload/v1709195307/fy3sgs9w8kuqtq6mfddw.png"
     }
   ],
   "users": [
