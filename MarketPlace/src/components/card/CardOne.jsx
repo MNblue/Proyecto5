@@ -17,12 +17,40 @@ import swal from 'sweetalert';
 import Swal from 'sweetalert2';
 // import withReactContent from '@sweetalert2/react-content';
 
-function CardOne({ isLogged }) {
+function CardOne({ isLogged, selectOpt }) {
 
     //const MySwal = withReactContent(Swal);
     const navigate = useNavigate();
     const [productList, setProductList] = useState([]);
     const [productSelected, setProductSelected] = useState(null);
+    //indice para recorrer el slider
+    const [startIndex, setStartIndex] = useState(0);
+    const [filteredProductList, setFilteredProductList] = useState([]);
+
+
+    // //para el boton izquierdo llevar la cuenta
+    // const handleClickLeft = () => {
+    //     setStartIndex(startIndex > 0 ? startIndex - 1 : startIndex);
+    // };
+    // //para el boton derecho llevar la cuenta
+    // const handleClickRight = () => {
+    //     setStartIndex(startIndex + 1);
+    // };
+
+    // Llamo a getData() para traer los datos una vez que el componente se ha montado
+    // useEffect(() => {
+    //     getData();
+    
+    getData();
+    // }, []); // Pasa un arreglo vacío como segundo argumento para asegurar que getData solo se ejecute una vez
+
+    useEffect(() => {
+
+        filterData();
+        // getData();
+        console.log("datos...............");
+        console.log(productList);
+    }, [selectOpt]);
 
 
     //esta es la función que carga los datos almacenados en el json
@@ -30,21 +58,56 @@ function CardOne({ isLogged }) {
         try {
             // Accedo a productService, en concreto a su método GET. 
             const products = await productService.getAllProducts();
+
             // Ahora actualizo el estado de userList con esta variable (usuarios)
             setProductList(products);
+            setFilteredProductList(productList);
+            filterData();
         } catch (error) {
             console.error('Error al obtener los datos:', error);
         }
     };
 
-    // Llamo a getData() para traer los datos una vez que el componente se ha montado
-    useEffect(() => {
-        getData();
-    }, []); // Pasa un arreglo vacío como segundo argumento para asegurar que getData solo se ejecute una vez
+    async function filterData() {
 
-    useEffect(() => {
-        getData();
-    }, [productList]);
+        
+
+        if (selectOpt !== 'option1') {
+            let auxSelectOpt;
+            if (selectOpt === 'option2') {
+                auxSelectOpt = 'De la huerta a la mesa';
+            } else if (selectOpt === 'option3') {
+                auxSelectOpt = 'Elaborados';
+            } else if (selectOpt === 'option4') {
+                auxSelectOpt = 'Artesanía local';
+            }
+            let filteredList = productList.filter(product => product.category === auxSelectOpt);
+            setFilteredProductList(filteredList);
+            setStartIndex(0); // Reiniciar el índice al principio de la lista filtrada
+        } else {
+            setFilteredProductList(productList);
+        }
+    }
+
+
+    const handlePrevious = () => {
+        if (startIndex > 0) {
+            setStartIndex(startIndex - 1);
+        }
+    };
+
+    const handleNext = () => {
+        if (startIndex < productList.length - 4) {
+            setStartIndex(startIndex + 1);
+        }
+    };
+
+
+    // useEffect(() => {
+    //     getData();
+    // }, [productList]);
+
+
 
     function handleClick(id) {
         const findedProduct = productList.find(product => product.id === id);
@@ -54,7 +117,7 @@ function CardOne({ isLogged }) {
 
     async function deleteData(id) {
         try {
-            // Accedo a productService, en concreto a su método GET. 
+            // Accedo a productService, 
             const products = await productService.deleteProduct(id);
             const newList = productList.filter(producto => producto.id !== id);
             // Actualizar el estado con la nueva lista de productos
@@ -95,48 +158,12 @@ function CardOne({ isLogged }) {
         try {
             // Accedo a productService, en concreto a su método GET. 
             const products = await productService.updateProduct(id);
-            getData();
+            // getData();
         } catch (error) {
             console.error('Error al actualizar los datos:', error);
         }
     };
 
-
-    // function solicitarCantidad(maxCantidad) {
-    //     return new Promise((resolve, reject) => {
-    //         swal({
-    //             text: "Ingrese la cantidad que desea comprar:",
-    //             content: "input",
-    //             buttons: {
-    //                 cancel: "Cancelar",
-    //                 confirm: "Aceptar"
-    //             },
-    //         })
-    //             .then((value) => {
-    //                 // Verificar si se ingresó un número válido
-    //                 if (value === null || isNaN(value) || value.trim() === "") {
-    //                     swal("Error", "Por favor ingrese una cantidad válida", "error");
-    //                     reject("Cantidad inválida");
-    //                 } else {
-    //                     // Convertir la cantidad a número entero
-    //                     const cantidad = parseInt(value);
-    //                     // Verificar si la cantidad está dentro del rango permitido
-    //                     if (cantidad > 0 && cantidad <= maxCantidad) {
-    //                         swal("Éxito", "Has comprado " + cantidad + " productos", "success");
-    //                         resolve(cantidad);
-
-    //                     } else {
-    //                         swal("Error", "La cantidad debe ser mayor que cero y menor o igual que " + maxCantidad, "error");
-    //                         reject("Cantidad fuera de rango");
-    //                     }
-    //                 }
-    //             })
-    //             .catch(error => {
-    //                 console.error("Error en la solicitud de cantidad:", error);
-    //                 reject(error);
-    //             });
-    //     });
-    // }
 
     function solicitarCantidad(maxCantidad) {
         return new Promise((resolve, reject) => {
@@ -192,62 +219,159 @@ function CardOne({ isLogged }) {
     };
 
     return (
+        //      <>
+
+        //    </> //     <Container>
+        //         <Row>
+        //             {productList.map((product, index) => (
+        //                 <Col key={index} md={3} className="mb-2">
+        //                     <Card className="sombreado" style={{ width: '18rem' }}>
+        //                         <Card.Text style={{ color: 'green', textAlign: 'center', backgroundColor: 'lightgray' }}>
+        //                             {product.category}
+        //                         </Card.Text>
+        //                         <Card.Img variant="top" src={product.file} />
+        //                         <Card.Body>
+        //                             <Card.Title style={{ color: 'green' }}>{product.name}</Card.Title>
+        //                             <Card.Text className="descripcion">
+        //                                 {product.description}<br></br>
+        //                             </Card.Text>
+        //                             <span className="precioDestacado">{product.price}</span> €<br></br>
+        //                             Stock <span>{product.stock}</span>
+        //                             <div style={{ textAlign: 'center' }}>
+
+        //                                 {/* {isLogged ? (<Button variant="primary" disabled ={!isLogged}>Comprar</Button>):
+        //                                 ((<Button variant="primary" disabled ={!isLogged} >Comprar2222</Button>))
+        //                                 }
+        //                                  */}
+
+        //                                 {isLogged ? (
+        //                                     <span>
+        //                                         <Button variant="primary" disabled={!isLogged} onClick={() => handleClickUpdateStock(product)} >Comprar</Button>
+        //                                         <Button variant="primary" disabled={!isLogged} onClick={() => handleClickDelete(product.id)}>Eliminar</Button>
+        //                                     </span>
+        //                                 ) : (
+        //                                     <OverlayTrigger
+        //                                         placement="top"
+        //                                         overlay={<Tooltip id="tooltip-disabled">Debes Logearte para poder comprar</Tooltip>}
+        //                                         trigger={['hover', 'focus']} // Muestra el tooltip en el hover y el foco
+        //                                     >
+        //                                         <span className="d-inline-block">
+        //                                             <Button variant="primary" disabled={!isLogged}>Comprar</Button>
+        //                                         </span>
+        //                                     </OverlayTrigger>
+        //                                 )}
+
+
+
+        //                                 <span style={{ margin: '0 2px' }}></span>
+
+        //                                 <Button variant="primary" id={product.id} onClick={() => handleClick(product.id)}>ver más</Button>
+
+        //                             </div>
+        //                         </Card.Body>
+        //                     </Card>
+        //                 </Col>
+        //             ))}
+        //         </Row>
+        //     </Container>
+        // </>
+
+
+        // <>
+        //     return (
         <>
+            <Container className="containerA" style={{ width: '60%' }}>
+                <Row >
+                    {/* <Col xs="auto" className="d-flex align-items-center justify-content-center" style={{backgroundColor:'green'}}> */}
+                    <Col xs="auto" className="d-flex align-items-center justify-content-center" style={{ width: '40px' }}>
+                        {/* <button onClick={handlePrevious} disabled={startIndex === 0} className='btnArrow' style={{ visibility: startIndex === 0 ? 'hidden' : 'visible' }} ><img src='/src/components/card/atras.png' style={{ width: '16px', height: '16px' }} /></button> */}
+                        <button onClick={handlePrevious} disabled={startIndex === 0} className='btnArrow' style={{ visibility: startIndex === 0 ? 'hidden' : 'visible' }} ><img src='/src/components/card/atras.png' style={{ width: '16px', height: '16px' }} /></button>
 
-            <Container>
-                <Row>
-                    {productList.map((product, index) => (
-                        <Col key={index} md={3} className="mb-2">
-                            <Card className="sombreado" style={{ width: '18rem' }}>
-                                <Card.Text style={{ color: 'green', textAlign: 'center', backgroundColor: 'lightgray' }}>
-                                    {product.category}
-                                </Card.Text>
-                                <Card.Img variant="top" src={product.file} />
-                                <Card.Body>
-                                    <Card.Title style={{ color: 'green' }}>{product.name}</Card.Title>
-                                    <Card.Text className="descripcion">
-                                        {product.description}<br></br>
-                                    </Card.Text>
-                                    <span className="precioDestacado">{product.price}</span> €<br></br>
-                                    Stock <span>{product.stock}</span>
-                                    <div style={{ textAlign: 'center' }}>
+                    </Col>
+                    <Col >
+                        <Row>
+                            {filteredProductList.slice(startIndex, startIndex + 4).map((product, index) => (
+                                //  {productList.slice(startIndex, startIndex + 4).map((product, index) => (
 
-                                        {/* {isLogged ? (<Button variant="primary" disabled ={!isLogged}>Comprar</Button>):
-                                        ((<Button variant="primary" disabled ={!isLogged} >Comprar2222</Button>))
-                                        }
-                                         */}
+                                <Col key={index} md={3} className="mb-1">
+                                    <Card className="classCategory" style={{ width: '10rem', display: 'flex', flexDirection: 'column', boxShadow: ' 1px 12px 16px -1px rgba(174,187,209,0.81)' }}>
+                                        <Card.Text style={{ textAlign: 'center', marginTop: '5px', paddingBottom: '0px', marginBottom: '0px', fontSize: '12px' }}>
 
-                                        {isLogged ? (
-                                            <span>
-                                                <Button variant="primary" disabled={!isLogged} onClick={() => handleClickUpdateStock(product)} >Comprar</Button>
-                                                <Button variant="primary" disabled={!isLogged} onClick={() => handleClickDelete(product.id)}>Eliminar</Button>
-                                            </span>
-                                        ) : (
-                                            <OverlayTrigger
-                                                placement="top"
-                                                overlay={<Tooltip id="tooltip-disabled">Debes Logearte para poder comprar</Tooltip>}
-                                                trigger={['hover', 'focus']} // Muestra el tooltip en el hover y el foco
-                                            >
-                                                <span className="d-inline-block">
-                                                    <Button variant="primary" disabled={!isLogged}>Comprar</Button>
-                                                </span>
-                                            </OverlayTrigger>
-                                        )}
+
+                                            <span> {product.category}</span>
+                                            {isLogged && (<button disabled={!isLogged} onClick={() => handleClickDelete(product.id)} style={{ border: 'none', background: 'none', padding: 0, cursor: 'pointer', outline: 'none', marginLeft: 'auto' }}><img src='/src/components/card/delete.png' style={{ width: '14px', height: '14px', border: 'none' }} /></button>)}
 
 
 
-                                        <span style={{ margin: '0 2px' }}></span>
+                                        </Card.Text>
+                                        <div style={{ display: 'flex', flexDirection: 'column', paddingTop: '0px', gap: '20px', textAlign: 'center', position: 'relative' }}>
+                                            <Card.Img variant="top" src={product.file} className='imgCard' />
+                                            <div className='boxSmallPrice'>
+                                                {product.price} €
+                                            </div>
+                                        </div>
+                                        <Card.Body style={{ flex: '1', padding: '0px' }}>
+                                            <div style={{ textAlign: 'right', paddingBottom: '5px' }}><span className='boxSmall'>Stock: {product.stock}</span></div>
 
-                                        <Button variant="primary" id={product.id} onClick={() => handleClick(product.id)}>ver más</Button>
+                                            <div style={{ display: 'flex', flexDirection: 'column', gap: '15px' }}>
+                                                <div style={{ padding: '8px' }}>
+                                                    <Card.Title className='text1'>{product.name}</Card.Title>
+                                                    <Card.Text className="descripcion">
+                                                        {product.description}<br></br>
+                                                    </Card.Text>
+                                                </div>
+                                                <div style={{ marginTop: 'auto', display: 'flex', justifyContent: 'center', gap: '10px' }}>
+                                                    {isLogged ? (
+                                                        <button disabled={!isLogged} className='btn2' onClick={() => handleClickUpdateStock(product)}><img src='/src/components/card/carrito1.png' style={{ width: '16px', height: '16px' }} /> Comprar</button>
+                                                    ) : (
+                                                        <OverlayTrigger
+                                                            placement="top"
+                                                            overlay={<Tooltip className="custom-tooltip">Debes Logearte para poder comprar</Tooltip>}
+                                                            trigger={['hover', 'focus']}
+                                                        >
+                                                            <button disabled={!isLogged} className='btn1'> <img src='/src/components/card/carrito1.png' style={{ width: '16px', height: '16px' }} /> Comprar</button>
+                                                        </OverlayTrigger>
+                                                    )}
+                                                    <button id={product.id} onClick={() => handleClick(product.id)} className='btn2'><img src='/src/components/card/mas.png' style={{ width: '14px', height: '14px' }} /> Ver más</button>
+                                                </div>
+                                            </div>
 
-                                    </div>
-                                </Card.Body>
-                            </Card>
-                        </Col>
-                    ))}
+
+                                        </Card.Body>
+                                    </Card>
+                                </Col>
+                            ))}
+                        </Row>
+                    </Col>
+                    {/* <Col xs="auto" className="d-flex align-items-center justify-content-center" style={{ width: '40px' }} >
+                        <button onClick={handleNext} disabled={startIndex >= productList.length - 4} className='btnArrow' style={{ visibility: startIndex === productList.length - 4 ? 'hidden' : 'visible' }}><img src='/src/components/card/sig.png' style={{ width: '16px', height: '16px' }} /></button>
+                    </Col> */}
+                
+                <Col xs="auto" className="d-flex align-items-center justify-content-center" style={{ width: '40px' }} >
+    <button onClick={handleNext} disabled={startIndex >= filteredProductList.length - 4} className='btnArrow' style={{ visibility: startIndex === filteredProductList.length - 4 ? 'hidden' : 'visible' }}><img src='/src/components/card/sig.png' style={{ width: '16px', height: '16px' }} /></button>
+</Col>
+                
+                
                 </Row>
             </Container>
+            {/* 
+            <div style={{ textAlign: 'center', marginTop: '10px' }}>
+                <Button variant="secondary" onClick={handleClickLeft} disabled={startIndex === 0}>Anterior</Button>{' '}
+                <Button variant="secondary" onClick={handleClickRight} disabled={startIndex + 4 >= productList.length}>Siguiente</Button>
+            </div> */}
+
+            {/* <div style={{ display: 'flex', justifyContent: 'space-between', marginTop: '20px' }}>
+                <Button onClick={handlePrevious} disabled={startIndex === 0}>Anterior</Button>
+                <Button onClick={handleNext} disabled={startIndex >= productList.length - 4}>Siguiente</Button>
+            </div> */}
+
+
         </>
     );
+    //     </>
+
+
+
+    // );
 }
 export default CardOne;
