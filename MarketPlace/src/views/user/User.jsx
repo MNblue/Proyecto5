@@ -38,9 +38,7 @@ function User() {
 
       <Filter optionSelected={optionFilterM} />
 
-      <p>La opcion selecionada es: {optionFilter}</p>
-
-      <CardOne key={optionFilter} isLogged={isLogged} selectOpt={optionFilter} />
+      <CardOne isLogged={isLogged} selectOpt={optionFilter} />
     </>
   )
 }
