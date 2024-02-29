@@ -80,6 +80,24 @@
       "price": 225,
       "description": "sadfasdf",
       "file": " https://res.cloudinary.com/dgusxuq9j/image/upload/v1709054693/oqtefqhrdxgvvpeyrcv2.png"
+    },
+    {
+      "id": "6aea",
+      "name": "produco new",
+      "stock": 5,
+      "category": "De la huerta a la mesa",
+      "price": 5,
+      "description": "asdfadf",
+      "file": " https://res.cloudinary.com/dgusxuq9j/image/upload/v1709200936/x3moxonmyv7llvatxkhy.png"
+    },
+    {
+      "id": "5ac7",
+      "name": "prueba 55",
+      "stock": 4,
+      "category": "Elaborados",
+      "price": 5,
+      "description": "asdfasdfsf",
+      "file": " https://res.cloudinary.com/dgusxuq9j/image/upload/v1709201133/zevcpg8tnymkl3ftwnm5.png"
     }
   ],
   "users": [

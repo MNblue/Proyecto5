@@ -15,7 +15,7 @@ function FormAddProduct() {
   const { Formik } = formik;
 
   const schema = yup.object().shape({
-    firstName: yup.string().required("El nombre es requerido"),
+    name: yup.string().required("El nombre es requerido"),
     stock: yup.string().required("El stock es requerido"),
     category: yup.string().required("La categoría es requerida"),
     price: yup.number().required("Solo valores numéricos"),
@@ -78,7 +78,7 @@ function FormAddProduct() {
                   });
                 }}
                 initialValues={{
-                  firstName: "",
+                  name: "",
                   stock: "",
                   category: "",
                   price: "",
@@ -110,15 +110,15 @@ function FormAddProduct() {
                         <Form.Label>Nombre</Form.Label>
                         <Form.Control
                           type="text"
-                          name="firstName"
+                          name="name"
                           placeholder="Nombre"
-                          value={values.firstName}
+                          value={values.name}
                           onChange={handleChange}
                           onBlur={handleBlur}
-                          isInvalid={touched.firstName && !!errors.firstName}
+                          isInvalid={touched.name && !!errors.name}
                         />
                         <Form.Control.Feedback type="invalid">
-                          {errors.firstName}
+                          {errors.name}
                         </Form.Control.Feedback>
                       </Form.Group>
                       <Form.Group

@@ -38,10 +38,11 @@ function CardOne({ isLogged, selectOpt }) {
     // };
 
     // Llamo a getData() para traer los datos una vez que el componente se ha montado
-    useEffect(() => {
-        getData();
-
-    }, []); // Pasa un arreglo vacío como segundo argumento para asegurar que getData solo se ejecute una vez
+    // useEffect(() => {
+    //     getData();
+    
+    getData();
+    // }, []); // Pasa un arreglo vacío como segundo argumento para asegurar que getData solo se ejecute una vez
 
     useEffect(() => {
 
@@ -60,13 +61,16 @@ function CardOne({ isLogged, selectOpt }) {
 
             // Ahora actualizo el estado de userList con esta variable (usuarios)
             setProductList(products);
-            setFilteredProductList(products);
+            setFilteredProductList(productList);
+            filterData();
         } catch (error) {
             console.error('Error al obtener los datos:', error);
         }
     };
 
     async function filterData() {
+
+        
 
         if (selectOpt !== 'option1') {
             let auxSelectOpt;
@@ -77,7 +81,7 @@ function CardOne({ isLogged, selectOpt }) {
             } else if (selectOpt === 'option4') {
                 auxSelectOpt = 'Artesanía local';
             }
-            const filteredList = productList.filter(product => product.category === auxSelectOpt);
+            let filteredList = productList.filter(product => product.category === auxSelectOpt);
             setFilteredProductList(filteredList);
             setStartIndex(0); // Reiniciar el índice al principio de la lista filtrada
         } else {
