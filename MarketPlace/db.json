@@ -7,14 +7,14 @@
       "category": "Artesanía local",
       "file": "https://res.cloudinary.com/dgusxuq9j/image/upload/v1708955066/cck61ftl3ir8ifvbn4qt.png",
       "description": "descripcion444 del producto primero bla bla bla blufffffffffffrteryteryeryeryeryfffdfsdfuuuu",
-      "stock": "79"
+      "stock": "70"
     },
     {
       "id": "001d",
       "name": "producto 2",
-      "stock": 3,
+      "stock": "4",
       "category": "De la huerta a la mesa",
-      "price": 3,
+      "price": "2",
       "description": "dudu dudud ududu",
       "file": "https://res.cloudinary.com/dgusxuq9j/image/upload/v1708958512/febqx6o2tkuoto7gnskj.png"
     },
