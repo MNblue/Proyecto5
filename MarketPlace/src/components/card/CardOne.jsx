@@ -40,7 +40,7 @@ function CardOne({ isLogged, selectOpt }) {
     // Llamo a getData() para traer los datos una vez que el componente se ha montado
     // useEffect(() => {
     //     getData();
-    
+
     getData();
     // }, []); // Pasa un arreglo vacío como segundo argumento para asegurar que getData solo se ejecute una vez
 
@@ -70,7 +70,7 @@ function CardOne({ isLogged, selectOpt }) {
 
     async function filterData() {
 
-        
+
 
         if (selectOpt !== 'option1') {
             let auxSelectOpt;
@@ -297,11 +297,12 @@ function CardOne({ isLogged, selectOpt }) {
                                     <Card className="classCategory" style={{ width: '10rem', display: 'flex', flexDirection: 'column', boxShadow: ' 1px 12px 16px -1px rgba(174,187,209,0.81)' }}>
                                         <Card.Text style={{ textAlign: 'center', marginTop: '5px', paddingBottom: '0px', marginBottom: '0px', fontSize: '12px' }}>
 
-
-                                            <span> {product.category}</span>
-                                            {isLogged && (<button disabled={!isLogged} onClick={() => handleClickDelete(product.id)} style={{ border: 'none', background: 'none', padding: 0, cursor: 'pointer', outline: 'none', marginLeft: 'auto' }}><img src='/src/components/card/delete.png' style={{ width: '14px', height: '14px', border: 'none' }} /></button>)}
-
-
+                                            <div className='btnDeleteDch'>
+                                                <div> {product.category}</div>
+                                                <div>
+                                                    {isLogged && (<button disabled={!isLogged} onClick={() => handleClickDelete(product.id)} style={{ border: 'none', background: 'none', padding: 0, cursor: 'pointer', outline: 'none', marginLeft: 'auto' }}><img src='/src/components/card/delete.png' style={{ width: '14px', height: '14px', border: 'none' }} /></button>)}
+                                                </div>
+                                            </div>
 
                                         </Card.Text>
                                         <div style={{ display: 'flex', flexDirection: 'column', paddingTop: '0px', gap: '20px', textAlign: 'center', position: 'relative' }}>
@@ -346,12 +347,12 @@ function CardOne({ isLogged, selectOpt }) {
                     {/* <Col xs="auto" className="d-flex align-items-center justify-content-center" style={{ width: '40px' }} >
                         <button onClick={handleNext} disabled={startIndex >= productList.length - 4} className='btnArrow' style={{ visibility: startIndex === productList.length - 4 ? 'hidden' : 'visible' }}><img src='/src/components/card/sig.png' style={{ width: '16px', height: '16px' }} /></button>
                     </Col> */}
-                
-                <Col xs="auto" className="d-flex align-items-center justify-content-center" style={{ width: '40px' }} >
-    <button onClick={handleNext} disabled={startIndex >= filteredProductList.length - 4} className='btnArrow' style={{ visibility: startIndex === filteredProductList.length - 4 ? 'hidden' : 'visible' }}><img src='/src/components/card/sig.png' style={{ width: '16px', height: '16px' }} /></button>
-</Col>
-                
-                
+
+                    <Col xs="auto" className="d-flex align-items-center justify-content-center" style={{ width: '40px' }} >
+                        <button onClick={handleNext} disabled={startIndex >= filteredProductList.length - 4} className='btnArrow' style={{ visibility: startIndex === filteredProductList.length - 4 ? 'hidden' : 'visible' }}><img src='/src/components/card/sig.png' style={{ width: '16px', height: '16px' }} /></button>
+                    </Col>
+
+
                 </Row>
             </Container>
             {/* 

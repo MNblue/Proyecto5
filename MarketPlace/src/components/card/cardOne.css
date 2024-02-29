@@ -119,3 +119,10 @@ div.tooltip-inner{
   border: 0px;
   background-color: rgba(255, 255, 255, 0);
 }
+
+.btnDeleteDch{
+  display:flex;
+   /* justify-content: center;  */
+  flex-direction: row;
+  justify-content: space-between;
+}
