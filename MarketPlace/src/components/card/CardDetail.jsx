@@ -9,6 +9,7 @@ import { useLocation } from 'react-router-dom';
 import { productService } from '../../service/productService';
 import * as formik from "formik";
 import * as yup from "yup";
+import turnleft from './turnleft.png';
 
 
 
@@ -100,10 +101,12 @@ function CardDetail() {
   return (
     <>
     <main>
-    <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+    <Button style={{ position: 'absolute', top: '10px', right: '10px', zIndex: '9999', marginTop:"40px", marginRight:"200px", backgroundColor: "white", boxShadow: "1px 18px 25px -8px rgba(107,102,107,0.73)", color:"black", border:"none" }} onClick={() => history.push('/')}>Volver <img src={turnleft} style={{width:"30px",height:"30px"}}/></Button>
+
+    {/* <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
       <Card className="sombreado" style={{ width: '44rem' }}>
         <div style={{ color: 'green', textAlign: 'center', backgroundColor: 'lightcolor' }}>
-          {/* <input type="text" name="category" value={editable ? editedProduct.category : product.category} onChange={handleInputChange} disabled={!editable}  style={{ border: 'none', outline: 'none' }}/> */}
+         
           <select name="category" value={editable ? editedProduct.category : product.category} onChange={handleInputChange} disabled={!editable} style={{ border: 'none', outline: 'none' }}>
             <option value="De la huerta a la mesa">De la huerta a la mesa</option>
             <option value="Artesanía local">Artesanías Locales</option>
@@ -136,7 +139,94 @@ function CardDetail() {
           </div>
         </Card.Body>
       </Card>
-    </div>
+    </div> */}
+
+
+
+
+
+
+
+
+<Container className="containerA" style={{ width: '60%' }}>
+                <Row >
+                    {/* <Col xs="auto" className="d-flex align-items-center justify-content-center" style={{backgroundColor:'green'}}> */}
+                    <Col xs="auto" className="d-flex align-items-center justify-content-center" style={{ width: '40px' }}>
+                        {/* <button onClick={handlePrevious} disabled={startIndex === 0} className='btnArrow' style={{ visibility: startIndex === 0 ? 'hidden' : 'visible' }} ><img src='/src/components/card/atras.png' style={{ width: '16px', height: '16px' }} /></button> */}
+                        <button onClick={handlePrevious} disabled={startIndex === 0} className='btnArrow' style={{ visibility: startIndex === 0 ? 'hidden' : 'visible' }} ><img src='/src/components/card/atras.png' style={{ width: '16px', height: '16px' }} /></button>
+
+                    </Col>
+                    <Col >
+                        <Row>
+                            {filteredProductList.slice(startIndex, startIndex + 4).map((product, index) => (
+                                //  {productList.slice(startIndex, startIndex + 4).map((product, index) => (
+
+                                <Col key={index} md={3} className="mb-1">
+                                    <Card className="classCategory" style={{ width: '10rem', display: 'flex', flexDirection: 'column', boxShadow: ' 1px 12px 16px -1px rgba(174,187,209,0.81)' }}>
+                                        <Card.Text style={{ textAlign: 'center', marginTop: '5px', paddingBottom: '0px', marginBottom: '0px', fontSize: '12px' }}>
+
+                                            <div className={isLogged ? 'btnDeleteDch' : 'btnDeleteDchUser'}>
+                                                <div > {product.category}</div>
+                                                <div style={{ textAlign:'right'}}>
+                                                    {isLogged && (<button disabled={!isLogged} onClick={() => handleClickDelete(product.id)} style={{ border: 'none', background: 'none', padding: 0, cursor: 'pointer', outline: 'none', marginLeft: 'auto' }}><img src='/src/components/card/delete.png' style={{ width: '14px', height: '14px', border: 'none' }} /></button>)}
+                                                </div>
+                                            </div>
+
+                                        </Card.Text>
+                                        <div style={{ display: 'flex', flexDirection: 'column', paddingTop: '0px', gap: '20px', textAlign: 'center', position: 'relative' }}>
+                                            <Card.Img variant="top" src={product.file} className='imgCard' />
+                                            <div className='boxSmallPrice'>
+                                                {product.price} €
+                                            </div>
+                                        </div>
+                                        <Card.Body style={{ flex: '1', padding: '0px' }}>
+                                            <div style={{ textAlign: 'right', paddingBottom: '5px' }}><span className='boxSmall'>Stock: {product.stock}</span></div>
+
+                                            <div style={{ display: 'flex', flexDirection: 'column', gap: '15px' }}>
+                                                <div style={{ padding: '8px' }}>
+                                                    <Card.Title className='text1'>{product.name}</Card.Title>
+                                                    <Card.Text className="descripcion">
+                                                        {product.description}<br></br>
+                                                    </Card.Text>
+                                                </div>
+                                                <div style={{ marginTop: 'auto', display: 'flex', justifyContent: 'center', gap: '10px' }}>
+                                                    {isLogged ? (
+                                                        <button disabled={!isLogged} className='btn2' onClick={() => handleClickUpdateStock(product)}><img src='/src/components/card/carrito1.png' style={{ width: '16px', height: '16px' }} /> Comprar</button>
+                                                    ) : (
+                                                        <OverlayTrigger
+                                                            placement="top"
+                                                            overlay={<Tooltip className="custom-tooltip">Debes Logearte para poder comprar</Tooltip>}
+                                                            trigger={['hover', 'focus']}
+                                                        >
+                                                            <button disabled={!isLogged} className='btn1'> <img src='/src/components/card/carrito1.png' style={{ width: '16px', height: '16px' }} /> Comprar</button>
+                                                        </OverlayTrigger>
+                                                    )}
+                                                    <button id={product.id} onClick={() => handleClick(product.id)} className='btn2'><img src='/src/components/card/mas.png' style={{ width: '14px', height: '14px' }} /> Ver más</button>
+                                                </div>
+                                            </div>
+
+
+                                        </Card.Body>
+                                    </Card>
+                                </Col>
+                            ))}
+                        </Row>
+                    </Col>
+                    {/* <Col xs="auto" className="d-flex align-items-center justify-content-center" style={{ width: '40px' }} >
+                        <button onClick={handleNext} disabled={startIndex >= productList.length - 4} className='btnArrow' style={{ visibility: startIndex === productList.length - 4 ? 'hidden' : 'visible' }}><img src='/src/components/card/sig.png' style={{ width: '16px', height: '16px' }} /></button>
+                    </Col> */}
+
+                    <Col xs="auto" className="d-flex align-items-center justify-content-center" style={{ width: '40px' }} >
+                        <button onClick={handleNext} disabled={startIndex >= filteredProductList.length - 4} className='btnArrow' style={{ visibility: startIndex === filteredProductList.length - 4 ? 'hidden' : 'visible' }}><img src='/src/components/card/sig.png' style={{ width: '16px', height: '16px' }} /></button>
+                    </Col>
+
+
+                </Row>
+            </Container>
+
+
+
+            
     </main>
     </>
   );
