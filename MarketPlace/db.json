@@ -2,7 +2,7 @@
   "products": [
     {
       "id": "3",
-      "name": "producto 3",
+      "name": "producto 1",
       "price": "5.994",
       "category": "Artesanía local",
       "file": "https://res.cloudinary.com/dgusxuq9j/image/upload/v1708955066/cck61ftl3ir8ifvbn4qt.png",
@@ -11,7 +11,7 @@
     },
     {
       "id": "001d",
-      "name": "duud",
+      "name": "producto 2",
       "stock": 3,
       "category": "De la huerta a la mesa",
       "price": 3,
@@ -20,7 +20,7 @@
     },
     {
       "id": "9bc0",
-      "name": "ddd",
+      "name": "producto 3",
       "stock": 4,
       "category": "Artesanía local",
       "price": 8,
@@ -29,7 +29,7 @@
     },
     {
       "id": "52c6",
-      "name": "eeerer",
+      "name": "producto 4",
       "stock": 5,
       "category": "De la huerta a la mesa",
       "price": 45,
@@ -38,7 +38,7 @@
     },
     {
       "id": "5c0c",
-      "name": "ksndflklsd",
+      "name": "producto 5",
       "stock": 4,
       "category": "Artesanía local",
       "price": 5,
@@ -47,7 +47,7 @@
     },
     {
       "id": "3r",
-      "name": "Product 3",
+      "name": "Product 6",
       "price": "5.994",
       "category": "Elaborados",
       "file": "https://res.cloudinary.com/dgusxuq9j/image/upload/v1708955066/cck61ftl3ir8ifvbn4qt.png",
@@ -56,7 +56,7 @@
     },
     {
       "id": "001dr",
-      "name": "duud",
+      "name": "producto 7",
       "stock": 3,
       "category": "De la huerta a la mesa",
       "price": 3,
@@ -65,7 +65,7 @@
     },
     {
       "id": "9bc0r",
-      "name": "muestra",
+      "name": "producto 8",
       "stock": 4,
       "category": "Elaborados",
       "price": 8,
@@ -74,7 +74,7 @@
     },
     {
       "id": "52c6r",
-      "name": "eeerer",
+      "name": "producto 9",
       "stock": 5,
       "category": "De la huerta a la mesa",
       "price": 45,
@@ -83,7 +83,7 @@
     },
     {
       "id": "5c0rc",
-      "name": "ksndflklsd",
+      "name": "producto 10",
       "stock": 4,
       "category": "Artesanía local",
       "price": 225,

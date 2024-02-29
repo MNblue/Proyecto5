@@ -269,20 +269,26 @@ function CardOne({ isLogged, selectOpt }) {
         // <>
         //     return (
         <>
-            <Container className="containerA" style={{ width: '100%' }}>
+            <Container className="containerA" style={{ width: '60%' }}>
                 <Row >
                 {/* <Col xs="auto" className="d-flex align-items-center justify-content-center" style={{backgroundColor:'green'}}> */}
-                    <Col xs="auto" className="d-flex align-items-center justify-content-center" style={{width: '40px', backgroundColor:'green'}}>
+                    <Col xs="auto" className="d-flex align-items-center justify-content-center" style={{width: '40px'}}>
                         <button onClick={handlePrevious} disabled={startIndex === 0} className='btnArrow' style={{ visibility: startIndex === 0 ? 'hidden' : 'visible' }} ><img src='/src/components/card/atras.png' style={{ width: '16px', height: '16px' }} /></button>
                     </Col>
-                    <Col style={{backgroundColor:'yellow'}}>
+                    <Col >
                         <Row>
                             {productList.slice(startIndex, startIndex + 4).map((product, index) => (
 
                                 <Col key={index} md={3} className="mb-1">
                                     <Card className="classCategory" style={{ width: '10rem', display: 'flex', flexDirection: 'column',boxShadow:' 1px 12px 16px -1px rgba(174,187,209,0.81)' }}>
                                         <Card.Text style={{ textAlign: 'center', marginTop: '5px', paddingBottom: '0px', marginBottom: '0px', fontSize: '12px' }}>
-                                            {product.category}
+                                      
+                                      
+                                        <span> {product.category}</span>
+                                        {isLogged && (<button disabled={!isLogged} onClick={() => handleClickDelete(product.id)} style={{ border: 'none', background: 'none', padding: 0, cursor: 'pointer', outline: 'none', marginLeft:'auto' }}><img src='/src/components/card/delete.png' style={{ width: '14px', height: '14px', border: 'none' }} /></button>)}
+
+
+
                                         </Card.Text>
                                         <div style={{ display: 'flex', flexDirection: 'column', paddingTop: '0px', gap: '20px', textAlign: 'center', position: 'relative' }}>
                                             <Card.Img variant="top" src={product.file} className='imgCard' />
@@ -323,7 +329,7 @@ function CardOne({ isLogged, selectOpt }) {
                             ))}
                         </Row>
                     </Col>
-                    <Col xs="auto" className="d-flex align-items-center justify-content-center" style={{width: '40px', backgroundColor:'green'}} >
+                    <Col xs="auto" className="d-flex align-items-center justify-content-center" style={{width: '40px'}} >
                         <button onClick={handleNext} disabled={startIndex >= productList.length - 4} className='btnArrow' style={{ visibility: startIndex === productList.length - 4 ? 'hidden' : 'visible' }}><img src='/src/components/card/sig.png' style={{ width: '16px', height: '16px'}} /></button>
                     </Col>
                 </Row>
