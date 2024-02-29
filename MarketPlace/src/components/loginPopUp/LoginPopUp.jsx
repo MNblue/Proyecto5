@@ -152,7 +152,7 @@ const login = useGoogleLogin({
                 <Button style={customStylesLogin} onClick={() => login()}>Sign in with Google 🚀</Button>
               </div>
               <div className="register-link">
-                <p>¿Todavía no tienes la cuenta?
+                <p>¿Todavía no tienes una cuenta?
                   <Link to='#'> Regístrate ahora</Link></p>
               </div>
             </form>

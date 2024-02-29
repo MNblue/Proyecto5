@@ -17,6 +17,69 @@
       "price": 3,
       "description": "dudu dudud ududu",
       "file": "https://res.cloudinary.com/dgusxuq9j/image/upload/v1708958512/febqx6o2tkuoto7gnskj.png"
+    },
+    {
+      "id": "fb4a",
+      "firstName": "Mermelada",
+      "stock": 100,
+      "category": "Elaborados",
+      "price": 5,
+      "description": "Mermelada casera de rosa mosqueta",
+      "file": "https://res.cloudinary.com/dgusxuq9j/image/upload/v1709116091/lpe5ljmm7zn4oodt3hni.png "
+    },
+    {
+      "id": "43ff",
+      "firstName": "Tabla de quesos",
+      "stock": 20,
+      "category": "elaborados",
+      "price": 20,
+      "description": "Quesos de la comarca.",
+      "file": "https://res.cloudinary.com/dgusxuq9j/image/upload/v1709116275/ddlync3ctvwupifcqr11.png "
+    },
+    {
+      "id": "4674",
+      "firstName": "Vino Tinto",
+      "stock": 20,
+      "category": "elaborados",
+      "price": "8",
+      "description": "Vino Denominación de Origen. Cosecha 2010.",
+      "file": "https://res.cloudinary.com/dgusxuq9j/image/upload/v1709116483/sxxp6bhmyg15x9tzd2u7.png "
+    },
+    {
+      "id": "2304",
+      "firstName": "Cerámica Local",
+      "stock": 10,
+      "category": "Artesanía local",
+      "price": 20,
+      "description": "Cuenco de cerámica.",
+      "file": "https://res.cloudinary.com/dgusxuq9j/image/upload/v1709116661/p9v0oceb0ie61myg2rjc.png "
+    },
+    {
+      "id": "69ce",
+      "firstName": "Verdura Eco Local",
+      "stock": 10,
+      "category": "De la huerta a la mesa",
+      "price": 15,
+      "description": "Cesta de frutas y verduras ecológicas de procedencia local.",
+      "file": "https://res.cloudinary.com/dgusxuq9j/image/upload/v1709116853/cyog5t1fwsrbrb72vkeg.png"
+    },
+    {
+      "id": "2ddc",
+      "firstName": "Mermelada",
+      "stock": 5,
+      "category": "Elaborados",
+      "price": 1,
+      "description": "Las cards van adaptando su tamaño según el tamaño de las fotos o del largo de la descripción. Y las fotos al guardarlas ya modificadas se han hecho más pequeñas y no se porque",
+      "file": "https://res.cloudinary.com/dgusxuq9j/image/upload/v1709116940/cxumjmsav0idb3uie0g2.jpg "
+    },
+    {
+      "id": "c0d2",
+      "name": "prueba name",
+      "stock": 3,
+      "category": "De la huerta a la mesa",
+      "price": 4,
+      "description": "prueba",
+      "file": " https://res.cloudinary.com/dgusxuq9j/image/upload/v1709195307/fy3sgs9w8kuqtq6mfddw.png"
     }
   ],
   "users": [
