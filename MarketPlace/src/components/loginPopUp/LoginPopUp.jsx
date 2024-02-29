@@ -8,6 +8,9 @@ import Validate from './Validate';
 import { Link } from 'react-router-dom';
 import { FaUser } from "react-icons/fa";
 import { FaLock } from "react-icons/fa";
+import Swal from 'sweetalert2';
+import { useGoogleLogin } from '@react-oauth/google';
+import axios from 'axios';
 
 
 const LoginPopUp = ({ closeModal }) => {
@@ -35,6 +38,7 @@ const styleModalShow = {
     border: 'none',
     borderRadius: '20px',
     boxShadow: '0 0 10px #e9e0e9',
+    margin: '10px auto'
     
 
   };
@@ -56,7 +60,29 @@ const styleModalShow = {
     };
   ///////////////////////////////////
 
+///////////Google-Sing-In//////////
+const [googleUserData, setGoogleUserData] = useState(null);
 
+const login = useGoogleLogin({
+  onSuccess: async (response) => {
+    try {
+      const res = await axios.get("https://www.googleapis.com/oauth2/v3/userinfo",
+      {
+        headers: {
+          "Authorization": `Bearer ${response.access_token}`,
+        },
+      }
+      );
+      console.log(res);
+      setGoogleUserData(res.data);
+      navigate('/admin');
+    }  catch (err) {
+      console.log('Error', err);
+    };
+    },
+});
+
+////////////////////////////////////////
   const [user, setUser] = useState({
     useremail: '',
     userpassword: ''
@@ -77,7 +103,11 @@ const styleModalShow = {
         if (foundUser) {
           navigate('/admin');
         } else {
-          alert('Login o contraseña no esta correcta ');
+          Swal.fire({
+            imageUrl: 'https://media.tenor.com/TWMxi0kGDTgAAAAi/hmm.gif',
+            title: 'Login o contraseña no esta correcta',
+        });
+          //alert('Login o contraseña no esta correcta ');
         }
       } catch (error) {
         console.error('Error:', error);
@@ -119,6 +149,7 @@ const styleModalShow = {
               </div>
               <div className="btnHolder">
                 <Button style={customStylesLogin} onClick={handleLogin}>Log in</Button>
+                <Button style={customStylesLogin} onClick={() => login()}>Sign in with Google 🚀</Button>
               </div>
               <div className="register-link">
                 <p>¿Todavía no tienes la cuenta?
