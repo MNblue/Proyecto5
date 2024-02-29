@@ -25,14 +25,66 @@ function CardOne({ isLogged, selectOpt }) {
     const [productSelected, setProductSelected] = useState(null);
     //indice para recorrer el slider
     const [startIndex, setStartIndex] = useState(0);
-    //para el boton izquierdo llevar la cuenta
-    const handleClickLeft = () => {
-        setStartIndex(startIndex > 0 ? startIndex - 1 : startIndex);
+    const [filteredProductList, setFilteredProductList] = useState([]);
+
+
+    // //para el boton izquierdo llevar la cuenta
+    // const handleClickLeft = () => {
+    //     setStartIndex(startIndex > 0 ? startIndex - 1 : startIndex);
+    // };
+    // //para el boton derecho llevar la cuenta
+    // const handleClickRight = () => {
+    //     setStartIndex(startIndex + 1);
+    // };
+
+    // Llamo a getData() para traer los datos una vez que el componente se ha montado
+    useEffect(() => {
+        getData();
+
+    }, []); // Pasa un arreglo vacío como segundo argumento para asegurar que getData solo se ejecute una vez
+
+    useEffect(() => {
+
+        filterData();
+        // getData();
+        console.log("datos...............");
+        console.log(productList);
+    }, [selectOpt]);
+
+
+    //esta es la función que carga los datos almacenados en el json
+    async function getData() {
+        try {
+            // Accedo a productService, en concreto a su método GET. 
+            const products = await productService.getAllProducts();
+
+            // Ahora actualizo el estado de userList con esta variable (usuarios)
+            setProductList(products);
+            setFilteredProductList(products);
+        } catch (error) {
+            console.error('Error al obtener los datos:', error);
+        }
     };
-    //para el boton derecho llevar la cuenta
-    const handleClickRight = () => {
-        setStartIndex(startIndex + 1);
-    };
+
+    async function filterData() {
+
+        if (selectOpt !== 'option1') {
+            let auxSelectOpt;
+            if (selectOpt === 'option2') {
+                auxSelectOpt = 'De la huerta a la mesa';
+            } else if (selectOpt === 'option3') {
+                auxSelectOpt = 'Elaborados';
+            } else if (selectOpt === 'option4') {
+                auxSelectOpt = 'Artesanía local';
+            }
+            const filteredList = productList.filter(product => product.category === auxSelectOpt);
+            setFilteredProductList(filteredList);
+            setStartIndex(0); // Reiniciar el índice al principio de la lista filtrada
+        } else {
+            setFilteredProductList(productList);
+        }
+    }
+
 
     const handlePrevious = () => {
         if (startIndex > 0) {
@@ -46,57 +98,12 @@ function CardOne({ isLogged, selectOpt }) {
         }
     };
 
-    function filterData(){
-        //si la opcion seleccionada es la 1 no hacemos nada ya que mostramos Todos los elementos sin filtrar
-
-        console.log("selectoOpt:  "+selectOpt);
-
-        if (selectOpt !== 'option1' ) {
-         
-            let auxSelectOpt;
-            if (selectOpt === 'option2'){
-                auxSelectOpt = 'De la huerta a la mesa';
-            }else if(selectOpt === 'option3'){
-                auxSelectOpt = 'Elaborados';
-            }else if(selectOpt === 'option4'){
-                auxSelectOpt = 'Artesanía locals';
-            }
-
-            console.log("aux: "+auxSelectOpt);
-            // filtrar la lista por la opción seleccionada
-            setProductList(prevList => prevList.filter(product => product.category === auxSelectOpt));
-          }
-    };
-
-    //esta es la función que carga los datos almacenados en el json
-    async function getData() {
-         try {
-            // Accedo a productService, en concreto a su método GET. 
-            const products = await productService.getAllProducts();
-            
-            // Ahora actualizo el estado de userList con esta variable (usuarios)
-            setProductList(products);
-
-         } catch (error) {
-             console.error('Error al obtener los datos:', error);
-         }
-    };
-
-    // Llamo a getData() para traer los datos una vez que el componente se ha montado
-    useEffect(() => {
-        getData();
-    }, []); // Pasa un arreglo vacío como segundo argumento para asegurar que getData solo se ejecute una vez
 
     // useEffect(() => {
     //     getData();
     // }, [productList]);
 
-    useEffect(() => {
-       // getData();
-        filterData();
-        console.log("datos...............");
-        console.log(productList);
-    }, [selectOpt]);
+
 
     function handleClick(id) {
         const findedProduct = productList.find(product => product.id === id);
@@ -106,7 +113,7 @@ function CardOne({ isLogged, selectOpt }) {
 
     async function deleteData(id) {
         try {
-            // Accedo a productService, en concreto a su método GET. 
+            // Accedo a productService, 
             const products = await productService.deleteProduct(id);
             const newList = productList.filter(producto => producto.id !== id);
             // Actualizar el estado con la nueva lista de productos
@@ -147,7 +154,7 @@ function CardOne({ isLogged, selectOpt }) {
         try {
             // Accedo a productService, en concreto a su método GET. 
             const products = await productService.updateProduct(id);
-            getData();
+            // getData();
         } catch (error) {
             console.error('Error al actualizar los datos:', error);
         }
@@ -271,21 +278,24 @@ function CardOne({ isLogged, selectOpt }) {
         <>
             <Container className="containerA" style={{ width: '60%' }}>
                 <Row >
-                {/* <Col xs="auto" className="d-flex align-items-center justify-content-center" style={{backgroundColor:'green'}}> */}
-                    <Col xs="auto" className="d-flex align-items-center justify-content-center" style={{width: '40px'}}>
+                    {/* <Col xs="auto" className="d-flex align-items-center justify-content-center" style={{backgroundColor:'green'}}> */}
+                    <Col xs="auto" className="d-flex align-items-center justify-content-center" style={{ width: '40px' }}>
+                        {/* <button onClick={handlePrevious} disabled={startIndex === 0} className='btnArrow' style={{ visibility: startIndex === 0 ? 'hidden' : 'visible' }} ><img src='/src/components/card/atras.png' style={{ width: '16px', height: '16px' }} /></button> */}
                         <button onClick={handlePrevious} disabled={startIndex === 0} className='btnArrow' style={{ visibility: startIndex === 0 ? 'hidden' : 'visible' }} ><img src='/src/components/card/atras.png' style={{ width: '16px', height: '16px' }} /></button>
+
                     </Col>
                     <Col >
                         <Row>
-                            {productList.slice(startIndex, startIndex + 4).map((product, index) => (
+                            {filteredProductList.slice(startIndex, startIndex + 4).map((product, index) => (
+                                //  {productList.slice(startIndex, startIndex + 4).map((product, index) => (
 
                                 <Col key={index} md={3} className="mb-1">
-                                    <Card className="classCategory" style={{ width: '10rem', display: 'flex', flexDirection: 'column',boxShadow:' 1px 12px 16px -1px rgba(174,187,209,0.81)' }}>
+                                    <Card className="classCategory" style={{ width: '10rem', display: 'flex', flexDirection: 'column', boxShadow: ' 1px 12px 16px -1px rgba(174,187,209,0.81)' }}>
                                         <Card.Text style={{ textAlign: 'center', marginTop: '5px', paddingBottom: '0px', marginBottom: '0px', fontSize: '12px' }}>
-                                      
-                                      
-                                        <span> {product.category}</span>
-                                        {isLogged && (<button disabled={!isLogged} onClick={() => handleClickDelete(product.id)} style={{ border: 'none', background: 'none', padding: 0, cursor: 'pointer', outline: 'none', marginLeft:'auto' }}><img src='/src/components/card/delete.png' style={{ width: '14px', height: '14px', border: 'none' }} /></button>)}
+
+
+                                            <span> {product.category}</span>
+                                            {isLogged && (<button disabled={!isLogged} onClick={() => handleClickDelete(product.id)} style={{ border: 'none', background: 'none', padding: 0, cursor: 'pointer', outline: 'none', marginLeft: 'auto' }}><img src='/src/components/card/delete.png' style={{ width: '14px', height: '14px', border: 'none' }} /></button>)}
 
 
 
@@ -329,9 +339,15 @@ function CardOne({ isLogged, selectOpt }) {
                             ))}
                         </Row>
                     </Col>
-                    <Col xs="auto" className="d-flex align-items-center justify-content-center" style={{width: '40px'}} >
-                        <button onClick={handleNext} disabled={startIndex >= productList.length - 4} className='btnArrow' style={{ visibility: startIndex === productList.length - 4 ? 'hidden' : 'visible' }}><img src='/src/components/card/sig.png' style={{ width: '16px', height: '16px'}} /></button>
-                    </Col>
+                    {/* <Col xs="auto" className="d-flex align-items-center justify-content-center" style={{ width: '40px' }} >
+                        <button onClick={handleNext} disabled={startIndex >= productList.length - 4} className='btnArrow' style={{ visibility: startIndex === productList.length - 4 ? 'hidden' : 'visible' }}><img src='/src/components/card/sig.png' style={{ width: '16px', height: '16px' }} /></button>
+                    </Col> */}
+                
+                <Col xs="auto" className="d-flex align-items-center justify-content-center" style={{ width: '40px' }} >
+    <button onClick={handleNext} disabled={startIndex >= filteredProductList.length - 4} className='btnArrow' style={{ visibility: startIndex === filteredProductList.length - 4 ? 'hidden' : 'visible' }}><img src='/src/components/card/sig.png' style={{ width: '16px', height: '16px' }} /></button>
+</Col>
+                
+                
                 </Row>
             </Container>
             {/* 
