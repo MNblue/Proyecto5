@@ -1,31 +1,119 @@
 {
-    "products": [
-        {
-            "id": "1",
-            "name": "Product 1",
-            "price": 5.99,
-            "category": "Electronics",
-            "image": "",
-            "description": ""
-        },
-        {
-            "id": "2",
-            "name": "Product 2",
-            "price": 5.99,
-            "category": "Electronics",
-            "image": "",
-            "description": ""
-        }
-    ],
-    "users": [
-        {
-            "id": "1",
-            "name": "user 1",
-            "surname": "",
-            "email": "user@mail.com",
-            "password": "password",
-            "image": "",
-            "description": ""
-        }
-    ]
+  "products": [
+    {
+      "id": "3",
+      "name": "producto 3",
+      "price": "5.994",
+      "category": "Artesanía local",
+      "file": "https://res.cloudinary.com/dgusxuq9j/image/upload/v1708955066/cck61ftl3ir8ifvbn4qt.png",
+      "description": "descripcion444 del producto primero bla bla bla blufffffffffffrteryteryeryeryeryfffdfsdfuuuu",
+      "stock": "80"
+    },
+    {
+      "id": "001d",
+      "name": "duud",
+      "stock": 3,
+      "category": "De la huerta a la mesa",
+      "price": 3,
+      "description": "dudu dudud ududu",
+      "file": "https://res.cloudinary.com/dgusxuq9j/image/upload/v1708958512/febqx6o2tkuoto7gnskj.png"
+    },
+    {
+      "id": "9bc0",
+      "name": "ddd",
+      "stock": 4,
+      "category": "Artesanía local",
+      "price": 8,
+      "description": "dddd",
+      "file": " https://res.cloudinary.com/dgusxuq9j/image/upload/v1709054639/n0dzpecd2bbcb7rttyxt.png"
+    },
+    {
+      "id": "52c6",
+      "name": "eeerer",
+      "stock": 5,
+      "category": "De la huerta a la mesa",
+      "price": 45,
+      "description": "dfsdgadg",
+      "file": " https://res.cloudinary.com/dgusxuq9j/image/upload/v1709054665/fbcjlik6pxn02vyj2ll9.png"
+    },
+    {
+      "id": "5c0c",
+      "name": "ksndflklsd",
+      "stock": 4,
+      "category": "Artesanía local",
+      "price": 5,
+      "description": "sadfasdf",
+      "file": " https://res.cloudinary.com/dgusxuq9j/image/upload/v1709054693/oqtefqhrdxgvvpeyrcv2.png"
+    },
+    {
+      "id": "3r",
+      "name": "Product 3",
+      "price": "5.994",
+      "category": "Elaborados",
+      "file": "https://res.cloudinary.com/dgusxuq9j/image/upload/v1708955066/cck61ftl3ir8ifvbn4qt.png",
+      "description": "descripcion444 del producto primero bla bla bla bluuuuu",
+      "stock": "80"
+    },
+    {
+      "id": "001dr",
+      "name": "duud",
+      "stock": 3,
+      "category": "De la huerta a la mesa",
+      "price": 3,
+      "description": "dudu dudud ududu",
+      "file": "https://res.cloudinary.com/dgusxuq9j/image/upload/v1708958512/febqx6o2tkuoto7gnskj.png"
+    },
+    {
+      "id": "9bc0r",
+      "name": "muestra",
+      "stock": 4,
+      "category": "Elaborados",
+      "price": 8,
+      "description": "dddd",
+      "file": " https://res.cloudinary.com/dgusxuq9j/image/upload/v1709054639/n0dzpecd2bbcb7rttyxt.png"
+    },
+    {
+      "id": "52c6r",
+      "name": "eeerer",
+      "stock": 5,
+      "category": "De la huerta a la mesa",
+      "price": 45,
+      "description": "dfsdgadg",
+      "file": " https://res.cloudinary.com/dgusxuq9j/image/upload/v1709054665/fbcjlik6pxn02vyj2ll9.png"
+    },
+    {
+      "id": "5c0rc",
+      "name": "ksndflklsd",
+      "stock": 4,
+      "category": "Artesanía local",
+      "price": 225,
+      "description": "sadfasdf",
+      "file": " https://res.cloudinary.com/dgusxuq9j/image/upload/v1709054693/oqtefqhrdxgvvpeyrcv2.png"
+    },
+    {
+      "id": "3159",
+      "firstName": "prueba elle",
+      "stock": 4,
+      "category": "Elaborados",
+      "price": 6,
+      "description": "sdfadf",
+      "file": " https://res.cloudinary.com/dgusxuq9j/image/upload/v1709195950/s7rivegb9ep4sspoinwf.png"
+    },
+    {
+      "id": "15e7",
+      "firstName": "prueba elle 4",
+      "stock": 5,
+      "category": "Elaborados",
+      "price": 5,
+      "description": "dfasdfasdfas",
+      "file": " https://res.cloudinary.com/dgusxuq9j/image/upload/v1709196040/hfkepk5awhogqrtowqmo.png"
+    }
+  ],
+  "users": [
+    {
+      "id": "1",
+      "useremail": "user@mail.com",
+      "userpassword": "password"
+    }
+  ]
 }
