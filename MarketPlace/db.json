@@ -2,16 +2,16 @@
   "products": [
     {
       "id": "3",
-      "name": "Product 3",
+      "name": "producto 3",
       "price": "5.994",
-      "category": "artesanias",
+      "category": "Artesanía local",
       "file": "https://res.cloudinary.com/dgusxuq9j/image/upload/v1708955066/cck61ftl3ir8ifvbn4qt.png",
-      "description": "descripcion444 del producto primero bla bla bla bluuuuu",
+      "description": "descripcion444 del producto primero bla bla bla blufffffffffffrteryteryeryeryeryfffdfsdfuuuu",
       "stock": "80"
     },
     {
       "id": "001d",
-      "firstName": "duud",
+      "name": "duud",
       "stock": 3,
       "category": "De la huerta a la mesa",
       "price": 3,
@@ -20,16 +20,16 @@
     },
     {
       "id": "9bc0",
-      "firstName": "ddd",
+      "name": "ddd",
       "stock": 4,
-      "category": "De la huerta a la mesa",
+      "category": "Artesanía local",
       "price": 8,
       "description": "dddd",
       "file": " https://res.cloudinary.com/dgusxuq9j/image/upload/v1709054639/n0dzpecd2bbcb7rttyxt.png"
     },
     {
       "id": "52c6",
-      "firstName": "eeerer",
+      "name": "eeerer",
       "stock": 5,
       "category": "De la huerta a la mesa",
       "price": 45,
@@ -38,7 +38,7 @@
     },
     {
       "id": "5c0c",
-      "firstName": "ksndflklsd",
+      "name": "ksndflklsd",
       "stock": 4,
       "category": "Artesanía local",
       "price": 5,
@@ -49,14 +49,14 @@
       "id": "3r",
       "name": "Product 3",
       "price": "5.994",
-      "category": "artesanias",
+      "category": "Elaborados",
       "file": "https://res.cloudinary.com/dgusxuq9j/image/upload/v1708955066/cck61ftl3ir8ifvbn4qt.png",
       "description": "descripcion444 del producto primero bla bla bla bluuuuu",
       "stock": "80"
     },
     {
       "id": "001dr",
-      "firstName": "duud",
+      "name": "duud",
       "stock": 3,
       "category": "De la huerta a la mesa",
       "price": 3,
@@ -65,16 +65,16 @@
     },
     {
       "id": "9bc0r",
-      "firstName": "ddd",
+      "name": "muestra",
       "stock": 4,
-      "category": "De la huerta a la mesa",
+      "category": "Elaborados",
       "price": 8,
       "description": "dddd",
       "file": " https://res.cloudinary.com/dgusxuq9j/image/upload/v1709054639/n0dzpecd2bbcb7rttyxt.png"
     },
     {
       "id": "52c6r",
-      "firstName": "eeerer",
+      "name": "eeerer",
       "stock": 5,
       "category": "De la huerta a la mesa",
       "price": 45,
@@ -83,10 +83,10 @@
     },
     {
       "id": "5c0rc",
-      "firstName": "ksndflklsd",
+      "name": "ksndflklsd",
       "stock": 4,
       "category": "Artesanía local",
-      "price": 5,
+      "price": 225,
       "description": "sadfasdf",
       "file": " https://res.cloudinary.com/dgusxuq9j/image/upload/v1709054693/oqtefqhrdxgvvpeyrcv2.png"
     }

@@ -1,34 +1,47 @@
 import NavbarOne from '../../components/navbar/NavbarOne';
 import LoginPopUp from '../../components/loginPopUp/LoginPopUp';
 import React, { useState } from 'react';
-import CardOne from '../../components/card/CardOne'
+import CardOne from '../../components/card/CardOne';
+import Filter from '../../components/filter/Filter';
+import { useEffect } from 'react';
 
 
+import './user.css';
 
-import './user.css'
 
-
-function User (){
-    const [isModalOpen, setIsModalOpen] = useState(false);
-    const [isLogged, setIsLogged] = useState(false);
+function User() {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isLogged, setIsLogged] = useState(false);
+  const [optionFilter, setOptionFilter] = useState('option1');
 
   const openModal = () => {
     setIsModalOpen(true);
   };
-  
+
 
   const closeModal = () => {
     setIsModalOpen(false);
   };
 
+  const optionFilterM = (selectedOption) => {
+    setOptionFilter(selectedOption);
+  }
 
-    return (
-        <>
-        <NavbarOne openModal={openModal} />
-        {isModalOpen && <LoginPopUp closeModal={closeModal} />}
-        {/*AQUI IRA EL FILTRADO Y SE DEBERÁN PASAR LAS PROPS A CARDONE PARA EL FILTRADO*/}
-        <CardOne isLogged={isLogged}/>
-        </>
-    )
+  useEffect(() => {
+
+  }, [optionFilter]); // Se ejecutará cada vez que optionFilter cambie, es decir que pinchemos en un radiobutton
+
+  return (
+    <>
+      <NavbarOne openModal={openModal} />
+      {isModalOpen && <LoginPopUp closeModal={closeModal} />}
+
+      <Filter optionSelected={optionFilterM} />
+
+      <p>La opcion selecionada es: {optionFilter}</p>
+
+      <CardOne key={optionFilter} isLogged={isLogged} selectOpt={optionFilter} />
+    </>
+  )
 }
 export default User;
