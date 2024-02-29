@@ -2,16 +2,24 @@ import { Container, Row } from 'react-bootstrap';
 import './footer.css'
 
 
+
 function Footer() {
     
     return (
 <>
 <footer>
-    <Container>
+    <p>Holaaaaa</p>
+    {/* <Container>
         <Row>
             <Col>Logo</Col>
         </Row>
-    </Container>
+        <Row>
+            <Col>RRSS</Col>
+        </Row>
+        <Row>
+            <Col>Text</Col>
+        </Row>
+    </Container> */}
 </footer>
 
 </>
