@@ -308,7 +308,7 @@ function CardOne({ isLogged, selectOpt }) {
                                                 </div>
                                                 <div style={{ marginTop: 'auto', display: 'flex', justifyContent: 'center', gap: '10px' }}>
                                                     {isLogged ? (
-                                                        <button disabled={!isLogged} className='btn2'><img src='/src/components/card/carrito1.png' style={{ width: '16px', height: '16px' }} /> Comprar</button>
+                                                        <button disabled={!isLogged} className='btn2' onClick={() => handleClickUpdateStock(product)}><img src='/src/components/card/carrito1.png' style={{ width: '16px', height: '16px' }} /> Comprar</button>
                                                     ) : (
                                                         <OverlayTrigger
                                                             placement="top"
