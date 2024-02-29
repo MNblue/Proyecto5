@@ -272,10 +272,10 @@ function CardOne({ isLogged, selectOpt }) {
             <Container className="containerA" style={{ width: '100%' }}>
                 <Row >
                 {/* <Col xs="auto" className="d-flex align-items-center justify-content-center" style={{backgroundColor:'green'}}> */}
-                    <Col xs="auto" className="d-flex align-items-center justify-content-center" style={{width: '40px', backgroundColor:'green'}}>
+                    <Col xs="auto" className="d-flex align-items-center justify-content-center" style={{width: '40px'}}>
                         <button onClick={handlePrevious} disabled={startIndex === 0} className='btnArrow' style={{ visibility: startIndex === 0 ? 'hidden' : 'visible' }} ><img src='/src/components/card/atras.png' style={{ width: '16px', height: '16px' }} /></button>
                     </Col>
-                    <Col style={{backgroundColor:'yellow'}}>
+                    <Col >
                         <Row>
                             {productList.slice(startIndex, startIndex + 4).map((product, index) => (
 
@@ -323,7 +323,7 @@ function CardOne({ isLogged, selectOpt }) {
                             ))}
                         </Row>
                     </Col>
-                    <Col xs="auto" className="d-flex align-items-center justify-content-center" style={{width: '40px', backgroundColor:'green'}} >
+                    <Col xs="auto" className="d-flex align-items-center justify-content-center" style={{width: '40px'}} >
                         <button onClick={handleNext} disabled={startIndex >= productList.length - 4} className='btnArrow' style={{ visibility: startIndex === productList.length - 4 ? 'hidden' : 'visible' }}><img src='/src/components/card/sig.png' style={{ width: '16px', height: '16px'}} /></button>
                     </Col>
                 </Row>

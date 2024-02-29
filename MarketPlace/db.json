@@ -89,6 +89,24 @@
       "price": 225,
       "description": "sadfasdf",
       "file": " https://res.cloudinary.com/dgusxuq9j/image/upload/v1709054693/oqtefqhrdxgvvpeyrcv2.png"
+    },
+    {
+      "id": "3159",
+      "firstName": "prueba elle",
+      "stock": 4,
+      "category": "Elaborados",
+      "price": 6,
+      "description": "sdfadf",
+      "file": " https://res.cloudinary.com/dgusxuq9j/image/upload/v1709195950/s7rivegb9ep4sspoinwf.png"
+    },
+    {
+      "id": "15e7",
+      "firstName": "prueba elle 4",
+      "stock": 5,
+      "category": "Elaborados",
+      "price": 5,
+      "description": "dfasdfasdfas",
+      "file": " https://res.cloudinary.com/dgusxuq9j/image/upload/v1709196040/hfkepk5awhogqrtowqmo.png"
     }
   ],
   "users": [
