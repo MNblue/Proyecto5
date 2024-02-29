@@ -1,5 +1,37 @@
-p {
-    color: white;
-    width: 1440px;
+footer {
+    width: auto;
     height: 109px;
 }
+
+.logoFooter{
+    width: 60px;
+    height: 65px;
+    margin-left: 35px;
+    margin-top: 20px;
+}
+
+.rrssFooter{
+    width: 150px;
+    margin-top: 9px;
+    margin-left: 40px;
+}
+
+.fbFooter{
+    padding-right: 26px;
+}
+
+.twitterFooter{
+    padding-left: 26px;
+}
+
+.text-footer {
+    color: white;
+    padding-right: 63px;
+}
+
+.text-footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between; 
+}
+
