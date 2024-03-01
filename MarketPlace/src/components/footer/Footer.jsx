@@ -11,11 +11,21 @@ function Footer() {
     return (
         <>
             <footer>
-                <Stack direction="horizontal" gap={5} className='text-footer'>
-                    <div className="p-2"><img src={homeIcon} className='logoFooter'/></div>
-                    <div className="p-2 rrssFooter"><img src={facebook} className='fbFooter' /> <img src={instagram}/> <img src={twitter} className='twitterFooter' /></div>
-                    <div className="p-2 ">© InnoConsulting Solutions</div>
+
+                <Stack direction="horizontal" gap={5} className='stack-footer'>
+
+                    <div className="p-2"><img src={homeIcon} className='logoFooter' /></div>
+
+                    <div className="p-2 rrssFooter">
+
+                        <img src={facebook} className='fbFooter' />
+                        <img src={instagram} className='instagramFooter' />
+                        <img src={twitter} className='twitterFooter' /></div>
+
+                    <div className="p-2">© InnoConsulting Solutions</div>
+
                 </Stack>
+
             </footer>
         </>
     )
