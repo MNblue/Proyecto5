@@ -86,45 +86,18 @@
       "name": "prueba 55",
       "stock": 4,
       "category": "Elaborados",
-      "price": 1,
-      "description": "Las cards van adaptando su tamaño según el tamaño de las fotos o del largo de la descripción. Y las fotos al guardarlas ya modificadas se han hecho más pequeñas y no se porque",
-      "file": "https://res.cloudinary.com/dgusxuq9j/image/upload/v1709116940/cxumjmsav0idb3uie0g2.jpg "
+      "price": 5,
+      "description": "asdfasdfsf",
+      "file": " https://res.cloudinary.com/dgusxuq9j/image/upload/v1709201133/zevcpg8tnymkl3ftwnm5.png"
     },
     {
-      "id": "c0d2",
-      "name": "prueba name",
-      "stock": 3,
+      "id": "bd5e",
+      "name": "lalala",
+      "stock": 5,
       "category": "De la huerta a la mesa",
-      "price": 4,
-      "description": "prueba",
-      "file": " https://res.cloudinary.com/dgusxuq9j/image/upload/v1709195307/fy3sgs9w8kuqtq6mfddw.png"
-    },
-    {
-      "id": "ca3c",
-      "name": "naranjas",
-      "stock": 60,
-      "category": "De la huerta a la mesa",
-      "price": 15,
-      "description": "naranjas",
-      "file": " https://res.cloudinary.com/dgusxuq9j/image/upload/v1709284105/hv8qmhyelme9pruh1sie.png"
-    },
-    {
-      "id": "fb63",
-      "name": "naranjas",
-      "stock": 454,
-      "category": "De la huerta a la mesa",
-      "price": 44,
-      "description": "fgdg",
-      "file": " https://res.cloudinary.com/dgusxuq9j/image/upload/v1709284206/k5z92cce0hcqyz4elrgs.png"
-    },
-    {
-      "id": "86a5",
-      "name": "naranjas",
-      "stock": 444,
-      "category": "De la huerta a la mesa",
-      "price": 4545,
-      "description": "drfre",
-      "file": " https://res.cloudinary.com/dgusxuq9j/image/upload/v1709284906/dzusdeccrjnt2vv0e73q.png"
+      "price": 55,
+      "description": "prueba lore",
+      "file": " https://res.cloudinary.com/dgusxuq9j/image/upload/v1709285559/xhpmx149h0gsc8mt2k4p.png"
     }
   ],
   "users": [
