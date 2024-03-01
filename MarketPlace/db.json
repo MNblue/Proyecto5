@@ -64,7 +64,6 @@
       "file": " https://res.cloudinary.com/dgusxuq9j/image/upload/v1709201133/zevcpg8tnymkl3ftwnm5.png"
     },
     {
-<<<<<<< HEAD
       "id": "bd5e",
       "name": "lalala",
       "stock": 5,
@@ -72,24 +71,6 @@
       "price": 55,
       "description": "prueba lore",
       "file": " https://res.cloudinary.com/dgusxuq9j/image/upload/v1709285559/xhpmx149h0gsc8mt2k4p.png"
-=======
-      "id": "1abb",
-      "name": "yamila",
-      "stock": 245,
-      "category": "De la huerta a la mesa",
-      "price": 354,
-      "description": "kjlñ",
-      "file": "https://res.cloudinary.com/dgusxuq9j/image/upload/v1709284359/umjjvynphms9ukd29fjw.svg "
-    },
-    {
-      "id": "ac9f",
-      "name": "fdghjtyj",
-      "stock": 351,
-      "category": "Elaborados",
-      "price": 3515,
-      "description": "hola prueba",
-      "file": "https://res.cloudinary.com/dgusxuq9j/image/upload/v1709284359/umjjvynphms9ukd29fjw.svg "
->>>>>>> yamila
     }
   ],
   "users": [
