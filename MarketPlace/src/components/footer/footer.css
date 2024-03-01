@@ -1,6 +1,10 @@
 footer {
     width: auto;
     height: 109px;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
 }
 
 .logoFooter{

@@ -98,6 +98,33 @@
       "price": 4,
       "description": "prueba",
       "file": " https://res.cloudinary.com/dgusxuq9j/image/upload/v1709195307/fy3sgs9w8kuqtq6mfddw.png"
+    },
+    {
+      "id": "ca3c",
+      "name": "naranjas",
+      "stock": 60,
+      "category": "De la huerta a la mesa",
+      "price": 15,
+      "description": "naranjas",
+      "file": " https://res.cloudinary.com/dgusxuq9j/image/upload/v1709284105/hv8qmhyelme9pruh1sie.png"
+    },
+    {
+      "id": "fb63",
+      "name": "naranjas",
+      "stock": 454,
+      "category": "De la huerta a la mesa",
+      "price": 44,
+      "description": "fgdg",
+      "file": " https://res.cloudinary.com/dgusxuq9j/image/upload/v1709284206/k5z92cce0hcqyz4elrgs.png"
+    },
+    {
+      "id": "86a5",
+      "name": "naranjas",
+      "stock": 444,
+      "category": "De la huerta a la mesa",
+      "price": 4545,
+      "description": "drfre",
+      "file": " https://res.cloudinary.com/dgusxuq9j/image/upload/v1709284906/dzusdeccrjnt2vv0e73q.png"
     }
   ],
   "users": [

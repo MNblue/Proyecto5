@@ -13,7 +13,7 @@ function Admin() {
     <>
       <main>
         <FormAddProduct />
-        <CardOne isLogged={isLogged} />
+        <CardOne isLogged={isLogged} selectOpt={'option1'} />
       </main>
       <Footer />
     </>
