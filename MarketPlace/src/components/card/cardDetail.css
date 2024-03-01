@@ -12,12 +12,13 @@
   }
 
   .boxSmallDetail {
-    box-shadow: 0px 6px 10px 0px rgba(115, 115, 115, 0.38);
+    box-shadow: 2px 2px 5px 1px rgba(0, 0, 0, 0.2);
+    width: 100px;
     border-radius: 4px;
     padding: 5px;
     margin-right: 6px;
-    background-color: #ffffff;
-    font-size: 8px;
+    background-color: #EBE8E8;
+    font-size: 20px;
     font-family: 'Fredoka One', sans-serif;
   }
   
@@ -26,11 +27,11 @@
     background-color: white;
     margin-top: 10px;
     margin-left: 10px;
-    box-shadow: 0px 10px 14px 0px rgba(115, 115, 115, 0.54);
+    box-shadow: 2px 2px 5px 1px rgba(0, 0, 0, 0.2);
     border-radius: 4px;
     padding: 3px;
     padding-right: 5px;
-    font-size: 9px;
+    font-size: 10px;
     font-family: 'Fredoka One', sans-serif;
   }
   

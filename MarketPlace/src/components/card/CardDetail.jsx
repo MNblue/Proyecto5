@@ -173,9 +173,10 @@ function CardDetail() {
                     <div style={{ display: 'flex', flexDirection: 'column', paddingTop: '0px', gap: '20px', textAlign: 'center', position: 'relative' }}>
                       <Card.Img variant="top" src={product.file} className='imgCardDetail' />
                       <div className='boxSmallPriceDetail'>
-                        {product.price} €
+                        {product.price}€
                       </div>
                     </div>
+                    
                     <Card.Body style={{ flex: '1', padding: '0px' }}>
                       <div style={{ textAlign: 'right', paddingBottom: '5px' }}><span className='boxSmallDetail'>Stock: {product.stock}</span></div>
 
