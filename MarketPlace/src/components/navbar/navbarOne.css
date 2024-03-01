@@ -19,3 +19,20 @@
 .button-style:hover{
     cursor: pointer;
 }
+
+.navbar-toggler {
+    padding: var(--bs-navbar-toggler-padding-y) var(--bs-navbar-toggler-padding-x);
+    font-size: var(--bs-navbar-toggler-font-size);
+    line-height: 1;
+    color: #FBF6EE;
+    background-color: #FBF6EE;
+    border: var(--bs-border-width) solid var(--bs-navbar-toggler-border-color);
+    border-radius: var(--bs-navbar-toggler-border-radius);
+    transition: var(--bs-navbar-toggler-transition);
+}
+.navbar>.container-fluid{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: initial;
+}

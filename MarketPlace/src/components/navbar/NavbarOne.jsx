@@ -16,26 +16,26 @@ function NavbarOne({ openModal ,isLogged}) {
 
 
   return (
-    <nav>
-      <Navbar>
+   
+      <Navbar expand="lg">
         <Container fluid>
           <Navbar.Toggle aria-controls="navbarScroll" />
           <Navbar.Collapse id="navbarScroll">
             <Container fluid>
               <Row className="align-items-center">
-                <Col md={2}>
+                <Col md={2} xs={2} className="d-none d-sm-block">
                   <Nav.Link onClick={() => navigate('/')}>
                     <img src={logo} alt="" />
                   </Nav.Link>
                 </Col>
-                <Col md={8} className="text-center">
+                <Col md={8} xs={8}className="text-center">
                   <Form.Control
                     type="search"
                     placeholder="Search"
                     aria-label="Search"
                   />
                 </Col>
-                <Col md={2} className="d-flex justify-content-end gap-5">
+                <Col md={2} xs={2} className="d-flex justify-content-end gap-5">
                   { isLogged ? (
                     <>
                     <button className="button-style" >
@@ -61,7 +61,7 @@ function NavbarOne({ openModal ,isLogged}) {
           </Navbar.Collapse>
         </Container>
       </Navbar>
-    </nav>
+
   );
 }
 export default NavbarOne;
