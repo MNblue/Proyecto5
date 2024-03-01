@@ -5,8 +5,6 @@ import React, { useState } from 'react';
 import CardOne from '../../components/card/CardOne';
 import Filter from '../../components/filter/Filter';
 import { useEffect } from 'react';
-import NavbarOne from '../../components/navbar/NavbarOne';
-
 import './user.css';
 
 
