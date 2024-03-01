@@ -20,6 +20,7 @@ export const userService = {
     //este es el método GET que trae los datos almacenados
     async getAllUser() {
 
+        
         //guardamos en una variable toda la respuesta que nos devuelve la API, que contiene más información además de los
         //datos almacenados
         let response = await apiClient.get("/users");

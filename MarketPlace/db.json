@@ -2,71 +2,89 @@
   "products": [
     {
       "id": "3",
-      "name": "Product 3",
+      "name": "producto 1",
       "price": "5.994",
-      "category": "artesanias",
+      "category": "Artesanía local",
+      "file": "https://res.cloudinary.com/dgusxuq9j/image/upload/v1708955066/cck61ftl3ir8ifvbn4qt.png",
+      "description": "descripcion444 del producto primero bla bla bla blufffffffffffrteryteryeryeryeryfffdfsdfuuuu",
+      "stock": "70"
+    },
+    {
+      "id": "001d",
+      "name": "producto 2",
+      "stock": "4",
+      "category": "De la huerta a la mesa",
+      "price": "2",
+      "description": "dudu dudud ududu",
+      "file": "https://res.cloudinary.com/dgusxuq9j/image/upload/v1708958512/febqx6o2tkuoto7gnskj.png"
+    },
+    {
+      "id": "9bc0",
+      "name": "producto 3",
+      "stock": 4,
+      "category": "Artesanía local",
+      "price": 8,
+      "description": "dddd",
+      "file": " https://res.cloudinary.com/dgusxuq9j/image/upload/v1709054639/n0dzpecd2bbcb7rttyxt.png"
+    },
+    {
+      "id": "52c6",
+      "name": "producto 4",
+      "stock": 5,
+      "category": "De la huerta a la mesa",
+      "price": 45,
+      "description": "dfsdgadg",
+      "file": " https://res.cloudinary.com/dgusxuq9j/image/upload/v1709054665/fbcjlik6pxn02vyj2ll9.png"
+    },
+    {
+      "id": "5c0c",
+      "name": "producto 5",
+      "stock": 4,
+      "category": "Artesanía local",
+      "price": 5,
+      "description": "sadfasdf",
+      "file": " https://res.cloudinary.com/dgusxuq9j/image/upload/v1709054693/oqtefqhrdxgvvpeyrcv2.png"
+    },
+    {
+      "id": "3r",
+      "name": "Product 6",
+      "price": "5.994",
+      "category": "Elaborados",
       "file": "https://res.cloudinary.com/dgusxuq9j/image/upload/v1708955066/cck61ftl3ir8ifvbn4qt.png",
       "description": "descripcion444 del producto primero bla bla bla bluuuuu",
       "stock": "80"
     },
     {
-      "id": "001d",
-      "firstName": "duud",
-      "stock": 3,
-      "category": "De la huerta a la mesa",
-      "price": 3,
-      "description": "dudu dudud ududu",
-      "file": "https://res.cloudinary.com/dgusxuq9j/image/upload/v1708958512/febqx6o2tkuoto7gnskj.png"
-    },
-    {
-      "id": "fb4a",
-      "firstName": "Mermelada",
-      "stock": 100,
-      "category": "Elaborados",
-      "price": 5,
-      "description": "Mermelada casera de rosa mosqueta",
-      "file": "https://res.cloudinary.com/dgusxuq9j/image/upload/v1709116091/lpe5ljmm7zn4oodt3hni.png "
-    },
-    {
-      "id": "43ff",
-      "firstName": "Tabla de quesos",
-      "stock": 20,
-      "category": "elaborados",
-      "price": 20,
-      "description": "Quesos de la comarca.",
-      "file": "https://res.cloudinary.com/dgusxuq9j/image/upload/v1709116275/ddlync3ctvwupifcqr11.png "
-    },
-    {
-      "id": "4674",
-      "firstName": "Vino Tinto",
-      "stock": 20,
-      "category": "elaborados",
-      "price": "8",
-      "description": "Vino Denominación de Origen. Cosecha 2010.",
-      "file": "https://res.cloudinary.com/dgusxuq9j/image/upload/v1709116483/sxxp6bhmyg15x9tzd2u7.png "
-    },
-    {
-      "id": "2304",
-      "firstName": "Cerámica Local",
-      "stock": 10,
-      "category": "Artesanía local",
-      "price": 20,
-      "description": "Cuenco de cerámica.",
-      "file": "https://res.cloudinary.com/dgusxuq9j/image/upload/v1709116661/p9v0oceb0ie61myg2rjc.png "
-    },
-    {
-      "id": "69ce",
-      "firstName": "Verdura Eco Local",
-      "stock": 10,
-      "category": "De la huerta a la mesa",
-      "price": 15,
-      "description": "Cesta de frutas y verduras ecológicas de procedencia local.",
-      "file": "https://res.cloudinary.com/dgusxuq9j/image/upload/v1709116853/cyog5t1fwsrbrb72vkeg.png"
-    },
-    {
-      "id": "2ddc",
-      "firstName": "Mermelada",
+      "id": "52c6r",
+      "name": "producto 9",
       "stock": 5,
+      "category": "De la huerta a la mesa",
+      "price": 45,
+      "description": "dfsdgadg",
+      "file": " https://res.cloudinary.com/dgusxuq9j/image/upload/v1709054665/fbcjlik6pxn02vyj2ll9.png"
+    },
+    {
+      "id": "5c0rc",
+      "name": "ksndflklsd",
+      "stock": 4,
+      "category": "Artesanía local",
+      "price": 225,
+      "description": "sadfasdf",
+      "file": " https://res.cloudinary.com/dgusxuq9j/image/upload/v1709054693/oqtefqhrdxgvvpeyrcv2.png"
+    },
+    {
+      "id": "6aea",
+      "name": "produco new",
+      "stock": 5,
+      "category": "De la huerta a la mesa",
+      "price": 5,
+      "description": "asdfadf",
+      "file": " https://res.cloudinary.com/dgusxuq9j/image/upload/v1709200936/x3moxonmyv7llvatxkhy.png"
+    },
+    {
+      "id": "5ac7",
+      "name": "prueba 55",
+      "stock": 4,
       "category": "Elaborados",
       "price": 1,
       "description": "Las cards van adaptando su tamaño según el tamaño de las fotos o del largo de la descripción. Y las fotos al guardarlas ya modificadas se han hecho más pequeñas y no se porque",
@@ -80,15 +98,6 @@
       "price": 4,
       "description": "prueba",
       "file": " https://res.cloudinary.com/dgusxuq9j/image/upload/v1709195307/fy3sgs9w8kuqtq6mfddw.png"
-    },
-    {
-      "id": "a2d4",
-      "name": "naranjas",
-      "stock": 10,
-      "category": "De la huerta a la mesa",
-      "price": 30,
-      "description": "naranjas",
-      "file": " https://res.cloudinary.com/dgusxuq9j/image/upload/v1709225127/zfnzbhzzpgd6ujw9itb2.png"
     }
   ],
   "users": [
