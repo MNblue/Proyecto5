@@ -1,6 +1,6 @@
 import { Container, Row, Col, Stack } from 'react-bootstrap';
 import './footer.css'
-import homeIcon from '../../img/logoHome.svg';
+import homeIcon from '../../img/HomeLogoFooter.svg';
 import facebook from '../../img/facebook.svg';
 import instagram from '../../img/instagram.svg';
 import twitter from '../../img/twitter.svg';

@@ -1,6 +1,5 @@
 footer {
-    width: auto;
-    height: 109px;
+    height: 60px;
     position: fixed;
     left: 0;
     bottom: 0;
@@ -8,10 +7,10 @@ footer {
 }
 
 .logoFooter{
-    width: 60px;
-    height: 65px;
+    width: 30px;
+    height: auto;
     margin-left: 35px;
-    margin-top: 20px;
+    margin-top: 10px;
 }
 
 .rrssFooter{
