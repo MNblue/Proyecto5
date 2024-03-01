@@ -68,7 +68,7 @@ function FormAddProduct() {
         <Col >
           <Card style={{ width: "80vw" }} className="form-container">
             <Card.Body>
-              <Card.Title className="text-center">Rincón Rural • Valle de la Comarca</Card.Title>
+              <Card.Title className="text-center">Rincón Rural · Valle de la Comarca</Card.Title>
               <Formik
                 onSubmit={(values, { setSubmitting, resetForm }) => {
                   // Aquí debes manejar la subida del producto
