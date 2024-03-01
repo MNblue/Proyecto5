@@ -1,33 +1,6 @@
 {
   "products": [
     {
-      "id": "3",
-      "name": "producto 1",
-      "price": "5.994",
-      "category": "Artesanía local",
-      "file": "https://res.cloudinary.com/dgusxuq9j/image/upload/v1708955066/cck61ftl3ir8ifvbn4qt.png",
-      "description": "descripcion444 del producto primero bla bla bla blufffffffffffrteryteryeryeryeryfffdfsdfuuuu",
-      "stock": "70"
-    },
-    {
-      "id": "001d",
-      "name": "producto 2",
-      "stock": "4",
-      "category": "De la huerta a la mesa",
-      "price": "2",
-      "description": "dudu dudud ududu",
-      "file": "https://res.cloudinary.com/dgusxuq9j/image/upload/v1708958512/febqx6o2tkuoto7gnskj.png"
-    },
-    {
-      "id": "9bc0",
-      "name": "producto 3",
-      "stock": 4,
-      "category": "Artesanía local",
-      "price": 8,
-      "description": "dddd",
-      "file": " https://res.cloudinary.com/dgusxuq9j/image/upload/v1709054639/n0dzpecd2bbcb7rttyxt.png"
-    },
-    {
       "id": "52c6",
       "name": "producto 4",
       "stock": 5,
@@ -39,7 +12,7 @@
     {
       "id": "5c0c",
       "name": "producto 5",
-      "stock": 4,
+      "stock": "1",
       "category": "Artesanía local",
       "price": 5,
       "description": "sadfasdf",
@@ -89,6 +62,24 @@
       "price": 5,
       "description": "asdfasdfsf",
       "file": " https://res.cloudinary.com/dgusxuq9j/image/upload/v1709201133/zevcpg8tnymkl3ftwnm5.png"
+    },
+    {
+      "id": "1abb",
+      "name": "yamila",
+      "stock": 245,
+      "category": "De la huerta a la mesa",
+      "price": 354,
+      "description": "kjlñ",
+      "file": "https://res.cloudinary.com/dgusxuq9j/image/upload/v1709284359/umjjvynphms9ukd29fjw.svg "
+    },
+    {
+      "id": "ac9f",
+      "name": "fdghjtyj",
+      "stock": 351,
+      "category": "Elaborados",
+      "price": 3515,
+      "description": "hola prueba",
+      "file": "https://res.cloudinary.com/dgusxuq9j/image/upload/v1709284359/umjjvynphms9ukd29fjw.svg "
     }
   ],
   "users": [

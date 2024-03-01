@@ -9,7 +9,8 @@ import { useLocation } from 'react-router-dom';
 import { productService } from '../../service/productService';
 import * as formik from "formik";
 import * as yup from "yup";
-
+import NavbarOne from '../navbar/NavbarOne';
+import LoginPopUp from '../loginPopUp/LoginPopUp';
 
 
 
@@ -23,6 +24,8 @@ function CardDetail() {
 
   const [editable, setEditable] = useState(false);
   const [editedProduct, setEditedProduct] = useState({ ...product });
+
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   //si hacemos clic en el boton de editar entonces la variable editable es true para que se pueda editar ya que al inicio es false
   const handleEditClick = () => {
@@ -88,7 +91,16 @@ function CardDetail() {
       );
       widget.open();
     };
-  
+    
+    
+  const openModal = () => {
+    setIsModalOpen(true);
+  };
+
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+  };
     // const ImageUpload = () => {
     //   const handleSubmit = async (values) => {
     //     // Obtener la URL de la imagen del estado
@@ -99,6 +111,8 @@ function CardDetail() {
 
   return (
     <>
+    <NavbarOne openModal={openModal} isLogged={isLogged} />
+    {isModalOpen && <LoginPopUp closeModal={closeModal} />}
     <main>
     <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
       <Card className="sombreado" style={{ width: '44rem' }}>
