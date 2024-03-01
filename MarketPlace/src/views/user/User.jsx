@@ -5,7 +5,7 @@ import React, { useState } from 'react';
 import CardOne from '../../components/card/CardOne';
 import Filter from '../../components/filter/Filter';
 import { useEffect } from 'react';
-
+import NavbarOne from '../../components/navbar/NavbarOne';
 
 import './user.css';
 
@@ -34,7 +34,7 @@ function User() {
 
   return (
     <>
-      <NavbarOne openModal={openModal} />
+      <NavbarOne openModal={openModal} isLogged={isLogged} />
       {isModalOpen && <LoginPopUp closeModal={closeModal} />}
 
       <Filter optionSelected={optionFilterM} />
