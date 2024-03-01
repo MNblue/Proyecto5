@@ -6,19 +6,23 @@ import { userService } from '../../service/userService';
 import { useNavigate } from 'react-router-dom';
 import Validate from './Validate';
 import { Link } from 'react-router-dom';
-import { FaUser } from "react-icons/fa";
-import { FaLock } from "react-icons/fa";
+import { RiUserLine } from "react-icons/ri";
+//import { GoLock } from "react-icons/go";
+import { FiLock } from "react-icons/fi";
+import { FiUnlock } from "react-icons/fi";
 import Swal from 'sweetalert2';
 import { useGoogleLogin } from '@react-oauth/google';
 import axios from 'axios';
 import styled from 'styled-components';
 
 const HoverModal = styled.div`
-  position: fixed;
-  top: 100%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  padding: 10px;
+  position: absolute;
+  // top: 50%;
+  // left: 50%;
+  // transform: translate(-100%, -100%);
+  top: 150px; /* Adjust as needed */
+  left: 2%; /* Adjust as needed */
+  padding: 5px;
   background-color: #fff;
   border: 1px solid #ccc;
   border-radius: 4px;
@@ -35,7 +39,6 @@ const LoginPopUp = ({ closeModal }) => {
     display: 'block',
     position: 'initial',
     backgroundColor: 'rgba(0, 0, 0, 0.700)',
-    // backdropFilter: 'blur(5px)',
     position: 'fixed',
     top: '50%',
     left: '50%',
@@ -54,24 +57,29 @@ const LoginPopUp = ({ closeModal }) => {
     boxShadow: '0 4px 4px rgba(0, 0, 0, 0.25)',
     margin: '10px auto',
     padding: '10px',
-    fontSize: '20px'
+    fontSize: '20px',
   };
 
   const stylesCloseBtn = {
+    position: 'absolute',
+    right: '20px',
+    top: '50%',
+    transform: 'translateY(-50%)',
     backgroundColor: 'transparent',
     color: '#000',
-    height: 'auto',
-    border: 'none',
-    boxShadow: '0 0 10px #e9e0e9',
+    fontWeight: 'bold',
+    fontSize: '18px',
+    height: '40px',
+    width: '40px',
+    border: '1px solid #D0CACA',
+
   };
 
   const stylesModalDialog = {
     backgroundColor: '#fff',
     backdropFilter: 'none',
     borderRadius: '10px',
-    color: '',
-    height: '',
-    border: '',
+    color: '#3D5B81',
     boxShadow: '0 4px 4px rgba(0, 0, 0, 0.25)',
   };
   ///////////////////////////////////
@@ -121,6 +129,12 @@ const LoginPopUp = ({ closeModal }) => {
     }
   };
 
+  /////////////Password visibility///////////////
+  const [showPassword, setShowPassword] = useState(false);
+
+  const handleTogglePassword = () => {
+    setShowPassword(!showPassword);
+  };
 
   ///////////Google-Sing-In//////////
   const [googleUserData, setGoogleUserData] = useState(null);
@@ -199,8 +213,8 @@ const LoginPopUp = ({ closeModal }) => {
       style={styleModalShow}>
 
       <Modal.Dialog style={stylesModalDialog}>
-        <Modal.Header>
-          <Modal.Title>Iniciar Sesión</Modal.Title>
+        <Modal.Header style={{ justifyContent: "center", position: "relative", }}>
+          <Modal.Title style={{ letterSpacing: "0.84px", fontSize: "26px" }}>Iniciar Sesión</Modal.Title>
           <Button style={stylesCloseBtn} variant="secondary" onClick={closeModal}>X</Button>
         </Modal.Header>
 
@@ -209,11 +223,19 @@ const LoginPopUp = ({ closeModal }) => {
             <form action="" >
               <div className='input-box'>
                 <input type='email' name='useremail' value={user.useremail} onChange={handleUserChange} placeholder='Email: ejemplo@gmail.com' required />
-                <FaUser className='icon' />
+
+                <div className='icon'> <RiUserLine /></div>
               </div>
               <div className='input-box'>
-                <input type='password' name='userpassword' value={user.userpassword} onChange={handleUserChange} placeholder='Contraseña' required />
-                <FaLock className='icon' />
+                <input type={showPassword ? 'text' : 'password'}
+                  name='userpassword'
+                  value={user.userpassword}
+                  onChange={handleUserChange}
+                  placeholder='Contraseña' required />
+
+                <div className='icon' onClick={handleTogglePassword}>
+                  {showPassword ? <FiUnlock /> : <FiLock />}
+                </div>
               </div>
 
               <div className="remember-forgot">
@@ -230,14 +252,21 @@ const LoginPopUp = ({ closeModal }) => {
 
               <div className="btnHolder">
                 <Button style={customStylesLogin} onClick={handleLogin}>Log in</Button>
+                <span style={{ color: '#555', fontWeight: 'bold' }}>— or —</span>
                 <Button style={customStylesLogin}
                   onClick={() => login()}
                   onMouseEnter={() => setIsHovered(true)}
-                  onMouseLeave={() => setIsHovered(false)}>Entrar con Google 🚀</Button>
-                <HoverModal visible={isHovered}>
+                  onMouseLeave={() => setIsHovered(false)}>Sing in with <span className="g">G</span>
+                  <span className="o1">o</span>
+                  <span className="o2">o</span>
+                  <span className="g2">g</span>
+                  <span className="l">l</span>
+                  <span className="e">e</span> 🚀</Button>
+                <HoverModal visible={isHovered ? 1 : 0}>
                   <p>Acepta la política de privacidad si aún no lo ha hecho</p>
                 </HoverModal>
                 
+
               </div>
               <div className="register-link">
                 <p>¿Todavía no tienes cuentas?
