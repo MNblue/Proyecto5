@@ -1,6 +1,10 @@
 .textProductName {
+  width: fit-content;
     font-size: 30px;
     font-family: 'Fredoka One', sans-serif;
+    box-shadow: 2px 2px 5px 1px rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+    padding: 3px;
   }
 
   .imgCardDetail {
@@ -31,7 +35,18 @@
     border-radius: 4px;
     padding: 3px;
     padding-right: 5px;
-    font-size: 10px;
+    font-size: 15px;
     font-family: 'Fredoka One', sans-serif;
   }
   
+  .containerDetail {margin-top: 60px;}
+
+  .description {
+    font-size: 20px;
+    font-family: 'Fredoka One', sans-serif;
+    box-shadow: 2px 2px 5px 1px rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+    padding: 3px;
+    width: fit-content;
+
+  }

@@ -14,7 +14,7 @@ import NavbarOne from '../navbar/NavbarOne';
 import LoginPopUp from '../loginPopUp/LoginPopUp';
 import turnleft from './turnleft.png';
 import Footer from '../footer/Footer';
-
+import { Link } from 'react-router-dom';
 
 
 function CardDetail() {
@@ -105,10 +105,31 @@ function CardDetail() {
 
   return (
     <>
-    <NavbarOne /> 
+      <NavbarOne />
       <main>
-        
-        <Button style={{ position: 'absolute', top: '10px', right: '10px', zIndex: '9999', marginTop: "40px", marginRight: "200px", backgroundColor: "white", boxShadow: " 2px 2px 5px 1px rgba(0, 0, 0, 0.2)", color: "black", border: "none" }} onClick={() => history.push('/')}>Volver <img src={turnleft} style={{ width: "30px", height: "30px" }} /></Button>
+
+        <Link
+          to="/" // Esta línea establece la URL a la que se dirigirá el enlace
+          style={{
+            position: 'absolute',
+            top: '100px',
+            right: '200px',
+            zIndex: '9999',
+            marginTop: '30px',
+            marginRight: '300px',
+            padding: '5px',
+            backgroundColor: 'white',
+            boxShadow: '2px 2px 5px 1px rgba(0, 0, 0, 0.2)',
+            color: 'black',
+            border: 'none',
+            borderRadius: '8px',
+            textDecoration: 'none', // Elimina la subrayado predeterminado del enlace
+            fontFamily: 'Fredoka One',
+
+          }}
+        >
+          Volver <img src={turnleft} style={{ width: '30px', height: '30px' }} />
+        </Link>
 
         {/* <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
       <Card className="sombreado" style={{ width: '44rem' }}>
@@ -165,9 +186,9 @@ function CardDetail() {
 
 
                 <Col md={3} className="detail">
-                  <Card className="classCategory" style={{ width: '40rem', height:'50rem', display: 'flex', flexDirection: 'column', boxShadow: '2px 2px 5px 1px rgba(0, 0, 0, 0.2)' }}>
-                    
-                    <Card.Text style={{ textAlign: 'center', marginTop: '5px', paddingBottom: '0px', marginBottom: '0px', fontSize: '12px' , color:'black',}}>
+                  <Card className="classCategory" style={{ width: '40rem', height: '50rem', display: 'flex', flexDirection: 'column', boxShadow: '2px 2px 5px 1px rgba(0, 0, 0, 0.2)' }}>
+
+                    <Card.Text style={{ textAlign: 'center', marginTop: '20px', paddingBottom: '0px', marginBottom: '0px', fontSize: '12px', color: 'black', }}>
 
                       {/* <div className={isLogged ? 'btnDeleteDch' : 'btnDeleteDchUser'}> */}
                       <div > {product.category}</div>
@@ -183,9 +204,10 @@ function CardDetail() {
                         {product.price}€
                       </div>
                     </div>
-                    
+
                     <Card.Body style={{ flex: '1', padding: '0px' }}>
-                      <div style={{ textAlign: 'right', paddingBottom: '5px' }}><span className='boxSmallDetail'>Stock: {product.stock}</span></div>
+                      <div style={{ textAlign: 'right', paddingBottom: '50px' }}><span className='boxSmallDetail'>
+                        Unidades: {product.stock}</span></div>
 
                       <div style={{ display: 'flex', flexDirection: 'column', gap: '15px' }}>
                         <div style={{ padding: '8px' }}>
@@ -214,7 +236,7 @@ function CardDetail() {
 
 
       </main>
-      <Footer /> 
+      <Footer />
     </>
   );
 }
