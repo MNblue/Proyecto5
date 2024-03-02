@@ -25,6 +25,11 @@ function Admin() {
       <FormAddProduct />
       <Filter optionSelected={optionFilterM} />
       <CardOne isLogged={isLogged} selectOpt={optionFilter} />
+     
+        <FormAddProduct />
+        <CardOne isLogged={isLogged} selectOpt={'option1'} />
+    
+      <Footer />
     </>
   );
 }

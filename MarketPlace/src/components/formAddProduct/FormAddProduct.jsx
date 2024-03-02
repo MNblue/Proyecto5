@@ -63,12 +63,12 @@ function FormAddProduct() {
   return (
 <>
 <p className="headTextForm">¡Sube tu producto para compartirlo con tus vecinos!</p>
-    <Container className="d-flex justify-content-center mt-5 mb-5 form-container">
+    <Container className="d-flex justify-content-center mt-5 mb-5">
       <Row >
         <Col >
           <Card style={{ width: "80vw" }} className="form-container">
             <Card.Body>
-              <Card.Title className="text-center">Rincón Rural • Valle de la Comarca</Card.Title>
+              <Card.Title className="text-center">Rincón Rural · Valle de la Comarca</Card.Title>
               <Formik
                 onSubmit={(values, { setSubmitting, resetForm }) => {
                   // Aquí debes manejar la subida del producto
