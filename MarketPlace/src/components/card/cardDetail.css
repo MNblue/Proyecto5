@@ -1,7 +1,7 @@
 .textProductName {
   position: relative;
   width: fit-content;
-  font-size: 25px;
+  font-size: 20px;
   font-family: 'Fredoka One', sans-serif;
   box-shadow: 2px 2px 5px 1px rgba(0, 0, 0, 0.2);
   border-radius: 4px;
@@ -13,7 +13,7 @@
 .textCategoryName {
   position: relative;
   width: fit-content;
-  font-size: 25px;
+  font-size: 20px;
   font-family: 'Fredoka One', sans-serif;
   box-shadow: 2px 2px 5px 1px rgba(0, 0, 0, 0.2);
   border-radius: 4px;
@@ -30,7 +30,7 @@
 }
 
 .boxSmallDetail {
-  font-size: 20px;
+  font-size: 15px;
   font-family: 'Fredoka One', sans-serif;
   box-shadow: 2px 2px 5px 1px rgba(0, 0, 0, 0.2);
   border-radius: 4px;
@@ -63,5 +63,10 @@
   border-radius: 4px;
   padding: 3px;
   width: fit-content;
+  background-color: #EBE8E8;
 
+}
+
+.detail{
+  background-color:#F5F5F5;
 }

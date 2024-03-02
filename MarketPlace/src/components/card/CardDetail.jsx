@@ -188,7 +188,7 @@ function CardDetail() {
                 <Col md={3} className="detail">
                   <Card className="classCategory1" style={{ width: '40rem', height: '50rem', display: 'flex', flexDirection: 'column', boxShadow: '2px 2px 5px 1px rgba(0, 0, 0, 0.2)' }}>
 
-                    <Card.Text style={{ textAlign: 'center', marginTop: '20px', paddingBottom: '0px', marginBottom: '0px', fontSize: '20px', color: 'black', }}>
+                    <Card.Text style={{ textAlign: 'center', marginTop: '20px', paddingBottom: '0px', marginBottom: '0px', fontSize: '20px', color: 'black',}}>
 
                       {/* <div className={isLogged ? 'btnDeleteDch' : 'btnDeleteDchUser'}> */}
                       {/* <div > {product.category}</div> */}
@@ -207,16 +207,16 @@ function CardDetail() {
                       <div style={{ display: 'flex', flexDirection: 'column', gap: '15px', alignItems: 'center' }}>
                         <div style={{ display: 'flex', flexDirection: 'row', gap: '15px', alignItems: 'center' }}>
                           <div>
-                            <Card.Title className='textCategoryName'>{product.category}</Card.Title>
+                            <Card.Title className='textCategoryName'>Categoría: {product.category}</Card.Title>
                           </div>
 
                           <div>
-                            <Card.Title className='textProductName'>{product.name}</Card.Title>
+                            <Card.Title className='textProductName'>Producto: {product.name}</Card.Title>
                           </div>
 
                         </div>
                         
-                        <Card.Text className="description" style={{ textAlign: 'center', margin: '0 20px' }}>
+                        <Card.Text className="description" style={{ textAlign: 'center', margin: '0 20px' }}> Descripción: 
                           {product.description}<br></br>
                         </Card.Text>
 
@@ -226,7 +226,7 @@ function CardDetail() {
                           </div>
 
                           <div className='boxSmallPriceDetail' style={{ textAlign: 'center' }}>
-                            {product.price} €
+                            Precio: {product.price} €
                           </div>
                           
                         </div>

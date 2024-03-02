@@ -53,6 +53,15 @@
       "price": 1,
       "description": "Las cards van adaptando su tamaño según el tamaño de las fotos o del largo de la descripción. Y las fotos al guardarlas ya modificadas se han hecho más pequeñas y no se porque",
       "file": "https://res.cloudinary.com/dgusxuq9j/image/upload/v1709116940/cxumjmsav0idb3uie0g2.jpg "
+    },
+    {
+      "id": "eb7c",
+      "name": "Cuencos de Cerámica",
+      "stock": 10,
+      "category": "Artesanía local",
+      "price": 5,
+      "description": "Hechos a mano, personalizados. Modelos únicos.",
+      "file": "https://res.cloudinary.com/dgusxuq9j/image/upload/v1709417694/shacnsnoncfrajlk0dpi.png "
     }
   ],
   "users": [
