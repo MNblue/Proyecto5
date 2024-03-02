@@ -33,37 +33,38 @@ function User() {
     <>
       <NavbarOne openModal={openModal} isLogged={isLogged} />
       {isModalOpen && <LoginPopUp closeModal={closeModal} />}
-
-      <Container fluid>
-        <div className="image-container">
-          <Container className="d-flex justify-content-center">
-            <Row className="flex-column">
-              <Col className="mt-5">
-                <h1 className="title-home fs-2">
-                  ¡Descubre el sabor auténtico del campo en Rincón Rural!
-                  <br />
-                  ¡Tu conexión con la frescura del valle!
-                </h1>
-              </Col>
-            </Row>
-          </Container>
-          <Container className="d-flex justify-content-center">
-            <Row>
-              <Col>
-                <h4 className="subtitle-home mt-3 text-center fs-6">
-                  ¡Compra y vende tusproductos frescos, elaborados y artesanía
-                  local... Disfruta de lo mejor de nuestra tierra <br />
-                  ¡Además todos los productos son denominación de origen, ama tu
-                  tierra!
-                </h4>
-              </Col>
-            </Row>
-          </Container>
-        </div>
-        <Filter optionSelected={optionFilterM} />
-        <CardOne isLogged={isLogged} selectOpt={optionFilter} />
-      </Container>
       
+      <div className="image-container">
+        <Container className="d-flex justify-content-center">
+          <Row className="flex-column">
+            <Col className="mt-5">
+              <h1 className="title-home fs-2">
+                ¡Descubre el sabor auténtico del campo en Rincón Rural!
+                <br />
+                ¡Tu conexión con la frescura del valle!
+              </h1>
+            </Col>
+          </Row>
+        </Container>
+        <Container className="d-flex justify-content-center">
+          <Row>
+            <Col>
+              <h4 className="subtitle-home mt-3 text-center fs-6">
+                ¡Compra y vende tusproductos frescos, elaborados y artesanía
+                local... Disfruta de lo mejor de nuestra tierra <br />
+                ¡Además todos los productos son denominación de origen, ama tu
+                tierra!
+              </h4>
+            </Col>
+          </Row>
+        </Container>
+      </div>
+      <Filter optionSelected={optionFilterM} />
+
+      <div className="container-cards">
+        <CardOne isLogged={isLogged} selectOpt={optionFilter} />
+      </div>
+
       <Footer />
     </>
   );
