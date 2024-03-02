@@ -63,7 +63,7 @@ function FormAddProduct() {
   return (
 <>
 <p className="headTextForm">¡Sube tu producto para compartirlo con tus vecinos!</p>
-    <Container className="d-flex justify-content-center mt-5 mb-5 form-container">
+    <Container className="d-flex justify-content-center mt-5 mb-5">
       <Row >
         <Col >
           <Card style={{ width: "80vw" }} className="form-container">

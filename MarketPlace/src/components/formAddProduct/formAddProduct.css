@@ -3,9 +3,11 @@
     background-image: url('images/formBackgroundLogo.svg');
     background-repeat: no-repeat;
     background-position: center;
+    background-size: 100%;
     background-color: #F5F5F5;
     /* max-width: 50rem;  */
-    margin: auto; 
+    margin: auto;
+    
     max-width: 900px;
 }
 
@@ -17,8 +19,8 @@
 }
 
 .formButton {
-    width: 304px;
-    height: 42px;
+    width: 80%;
+    height: auto;
     background-color: #3D5B81; 
     color: #fff; 
     border: none; 
@@ -37,8 +39,8 @@
 }
 
 .formButtonSelect {
-    width: 304px;
-    height: 42px;
+    width: 100%;
+    height: auto;
     background-color: #3D5B81; 
     color: #fff; 
     border: none; 

@@ -11,10 +11,10 @@ function Admin() {
 
   return (
     <>
-      <main>
+     
         <FormAddProduct />
         <CardOne isLogged={isLogged} selectOpt={'option1'} />
-      </main>
+    
       <Footer />
     </>
   )
