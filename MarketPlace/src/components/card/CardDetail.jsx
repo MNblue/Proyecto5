@@ -188,7 +188,7 @@ function CardDetail() {
                 <Col md={3} className="detail">
                   <Card className="classCategory" style={{ width: '40rem', height: '50rem', display: 'flex', flexDirection: 'column', boxShadow: '2px 2px 5px 1px rgba(0, 0, 0, 0.2)' }}>
 
-                    <Card.Text style={{ textAlign: 'center', marginTop: '20px', paddingBottom: '0px', marginBottom: '0px', fontSize: '12px', color: 'black', }}>
+                    <Card.Text style={{ textAlign: 'center', marginTop: '20px', paddingBottom: '0px', marginBottom: '0px', fontSize: '20px', color: 'black', }}>
 
                       {/* <div className={isLogged ? 'btnDeleteDch' : 'btnDeleteDchUser'}> */}
                       <div > {product.category}</div>
@@ -200,21 +200,29 @@ function CardDetail() {
                     </Card.Text>
                     <div style={{ display: 'flex', flexDirection: 'column', paddingTop: '0px', gap: '20px', textAlign: 'center', position: 'relative' }}>
                       <Card.Img variant="top" src={product.file} className='imgCardDetail' />
-                      <div className='boxSmallPriceDetail'>
-                        {product.price}€
-                      </div>
+
                     </div>
 
                     <Card.Body style={{ flex: '1', padding: '0px' }}>
-                      <div style={{ textAlign: 'right', paddingBottom: '50px' }}><span className='boxSmallDetail'>
-                        Unidades: {product.stock}</span></div>
+
+
 
                       <div style={{ display: 'flex', flexDirection: 'column', gap: '15px' }}>
                         <div style={{ padding: '8px' }}>
                           <Card.Title className='textProductName'>{product.name}</Card.Title>
                           <Card.Text className="description">
                             {product.description}<br></br>
+
                           </Card.Text>
+                          <div className='boxSmallDetail'>
+                            Unidades: {product.stock}
+                          </div>
+
+                          <div className='boxSmallPriceDetail'>
+                            {product.price} €
+                          </div>
+
+
                         </div>
 
                       </div>
