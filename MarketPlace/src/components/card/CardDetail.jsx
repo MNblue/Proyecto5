@@ -13,7 +13,7 @@ import * as yup from "yup";
 import NavbarOne from '../navbar/NavbarOne';
 import LoginPopUp from '../loginPopUp/LoginPopUp';
 import turnleft from './turnleft.png';
-
+import Footer from '../footer/Footer';
 
 
 
@@ -105,7 +105,9 @@ function CardDetail() {
 
   return (
     <>
+    <NavbarOne /> 
       <main>
+        
         <Button style={{ position: 'absolute', top: '10px', right: '10px', zIndex: '9999', marginTop: "40px", marginRight: "200px", backgroundColor: "white", boxShadow: " 2px 2px 5px 1px rgba(0, 0, 0, 0.2)", color: "black", border: "none" }} onClick={() => history.push('/')}>Volver <img src={turnleft} style={{ width: "30px", height: "30px" }} /></Button>
 
         {/* <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
@@ -144,6 +146,7 @@ function CardDetail() {
           </div>
         </Card.Body>
       </Card>
+       
     </div> */}
 
 
@@ -211,6 +214,7 @@ function CardDetail() {
 
 
       </main>
+      <Footer /> 
     </>
   );
 }
