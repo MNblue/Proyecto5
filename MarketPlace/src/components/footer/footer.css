@@ -1,7 +1,6 @@
 @media (min-width: 599px) {
     footer {
         height: 60px;
-        position: fixed;
         left: 0;
         bottom: 0;
         width: 100%;
