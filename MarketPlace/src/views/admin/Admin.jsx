@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import FormAddProduct from "../../components/formAddProduct/FormAddProduct";
 import NavbarOne from "../../components/navbar/NavbarOne";
 import Filter from '../../components/filter/Filter';
+import Footer from "../../components/footer/Footer";
 
 function Admin() {
   const [isLogged, setIsLogged] = useState(true);
@@ -26,8 +27,6 @@ function Admin() {
       <Filter optionSelected={optionFilterM} />
       <CardOne isLogged={isLogged} selectOpt={optionFilter} />
      
-        <FormAddProduct />
-        <CardOne isLogged={isLogged} selectOpt={'option1'} />
     
       <Footer />
     </>
