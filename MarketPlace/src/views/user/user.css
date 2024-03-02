@@ -1,0 +1,25 @@
+.image-container{
+    height: 80%;
+    position: relative;
+    background-image: url('../../img/imageHome.svg');
+    background-size: cover;
+    background-position: center;
+}
+
+.title-home{
+    font-family: "Dancing Script", cursive;
+    transition: transform 0.5s ease-in-out, filter 0.5s ease-in-out;
+}
+
+.title-home:hover{
+    transform: scale(1.1); 
+    filter:drop-shadow(1px) 
+}
+
+.subtitle-home{
+    transition: transform 0.5s ease-in-out, filter 0.5s ease-in-out;
+}
+.subtitle-home:hover{
+    transform: scale(1.1); 
+    filter:drop-shadow(1px) 
+}
