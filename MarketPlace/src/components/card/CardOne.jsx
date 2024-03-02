@@ -292,8 +292,8 @@ function CardOne({ isLogged, selectOpt }) {
                         <Row>
                             {filteredProductList.slice(startIndex, startIndex + 4).map((product, index) => (
                                 //  {productList.slice(startIndex, startIndex + 4).map((product, index) => (
-
-                                <Col key={index} md={3} className="mb-1">
+<Col key={index} xs={12} md={3} className="mb-1">
+                                {/* <Col key= md={3} className="mb-1"> */}
                                     <Card className="classCategory" style={{ width: '13rem', display: 'flex', flexDirection: 'column', boxShadow: ' 1px 12px 16px -1px rgba(174,187,209,0.81)' }}>
                                         <Card.Text style={{ textAlign: 'center', marginTop: '5px', paddingBottom: '0px', marginBottom: '0px', fontSize: '12px' }}>
 
