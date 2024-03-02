@@ -186,12 +186,12 @@ function CardDetail() {
 
 
                 <Col md={3} className="detail">
-                  <Card className="classCategory" style={{ width: '40rem', height: '50rem', display: 'flex', flexDirection: 'column', boxShadow: '2px 2px 5px 1px rgba(0, 0, 0, 0.2)' }}>
+                  <Card className="classCategory1" style={{ width: '40rem', height: '50rem', display: 'flex', flexDirection: 'column', boxShadow: '2px 2px 5px 1px rgba(0, 0, 0, 0.2)' }}>
 
                     <Card.Text style={{ textAlign: 'center', marginTop: '20px', paddingBottom: '0px', marginBottom: '0px', fontSize: '20px', color: 'black', }}>
 
                       {/* <div className={isLogged ? 'btnDeleteDch' : 'btnDeleteDchUser'}> */}
-                      <div > {product.category}</div>
+                      {/* <div > {product.category}</div> */}
                       {/* <div style={{ textAlign:'right'}}>
                                                     {isLogged && (<button disabled={!isLogged} onClick={() => handleClickDelete(product.id)} style={{ border: 'none', background: 'none', padding: 0, cursor: 'pointer', outline: 'none', marginLeft: 'auto' }}><img src='/src/components/card/delete.png' style={{ width: '14px', height: '14px', border: 'none' }} /></button>)}
                                                 </div>
@@ -203,32 +203,37 @@ function CardDetail() {
 
                     </div>
 
-                    <Card.Body style={{ flex: '1', padding: '0px' }}>
+                    <Card.Body style={{ flex: '1', padding: '0px', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+                      <div style={{ display: 'flex', flexDirection: 'column', gap: '15px', alignItems: 'center' }}>
+                        <div style={{ display: 'flex', flexDirection: 'row', gap: '15px', alignItems: 'center' }}>
+                          <div>
+                            <Card.Title className='textCategoryName'>{product.category}</Card.Title>
+                          </div>
 
+                          <div>
+                            <Card.Title className='textProductName'>{product.name}</Card.Title>
+                          </div>
 
+                        </div>
+                        
+                        <Card.Text className="description" style={{ textAlign: 'center', margin: '0 20px' }}>
+                          {product.description}<br></br>
+                        </Card.Text>
 
-                      <div style={{ display: 'flex', flexDirection: 'column', gap: '15px' }}>
-                        <div style={{ padding: '8px' }}>
-                          <Card.Title className='textProductName'>{product.name}</Card.Title>
-                          <Card.Text className="description">
-                            {product.description}<br></br>
-
-                          </Card.Text>
-                          <div className='boxSmallDetail'>
+                        <div style={{ display: 'flex', flexDirection: 'row', gap: '15px', alignItems: 'center' }}>
+                          <div className='boxSmallDetail' style={{ textAlign: 'center' }}>
                             Unidades: {product.stock}
                           </div>
 
-                          <div className='boxSmallPriceDetail'>
+                          <div className='boxSmallPriceDetail' style={{ textAlign: 'center' }}>
                             {product.price} €
                           </div>
-
-
+                          
                         </div>
-
                       </div>
-
-
                     </Card.Body>
+
+
                   </Card>
                 </Col>
 

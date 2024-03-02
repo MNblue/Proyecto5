@@ -10,6 +10,17 @@
   
 }
 
+.textCategoryName {
+  position: relative;
+  width: fit-content;
+  font-size: 25px;
+  font-family: 'Fredoka One', sans-serif;
+  box-shadow: 2px 2px 5px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+  padding: 3px;
+  background-color: #EBE8E8;
+  
+}
 .imgCardDetail {
   width: auto;
   height: 500px;
