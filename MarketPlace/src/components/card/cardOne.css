@@ -1,5 +1,14 @@
-.containerA{
-  width:100%;
+.containerA {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.firstRow {
+  width: 100%;
+  margin: 0;
+  justify-content: center;
+  display: flex;
 }
 
 .classCategory {
@@ -10,6 +19,63 @@
   margin: 5px;
   /* overflow: hidden;  */
   height: 370px;
+  width: 13rem;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 1px 12px 16px -1px rgba(174, 187, 209, 0.81);
+}
+
+.deleteBtn {
+  border: none;
+  background: none;
+  padding: 0;
+  cursor: pointer;
+  outline: none;
+  margin-left: auto;
+}
+
+.imgBtnDelete {
+  width: 16px;
+  height: 18px;
+  border: none;
+}
+
+.divCardImg {
+  display: flex;
+  flex-direction: column;
+  padding-top: 0px;
+  gap: 20px;
+  text-align: center;
+  position: 'relative';
+}
+
+.bodyCards {
+  flex: 1;
+  padding: 0px;
+}
+
+.divBtn {
+  margin-top: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 7px;
+}
+
+.imgCarrito {
+  width: 18px;
+  height: 18px;
+  vertical-align: middle;
+  margin-Right: 5px;
+  margin-Top: -2px;
+}
+
+.cardTxt {
+  text-align: center;
+  margin-Top: 5px;
+  padding-Bottom: 0px;
+  margin-Bottom: 0px;
+  font-Size: 12px;
 }
 
 .descripcion {
@@ -82,10 +148,10 @@
   /* font-family: 'Fredoka One', sans-serif; */
 }
 
-.btn2{
+.btn2 {
   background-color: #3D5B81;
-  color:white;
-  border:0;
+  color: white;
+  border: 0;
   border-radius: 4px;
   font-size: 12px;
   /* font-family: 'Fredoka One', sans-serif; */
@@ -94,21 +160,29 @@
   box-shadow: 2px 2px 5px 1px rgba(0, 0, 0, 0.2);
 }
 
-.btn2:hover{
+.btn2:hover {
   background-color: #EE6B4D;
 }
 
-.btn1{
+.btn1 {
   background-color: #3D5B81;
   opacity: 50%;
-  color:white;
-  border:0;
+  color: white;
+  border: 0;
   border-radius: 4px;
   font-size: 12px;
   /* font-family: 'Fredoka One', sans-serif; */
   padding: 4px;
   padding-right: 7px;
   box-shadow: 2px 2px 5px 1px rgba(0, 0, 0, 0.2);
+}
+
+.verMas {
+  width: 13px;
+  height: 13px;
+  vertical-Align: middle;
+  margin-right: 5px;
+  margin-top: -2px;
 }
 
 .custom-tooltip {
@@ -116,22 +190,74 @@
   border-radius: 5px;
 }
 
-div.tooltip-inner{
+div.tooltip-inner {
   background-color: #EE6B4D;
 }
 
 
-.btnArrow{
+.btnArrow {
   border: 0px;
   background-color: rgba(255, 255, 255, 0);
 }
 
-.btnDeleteDch{
-  display:grid;
+.imgBtnArrow {
+  width: 36px;
+  height: 36px;
+}
+
+.btnDeleteDch {
+  display: grid;
   grid-template-columns: 90% 10%;
 }
 
-.btnDeleteDchUser{
-  display:grid;
+.btnDeleteDchUser {
+  display: grid;
   grid-template-columns: 100% 10%;
+}
+
+
+
+@media screen and (max-width: 991px) and (min-width: 700px) {
+  .btn2 {
+    padding: 4px;
+    padding-right: 7px;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+  }
+
+  .containerBtn {
+    margin-top: auto;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 9px;
+  }
+
+  .sizeP {
+    width: 230px;
+    margin: 0;
+  }
+
+  /* .imgBtnArrow{
+  width:36px;
+  height:36px;
+} */
+
+  .containerCardsRow {
+    width: 1200px;
+    margin: 0;
+    left: 0;
+    position: fixed;
+    justify-Content: center;
+    display: flex;
+  }
+
+  .containerA {
+    width: 100%;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+  }
+
 }
