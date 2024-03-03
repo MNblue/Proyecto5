@@ -9,20 +9,17 @@
   padding: 5px;
   margin: 5px;
   /* overflow: hidden;  */
-  height: 370px;
+   height: 370px; 
+
+   width: 13rem;
 }
 
 .descripcion {
   height: 32px;
-  /* Establece una altura máxima para la descripción */
-  /* width:auto; */
   overflow-y: scroll;
-  /* Agrega un scroll vertical cuando el contenido excede la altura máxima */
-  /* background-color: rgb(233, 235, 247); */
-  /* border-radius: 8px; */
   font-size: 11px;
-  /* font-family: 'Fredoka One', sans-serif; */
 }
+
 
 /*Estilos para el scrollbar que nos aparece en el overflow de la descripcion*/
 ::-webkit-scrollbar {
@@ -57,7 +54,8 @@
   margin: 5px;
   border: 1px solid #acacac;
   border-radius: 8px;
-}
+} 
+
 
 .boxSmall {
   box-shadow: 0px 6px 10px 0px rgba(115, 115, 115, 0.38);
@@ -134,4 +132,26 @@ div.tooltip-inner{
 .btnDeleteDchUser{
   display:grid;
   grid-template-columns: 100% 10%;
+}
+
+/* Media query para pantallas más pequeñas */
+@media screen and (max-width: 991px) {
+  .classCategory {
+    width: 9rem;
+   
+  }
+
+  .imgCard {
+    width: 130px; 
+    height: 143px; 
+    margin: 0;
+  }
+
+  .descripcion {
+    font-size: 90%; 
+  }
+
+  .containerBtn{
+    gap:1px;
+  }
 }
