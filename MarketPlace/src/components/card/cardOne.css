@@ -527,7 +527,7 @@ div.tooltip-inner {
   .colContent {
     display: flex;
     flex-direction: row;
-    width: 230px;
+    width: 220px;
     justify-content: center;
   }
 }

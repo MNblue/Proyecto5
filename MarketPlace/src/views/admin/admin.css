@@ -5,11 +5,18 @@
     gap: 0;
 }
 
+
+.containerMain > div:not(:nth-last-child(-n+2)) {
+    margin: 0;
+}
+
+.containerMain > div:nth-last-child(-n+2) {
+    margin-bottom: 40px; 
+}
+
 @media screen and (max-width: 477px) {
 
     .cardC{
-        background-color: peru;
-        margin:70px;
         border: 0;
     }
 

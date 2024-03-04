@@ -30,13 +30,13 @@ function Admin() {
         <div >
           <FormAddProduct />
         </div>
-        <div >
+        <div style={{backgroundColor:'pink'}}>
           <Filter optionSelected={optionFilterM} />
         </div>
         <div className="cardC">
           <CardOne isLogged={isLogged} selectOpt={optionFilter} />
         </div>
-        <div>
+        <div >
           <Footer />
         </div>
       </div>
