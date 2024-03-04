@@ -15,6 +15,7 @@ import LoginPopUp from '../loginPopUp/LoginPopUp';
 import turnleft from './turnleft.png';
 import Footer from '../footer/Footer';
 import { Link } from 'react-router-dom';
+import { center } from '@cloudinary/transformation-builder-sdk/qualifiers/textAlignment';
 
 
 function CardDetail() {
@@ -109,7 +110,7 @@ function CardDetail() {
       <main>
 
         <Link
-          to="/" // Esta línea establece la URL a la que se dirigirá el enlace
+          to="/" 
           style={{
             position: 'absolute',
             top: '100px',
@@ -123,7 +124,7 @@ function CardDetail() {
             color: 'black',
             border: 'none',
             borderRadius: '8px',
-            textDecoration: 'none', // Elimina la subrayado predeterminado del enlace
+            textDecoration: 'none', 
             fontFamily: 'Fredoka One',
 
           }}
@@ -131,124 +132,84 @@ function CardDetail() {
           Volver <img src={turnleft} style={{ width: '30px', height: '30px' }} />
         </Link>
 
-        {/* <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-      <Card className="sombreado" style={{ width: '44rem' }}>
-        <div style={{ color: 'green', textAlign: 'center', backgroundColor: 'lightcolor' }}>
-         
-          <select name="category" value={editable ? editedProduct.category : product.category} onChange={handleInputChange} disabled={!editable} style={{ border: 'none', outline: 'none' }}>
-            <option value="De la huerta a la mesa">De la huerta a la mesa</option>
-            <option value="Artesanía local">Artesanías Locales</option>
-            <option value="Elaborados">Productos Elaborados</option>
-          </select>
-        </div>
-        <Card.Img variant="top" src={imageUrl} />
-
-        {editable && <Button  variant="success" onClick={handleUploadClick}>Cambiar imagen</Button>}
        
-        <Card.Body>
-          <Card.Title style={{ color: 'green' }}>
-            <input type="text" name="name" value={editedProduct.name} onChange={handleInputChange} disabled={!editable} style={{ border: 'none', outline: 'none' }} />
-          </Card.Title>
-          <Card.Text>
-            <textarea name="description" value={editedProduct.description} onChange={handleInputChange} disabled={!editable} style={{ border: 'none', outline: 'none', width: '100%', overflowX: 'auto' }} />
-            <br />
-            <span className="precioDestacado">
-              <input type="number" name="price" value={editedProduct.price} onChange={handleInputChange} disabled={!editable} style={{ border: 'none', outline: 'none' }} /> €
-            </span><br></br> Stock 
-            <span className="stock">
-              <input type="number" name="stock" value={editedProduct.stock} onChange={handleInputChange} disabled={!editable} style={{ border: 'none', outline: 'none' }} />
-            </span>
-          </Card.Text>
-          <div style={{ textAlign: 'center' }}>
-            {editable 
-              ? <Button variant="success" onClick={handleSaveClick} >Guardar</Button>
-              : <Button variant="primary" onClick={handleEditClick} style={{ display: isLogged? 'inline' : 'none' }}>Editar</Button>
-            }
-          </div>
-        </Card.Body>
-      </Card>
-       
-    </div> */}
-
-
-
-
-
-
-
-
         <Container className="containerDetail" style={{ width: '30%' }}>
-          <Row >
-            {/* <Col xs="auto" className="d-flex align-items-center justify-content-center" style={{backgroundColor:'green'}}> */}
+  <Row>
+    <Col>
+      <Row>
+        <Col md={3} className="detail">
+          <Card className="classCategory1" style={{ width: '40rem', height: '50rem', display: 'flex', flexDirection: 'column', boxShadow: '2px 2px 5px 1px rgba(0, 0, 0, 0.2)' }}>
 
-            <Col>
-              <Row>
+            {/* ... Otras partes del código ... */}
+
+            <div style={{ display: 'flex', flexDirection: 'column', paddingTop: '0px', gap: '20px', textAlign: 'center', position: 'relative' }}>
+              <Card.Img variant="top" src={imageUrl} className='imgCardDetail' />
+              <div className='btnChangeImg' style={{ width: '100%' }}>
+                {editable && <Button variant="success" onClick={handleUploadClick} style={{ backgroundColor: '#EBE8E8', color: 'black', width: '100%' }}>Cambiar imagen</Button>}
+              </div>
+            </div>
+
+            <Card.Body style={{ flex: '1', padding: '0px', display: 'flex', flexDirection: 'column' }}>
+
+<div style={{ width: '100%' }}>
+  <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '10px' }}>
+    <div className='textCategoryName'>
+      <select name="category" value={editable ? editedProduct.category : product.category} onChange={handleInputChange} disabled={!editable} style={{ border: 'none', outline: 'none', alignItems: 'center', width: '100%' }}>
+        <option value="Categoría">Categoría</option>
+        <option value="De la huerta a la mesa">De la huerta a la mesa</option>
+        <option value="Artesanía local">Artesanías Locales</option>
+        <option value="Elaborados">Productos Elaborados</option>
+      </select>
+    </div>
+    <div className="productName">
+      <Card.Title style={{ color: 'grey' }}>Producto :
+        <input type="text" name="name" value={editedProduct.name} onChange={handleInputChange} disabled={!editable} style={{ border: 'none', outline: 'none' }} />
+      </Card.Title>
+    </div>
+  </div>
+
+  <div className="description" style={{ width: '100%' }}>
+    Descripción del Producto:
+    <textarea name="description" value={editedProduct.description} onChange={handleInputChange} disabled={!editable} style={{ border: 'none', outline: 'none', width: '100%', overflowX: 'auto' }} />
+  </div>
+</div>
+
+<div style={{ width: '100%', display: 'flex', justifyContent: 'space-between' }}>
+  <div className="boxSmallDetail" style={{ backgroundColor: '#EBE8E8', textAlign: 'center' }}>
+    <span className="precioDestacado">Precio:
+      <input type="number" name="price" value={editedProduct.price} onChange={handleInputChange} disabled={!editable} style={{ border: 'none', outline: 'none' }} /> €
+    </span>
+  </div>
+
+  <div className="boxSmallStock" style={{ textAlign: 'center' }}>
+    Unidades disponibles:
+    <span className="stock">
+      <input type="number" name="stock" value={editedProduct.stock} onChange={handleInputChange} disabled={!editable} style={{ border: 'none', outline: 'none' }} />
+    </span>
+  </div>
+</div>
+
+</Card.Body>
+
+<div className="editProduct" style={{ width: '100%', textAlign: 'center' }}>
+{editable
+  ? <Button variant="success" onClick={handleSaveClick} style={{ width: '100%' }}>Guardar</Button>
+  : <Button variant="primary" onClick={handleEditClick} style={{ display: isLogged ? 'inline' : 'none', width: '100%' }}>Editar producto</Button>
+}
+</div>
+
+</Card>
+</Col>
+</Row>
+</Col>
+</Row>
+</Container>
 
 
-                <Col md={3} className="detail">
-                  <Card className="classCategory1" style={{ width: '40rem', height: '50rem', display: 'flex', flexDirection: 'column', boxShadow: '2px 2px 5px 1px rgba(0, 0, 0, 0.2)' }}>
-
-                    <Card.Text style={{ textAlign: 'center', marginTop: '20px', paddingBottom: '0px', marginBottom: '0px', fontSize: '20px', color: 'black',}}>
-
-                      {/* <div className={isLogged ? 'btnDeleteDch' : 'btnDeleteDchUser'}> */}
-                      {/* <div > {product.category}</div> */}
-                      {/* <div style={{ textAlign:'right'}}>
-                                                    {isLogged && (<button disabled={!isLogged} onClick={() => handleClickDelete(product.id)} style={{ border: 'none', background: 'none', padding: 0, cursor: 'pointer', outline: 'none', marginLeft: 'auto' }}><img src='/src/components/card/delete.png' style={{ width: '14px', height: '14px', border: 'none' }} /></button>)}
-                                                </div>
-                                            </div> */}
-
-                    </Card.Text>
-                    <div style={{ display: 'flex', flexDirection: 'column', paddingTop: '0px', gap: '20px', textAlign: 'center', position: 'relative' }}>
-                      <Card.Img variant="top" src={product.file} className='imgCardDetail' />
-
-                    </div>
-
-                    <Card.Body style={{ flex: '1', padding: '0px', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-                      <div style={{ display: 'flex', flexDirection: 'column', gap: '15px', alignItems: 'center' }}>
-                        <div style={{ display: 'flex', flexDirection: 'row', gap: '15px', alignItems: 'center' }}>
-                          <div>
-                            <Card.Title className='textCategoryName'>Categoría: {product.category}</Card.Title>
-                          </div>
-
-                          <div>
-                            <Card.Title className='textProductName'>Producto: {product.name}</Card.Title>
-                          </div>
-
-                        </div>
-                        
-                        <Card.Text className="description" style={{ textAlign: 'center', margin: '0 20px' }}> Descripción: 
-                          {product.description}<br></br>
-                        </Card.Text>
-
-                        <div style={{ display: 'flex', flexDirection: 'row', gap: '15px', alignItems: 'center' }}>
-                          <div className='boxSmallDetail' style={{ textAlign: 'center' }}>
-                            Unidades: {product.stock}
-                          </div>
-
-                          <div className='boxSmallPriceDetail' style={{ textAlign: 'center' }}>
-                            Precio: {product.price} €
-                          </div>
-                          
-                        </div>
-                      </div>
-                    </Card.Body>
-
-
-                  </Card>
-                </Col>
-
-              </Row>
-            </Col>
 
 
 
-          </Row>
-        </Container>
-
-
-
-
-      </main>
+      </main >
       <Footer />
     </>
   );

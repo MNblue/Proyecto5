@@ -52,6 +52,19 @@
 
 }
 
+.boxSmallStock{
+  font-size: 15px;
+  font-family: 'Fredoka One', sans-serif;
+  box-shadow: 2px 2px 5px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+  padding: 3px;
+  width: fit-content;
+  background-color: #EBE8E8;
+
+
+}
+
+
 .containerDetail {
   margin-top: 60px;
 }
@@ -69,4 +82,42 @@
 
 .detail{
   background-color:#F5F5F5;
+}
+
+.btnChangeImg {
+  font-size: 15px;
+  font-family: 'Fredoka One', sans-serif;
+  box-shadow: 2px 2px 5px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+  padding: 3px;
+  width: 633px;
+  background-color: #EBE8E8;
+  position: relative;
+
+}
+
+
+  .editProduct{
+  font-size: 15px;
+  font-family: 'Fredoka One', sans-serif;
+  box-shadow: 2px 2px 5px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+  padding: 3px;
+  width: 633px;
+  background-color: orange;
+  position: relative;
+
+}
+
+.productName{
+  font-size: 15px;
+  font-family: 'Fredoka One', sans-serif;
+  box-shadow: 2px 2px 5px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+  padding: 3px;
+  width: fit-content;
+  background-color: #EBE8E8;
+  color: black;
+
+
 }

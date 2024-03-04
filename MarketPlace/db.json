@@ -30,11 +30,11 @@
     {
       "id": "52c6r",
       "name": "producto 9",
-      "stock": 5,
-      "category": "De la huerta a la mesa",
-      "price": 45,
-      "description": "dfsdgadg",
-      "file": " https://res.cloudinary.com/dgusxuq9j/image/upload/v1709054665/fbcjlik6pxn02vyj2ll9.png"
+      "stock": "8",
+      "category": "Categoría",
+      "price": "50",
+      "description": "Fruta y verdura kilómetro cero.",
+      "file": "https://res.cloudinary.com/dgusxuq9j/image/upload/v1709553840/vrbnoab6tphif6xhbrvr.png"
     },
     {
       "id": "5c0rc",
