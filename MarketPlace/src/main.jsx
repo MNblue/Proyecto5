@@ -7,19 +7,23 @@ import User from './views/user/User';
 import CardOne from './components/card/CardOne';
 import CardDetail from './components/card/CardDetail';
 import Admin from './views/admin/Admin';
-
+import { GoogleOAuthProvider } from '@react-oauth/google';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
+    <GoogleOAuthProvider clientId="463077361108-j5fj2hqporlk34jgon97gkml7esm2vk6">
     <BrowserRouter>
       <Routes>
-        
+
+
+
         <Route path="/" element={<User />} />
         <Route path="/admin" element={<Admin />} />
-        <Route path="/CardOne" element={<CardOne/>} />
-        <Route path="/CardDetail" element={<CardDetail/>} />
-        
+        <Route path="/CardOne" element={<CardOne />} />
+        <Route path="/CardDetail" element={<CardDetail />} />
+
       </Routes>
     </BrowserRouter>
-  </React.StrictMode>,
+    </GoogleOAuthProvider>
+  </React.StrictMode >,
 )

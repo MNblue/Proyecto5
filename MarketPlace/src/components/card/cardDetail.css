@@ -1,0 +1,72 @@
+.textProductName {
+  position: relative;
+  width: fit-content;
+  font-size: 20px;
+  font-family: 'Fredoka One', sans-serif;
+  box-shadow: 2px 2px 5px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+  padding: 3px;
+  background-color: #EBE8E8;
+  
+}
+
+.textCategoryName {
+  position: relative;
+  width: fit-content;
+  font-size: 20px;
+  font-family: 'Fredoka One', sans-serif;
+  box-shadow: 2px 2px 5px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+  padding: 3px;
+  background-color: #EBE8E8;
+  
+}
+.imgCardDetail {
+  width: auto;
+  height: 500px;
+  margin: 5px;
+  border: 1px solid #e2e2e2;
+  border-radius: 8px;
+}
+
+.boxSmallDetail {
+  font-size: 15px;
+  font-family: 'Fredoka One', sans-serif;
+  box-shadow: 2px 2px 5px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+  padding: 3px;
+  width: fit-content;
+  background-color: #EBE8E8;
+ 
+}
+
+.boxSmallPriceDetail {
+  font-size: 15px;
+  font-family: 'Fredoka One', sans-serif;
+  box-shadow: 2px 2px 5px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+  padding: 3px;
+  width: fit-content;
+  background-color: #EBE8E8;
+  
+
+}
+
+.containerDetail {
+  margin-top: 60px;
+}
+
+.description {
+  font-size: 15px;
+  font-family: 'Fredoka One', sans-serif;
+  box-shadow: 2px 2px 5px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+  padding: 3px;
+  width: fit-content;
+  background-color: #EBE8E8;
+
+}
+
+.detail{
+  background-color:#F5F5F5;
+}

@@ -1,0 +1,86 @@
+.form-container {
+    color: black;
+    background-image: url('images/formBackgroundLogo.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100%;
+    background-color: #F5F5F5;
+    /* max-width: 50rem;  */
+    margin: auto;
+    
+    max-width: 900px;
+}
+
+.headTextForm {
+    color: #293243;
+    font-weight: 600;
+    font-size: 30px;
+    text-align: center;
+}
+
+.formButton {
+    width: 80%;
+    height: auto;
+    background-color: #3D5B81; 
+    color: #fff; 
+    border: none; 
+    padding: 10px 20px; 
+    text-align: center; 
+    text-decoration: none; 
+    display: inline-block;
+    font-size: 20px;
+    margin: 4px 2px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    column-gap: 20px;   
+    box-shadow: 2px 2px 5px 1px rgba(0, 0, 0, 0.2);
+}
+
+.formButtonSelect {
+    width: 100%;
+    height: auto;
+    background-color: #3D5B81; 
+    color: #fff; 
+    border: none; 
+    padding: 10px 20px; 
+    text-align: center; 
+    text-decoration: none; 
+    display: inline-block;
+    font-size: 20px;
+    margin: 4px 2px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    column-gap: 20px; 
+    margin-top: 14px;
+    box-shadow: 2px 2px 5px 1px rgba(0, 0, 0, 0.2);
+}
+
+.iconButton{
+width: 14px;
+height: 14px;
+}
+
+.formButton:hover {
+    background-color: #EE6B4D; 
+}
+.formButtonSelect:hover {
+    background-color: #EE6B4D; 
+}
+
+.imageField {
+    padding-top: 5px;
+}
+
+.unifyfields {
+    display: flex;
+    flex-direction: row;
+}
+
+.fixed-textarea {
+    resize: none;
+    overflow-y: auto;
+   }

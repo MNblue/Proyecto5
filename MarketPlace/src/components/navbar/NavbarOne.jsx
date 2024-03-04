@@ -1,50 +1,67 @@
-import './navbarOne.css'
-import Button from 'react-bootstrap/Button';
-import Container from 'react-bootstrap/Container';
-import Form from 'react-bootstrap/Form';
-import Nav from 'react-bootstrap/Nav';
-import Navbar from 'react-bootstrap/Navbar';
-import NavDropdown from 'react-bootstrap/NavDropdown';
+import "./navbarOne.css";
+import Container from "react-bootstrap/Container";
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
+import Form from "react-bootstrap/Form";
+import { useNavigate } from "react-router-dom";
+import Nav from "react-bootstrap/Nav";
+import Navbar from "react-bootstrap/Navbar";
+import logo from "../../img/logo (2).svg";
+import shoppingIcon from "../../img/shoppingIcon.svg";
+import logIn from "../../img/logIn.svg";
+import logOutIcon from "../../img/logoutIcon.svg";
+
+function NavbarOne({ openModal ,isLogged}) {
+  const navigate = useNavigate();
 
 
-function NavbarOne ({openModal}){
-    return (
-        <Navbar expand="lg" className="bg-body-tertiary ">
-      <Container fluid>
-        <Navbar.Brand href="#">Navbar scroll</Navbar.Brand>
-        <Navbar.Toggle aria-controls="navbarScroll" />
-        <Navbar.Collapse id="navbarScroll">
-          <Nav
-            className="me-auto my-2 my-lg-0"
-            style={{ maxHeight: '100px' }}
-            navbarScroll
-          >
-            <Nav.Link href="#action1">Home</Nav.Link>
-            <Nav.Link href="#action2">Link</Nav.Link>
-            <NavDropdown title="Link" id="navbarScrollingDropdown">
-              <NavDropdown.Item href="#action3">Action</NavDropdown.Item>
-              <NavDropdown.Item href="#action4">
-                Another action
-              </NavDropdown.Item>
-              <NavDropdown.Divider />
-              <NavDropdown.Item href="#action5">
-                Something else here
-              </NavDropdown.Item>
-            </NavDropdown>
-          </Nav>
-          <Form className="d-flex">
-            <Form.Control
-              type="search"
-              placeholder="Search"
-              className="me-2"
-              aria-label="Search"
-            />
-            <Button variant="outline-success">Search</Button>
-            <Button variant="outline-success ms-5 me-3 fw-bold" onClick={openModal}>Login</Button>
-          </Form>
-        </Navbar.Collapse>
-      </Container>
-    </Navbar>
-    )
+  return (
+   
+      <Navbar expand="lg">
+        <Container fluid>
+          <Navbar.Toggle aria-controls="navbarScroll" />
+          <Navbar.Collapse id="navbarScroll">
+            <Container fluid>
+              <Row className="align-items-center">
+                <Col md={2} xs={2} className="d-none d-sm-block">
+                  <Nav.Link onClick={() => navigate('/')}>
+                    <img src={logo} alt="" />
+                  </Nav.Link>
+                </Col>
+                <Col md={8} xs={8}className="text-center">
+                  <Form.Control
+                    type="search"
+                    placeholder="Search"
+                    aria-label="Search"
+                  />
+                </Col>
+                <Col md={2} xs={2} className="d-flex justify-content-end gap-5">
+                  { isLogged ? (
+                    <>
+                    <button className="button-style" >
+                        <img src={shoppingIcon} alt="Logout" />
+                      </button>
+                      <button className="button-style">
+                        <img src={logOutIcon} alt="Logout" />
+                      </button>
+                      
+                      {/* Aquí puedes agregar más íconos para cuando el usuario esté logueado */}
+                    </>
+                  ) : (
+                    <>
+                      <button className="button-style">
+                        <img src={logIn} onClick={openModal} alt="Login" />
+                      </button>
+                      {/* Aquí puedes agregar más íconos para cuando el usuario no esté logueado */}
+                    </>
+                  )}
+                </Col>
+              </Row>
+            </Container>
+          </Navbar.Collapse>
+        </Container>
+      </Navbar>
+
+  );
 }
 export default NavbarOne;

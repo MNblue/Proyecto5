@@ -4,59 +4,67 @@
     box-sizing: border-box;
 }
 .wrapper {
-    background-color: rgb(51, 51, 109);
-    color: #fff;
+    background-image: url('./src/img/bg_log.svg');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: #1A2A34;
     padding: 10px 20px;
+    margin: 5px;
     border-radius: 10px;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
 }
 
 
 .input-box{
     position: relative;
     width: 100%;
-    height:50px;
-    
+    height:44px;
     margin: 20px 0;
 }
 
 .input-box input{
     width: 100%;
     height: 100%;
-    background-color: transparent;
+    /* background-color: transparent;
+    backdrop-filter:  blur(5px);  */
     outline: none;
-    border: 2px solid  rgba(225, 225, 255, .2);
-    border-radius: 20px;
+    border: 2px solid  #1a2a349a;
+    border-radius: 8px;
     font-size: 16px;
-    color: #fff;
-    padding: 15px;
+    color:  #1A2A34;
+    padding: 10px;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
 }
 .input-box input::placeholder{
-    color: #fff;
+    color:  #1A2A34;
 }
 
 .input-box .icon{
     position: absolute;
-    right: 20px;
+    right: 15px;
     top: 50%;
     transform: translateY(-50%);
-    font-size: 16px;
+    font-size: 22px;
     cursor: pointer;
-    color: #fff;
+    color: #1a2a34c9;
+    
 }
 
 .remember-forgot{
     display: flex;
     justify-content: space-between; 
     font-size: 14.5px;
+    font-weight: 600;
     margin: -15px 0 15px;
 }
 .remember-forgot label{
     text-decoration: none;
-    color: #fff;
+    
 }
 
 .remember-forgot a{
-    color: #fff;
+    color: #1A2A34;
     text-decoration: none;
 
 }
@@ -71,22 +79,60 @@
 }
 
 .register-link p a {
-color: #fff;
+color: #1A2A34;
 text-decoration: none;
 font-weight: 600;
 }
 .register-link p a:hover{
     text-decoration: underline;
 }
-
+.privacy-policy label {
+font-weight: 600;
+}
 .btnHolder{
+    position: relative;
     display: flex;
+    flex-direction: column;
     width: 100%;
     justify-content: center;
     align-items: center;
-    margin: 30px 0;
+    margin: 5px 0;
 }
 
-.k{
-    background-color:  0 0 10px #9f9da186,
+.btnHolder p {
+    margin-bottom: -1px;
+    color: rgb(161, 27, 27);
 }
+
+
+
+/*GOOGLE Word*/
+.g {
+    color: #4285f4; 
+    font-size: 20px;
+  }
+  
+  .o1 {
+    color: #ea4335; 
+    font-size: 20px;
+  }
+  
+  .o2 {
+    color: #ffbb00;
+    font-size: 20px;
+  }
+  
+  .g2 {
+    color: #34a853;
+    font-size: 20px; 
+  }
+  
+  .l {
+    color: #3cba54; 
+    font-size: 20px;
+  }
+  
+  .e {
+    color: #ea4335; 
+    font-size: 20px;
+  }

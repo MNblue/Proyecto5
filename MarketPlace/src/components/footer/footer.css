@@ -1,0 +1,87 @@
+@media (min-width: 599px) {
+    footer {
+        height: 60px;
+        /* position: fixed; */
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        
+    }
+
+    .logoFooter {
+        width: 30px;
+        height: auto;
+        margin-left: 35px;
+        margin-top: 10px;
+    }
+
+    .rrssFooter {
+        width: 150px;
+        margin-top: 9px;
+        margin-left: 40px;
+    }
+
+    .fbFooter {
+        padding-right: 26px;
+    }
+
+    .twitterFooter {
+        padding-left: 26px;
+    }
+
+    .stack-footer {
+        color: white;
+        padding-right: 63px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+}
+
+@media (max-width: 599px) {
+
+    footer {
+        height: 130px;
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+    }
+
+    .rrssFooter {
+        height: 120px;
+        display: flex;
+        flex-direction: column;
+        justify-items: center;
+    }
+
+    .stack-footer {
+        width: 300px;
+        flex-direction: row;
+    }
+
+    .fbFooter {
+        padding-right: 26px;
+        padding-bottom: 10px;
+        padding-top: 10px;
+    }
+
+    .instagramFooter {
+        padding-right: 26px;
+        padding-bottom: 10px;
+    }
+
+    .twitterFooter {
+        padding-right: 26px;
+        padding-top: 5px;
+    }
+
+    .stack-footer {
+        color: white;
+        padding-left: 60px;
+        display: flex;
+        flex-direction: row;
+        justify-content: initial;
+    }
+
+}

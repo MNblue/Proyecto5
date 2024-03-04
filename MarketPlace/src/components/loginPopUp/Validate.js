@@ -3,8 +3,6 @@ import './alert.css'
 
 function Validate(user) {
    
-    
-
     if (!user.useremail ||
         !user.userpassword
       ) {

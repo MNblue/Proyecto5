@@ -1,17 +1,20 @@
 * {
-    font-family: "Hanken Grotesk", sans-serif;
+    font-family: "Fredoka", sans-serif;
     box-sizing: border-box;
 }
 main{
     background-image: url('./img/marcaDeAgua.svg');
     background-repeat: no-repeat;
     background-position: center;
-    /* min-height: 80vh;
-    min-width: 80vw; */
+    height: max-content;
   }
+
+ 
 
   nav{
     background-color: #293243 ;
+    width: auto;
+    height: 74px;
   }
   
   footer{
