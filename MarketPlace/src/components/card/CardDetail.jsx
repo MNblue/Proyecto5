@@ -133,16 +133,16 @@ function CardDetail() {
         </Link>
 
        
-        <Container className="containerDetail" style={{ width: '30%' }}>
+        <Container className="containerDetail" style={{ width: '30%'}}>
   <Row>
     <Col>
       <Row>
         <Col md={3} className="detail">
-          <Card className="classCategory1" style={{ width: '40rem', height: '50rem', display: 'flex', flexDirection: 'column', boxShadow: '2px 2px 5px 1px rgba(0, 0, 0, 0.2)' }}>
+          <Card className="classCategory1" style={{ width: '40rem', height: '50rem', display: 'flex', flexDirection: 'column', boxShadow: '2px 2px 5px 1px rgba(0, 0, 0, 0.2)' , marginTop: '50px' }}>
 
             {/* ... Otras partes del código ... */}
 
-            <div style={{ display: 'flex', flexDirection: 'column', paddingTop: '0px', gap: '20px', textAlign: 'center', position: 'relative' }}>
+            <div style={{ display: 'flex', flexDirection: 'column', paddingTop: '20px', gap: '20px', textAlign: 'center', position: 'relative' }}>
               <Card.Img variant="top" src={imageUrl} className='imgCardDetail' />
               <div className='btnChangeImg' style={{ width: '100%' }}>
                 {editable && <Button variant="success" onClick={handleUploadClick} style={{ backgroundColor: '#EBE8E8', color: 'black', width: '100%' }}>Cambiar imagen</Button>}
