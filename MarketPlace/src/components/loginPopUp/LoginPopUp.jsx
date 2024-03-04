@@ -7,7 +7,6 @@ import { useNavigate } from 'react-router-dom';
 import Validate from './Validate';
 import { Link } from 'react-router-dom';
 import { RiUserLine } from "react-icons/ri";
-//import { GoLock } from "react-icons/go";
 import { FiLock } from "react-icons/fi";
 import { FiUnlock } from "react-icons/fi";
 import Swal from 'sweetalert2';
@@ -37,14 +36,12 @@ const LoginPopUp = ({ closeModal }) => {
   const styleModalShow = {
 
     display: 'block',
-    position: 'initial',
     backgroundColor: 'rgba(0, 0, 0, 0.700)',
     position: 'fixed',
     top: '50%',
     left: '50%',
     transform: 'translate(-50%, -50%)',
     zIndex: 1000,
-
   }
 
   const customStylesLogin = {
@@ -72,7 +69,6 @@ const LoginPopUp = ({ closeModal }) => {
     height: '40px',
     width: '40px',
     border: '1px solid #D0CACA',
-
   };
 
   const stylesModalDialog = {
@@ -93,11 +89,15 @@ const LoginPopUp = ({ closeModal }) => {
   const [agree, setAgree] = useState(false);
   const navigate = useNavigate();
   const [isHovered, setIsHovered] = useState(false);
+  const [error, setError] = useState(false);
+
 
   const handleLogin = async () => {
 
     let flag = Validate(user);
     if (!flag) {
+      setError(true);
+
       return;
     }
 
@@ -106,6 +106,8 @@ const LoginPopUp = ({ closeModal }) => {
       const foundUser = allUsers.find(u => u.useremail === user.useremail && u.userpassword === user.userpassword);
 
       if (!foundUser) {
+        setError(true);
+
         Swal.fire({
           imageUrl: 'https://media.tenor.com/TWMxi0kGDTgAAAAi/hmm.gif',
           title: 'Login o contraseña no esta correcta',
@@ -114,12 +116,15 @@ const LoginPopUp = ({ closeModal }) => {
       }
 
       if (!agree) {
+        setError(true);
+
         Swal.fire({
           title: 'Acepta la política de privacidad',
           icon: 'warning',
         });
         return;
       }
+      setError(false);
 
       navigate('/admin');
 
@@ -158,7 +163,7 @@ const LoginPopUp = ({ closeModal }) => {
         );
         console.log(res);
         setGoogleUserData(res.data);
-        navigate('/admin');
+        navigate('/admin');l
       } catch (err) {
         console.log('Error', err);
       };
@@ -214,15 +219,26 @@ const LoginPopUp = ({ closeModal }) => {
 
       <Modal.Dialog style={stylesModalDialog}>
         <Modal.Header style={{ justifyContent: "center", position: "relative", }}>
+        
           <Modal.Title style={{ letterSpacing: "0.84px", fontSize: "26px" }}>Iniciar Sesión</Modal.Title>
+       
+       
           <Button style={stylesCloseBtn} variant="secondary" onClick={closeModal}>X</Button>
         </Modal.Header>
 
         <Modal.Body style={stylesModalDialog}>
           <div className='wrapper'>
+            
+           
             <form action="" >
               <div className='input-box'>
-                <input type='email' name='useremail' value={user.useremail} onChange={handleUserChange} placeholder='Email: ejemplo@gmail.com' required />
+                <input type='email'
+                  name='useremail'
+                  value={user.useremail}
+                  onChange={handleUserChange}
+                  placeholder='Email: ejemplo@gmail.com'
+                  required
+                  style={{ borderColor: error ? 'red' : 'initial' }} />
 
                 <div className='icon'> <RiUserLine /></div>
               </div>
@@ -231,7 +247,11 @@ const LoginPopUp = ({ closeModal }) => {
                   name='userpassword'
                   value={user.userpassword}
                   onChange={handleUserChange}
-                  placeholder='Contraseña' required />
+                  placeholder='Contraseña'
+
+                  required
+                  style={{ borderColor: error ? 'red' : 'initial' }} />
+
 
                 <div className='icon' onClick={handleTogglePassword}>
                   {showPassword ? <FiUnlock /> : <FiLock />}
@@ -245,8 +265,13 @@ const LoginPopUp = ({ closeModal }) => {
 
               <div className="privacy-policy">
                 <label>
-                  <input type="checkbox" id="agree" name="agree" defaultChecked={agree} onChange={handleAgreeChange} /> Acepto la <Link href="#">Política de privacidad</Link>
-                  <p>(por favor, lee y acepta la política de privacidad antes de iniciar la sesión. <strong>Es obligatorio!</strong>)</p>
+                  <input type="checkbox"
+                    id="agree"
+                    name="agree" defaultChecked={agree}
+                    onChange={handleAgreeChange}
+
+                  /> Acepto la <Link href="#">Política de privacidad</Link>
+                  <p style={{ color: error ? 'red' : 'initial' }}>(por favor, lee y acepta la política de privacidad antes de iniciar la sesión. <strong>Es obligatorio!</strong>)</p>
                 </label>
               </div>
 
@@ -265,7 +290,7 @@ const LoginPopUp = ({ closeModal }) => {
                 <HoverModal visible={isHovered ? 1 : 0}>
                   <p>Acepta la política de privacidad si aún no lo ha hecho</p>
                 </HoverModal>
-                
+
 
               </div>
               <div className="register-link">
@@ -273,6 +298,13 @@ const LoginPopUp = ({ closeModal }) => {
                   <Link to='#'> Regístrate ahora</Link></p>
               </div>
             </form>
+            
+            {/* {googleUserData &&
+                <div>
+                  <img src={googleUserData.picture} alt="user avatar" />
+                  <h1>Hola, {googleUserData.given_name}!</h1>
+                </div>
+              } */}
           </div>
 
         </Modal.Body>
