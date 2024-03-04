@@ -16,3 +16,9 @@
     margin-bottom: 30px;
 }
 
+input[type="radio"] {
+    accent-color: #293243;
+    width: 20px;
+    height: 20px;
+}
+
