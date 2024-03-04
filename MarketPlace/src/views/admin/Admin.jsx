@@ -22,6 +22,7 @@ function Admin() {
   };
   return (
     <>
+     <div style={{display:'flex',flexDirection:'column'}}>
       <NavbarOne openModal={openModal} isLogged={isLogged} />
       <FormAddProduct />
       <Filter optionSelected={optionFilterM} />
@@ -29,6 +30,7 @@ function Admin() {
      
     
       <Footer />
+      </div>
     </>
   );
 }

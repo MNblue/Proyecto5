@@ -31,6 +31,7 @@ function User() {
 
   return (
     <>
+    <div style={{display:'flex',flexDirection:'column', height:'100%'}}>
       <NavbarOne openModal={openModal} isLogged={isLogged} />
       {isModalOpen && <LoginPopUp closeModal={closeModal} />}
       
@@ -65,6 +66,8 @@ function User() {
         <CardOne isLogged={isLogged} selectOpt={optionFilter} />
       </div>
 
+      
+      </div>
       <Footer />
     </>
   );
