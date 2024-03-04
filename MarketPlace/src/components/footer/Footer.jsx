@@ -17,16 +17,23 @@ function Footer() {
                     <div className="p-2"><img src={homeIcon} className='logoFooter' /></div>
 
                     <div className="p-2 rrssFooter">
+                        <a href="https://www.facebook.com/?locale=es_ES" target="_blank" alt="Facebook">
+                            <img src={facebook} className='fbFooter' />
+                        </a>
 
-                        <img src={facebook} className='fbFooter' />
-                        <img src={instagram} className='instagramFooter' />
-                        <img src={twitter} className='twitterFooter' /></div>
+                        <a href="https://www.instagram.com/" target="_blank" alt="Instagram">
+                            <img src={instagram} className='instagramFooter' />
+                        </a>
+                        <a href="https://twitter.com/home?lang=es" target="_blank" alt="Twitter">
+                            <img src={twitter} className='twitterFooter' />
+                        </a>
+                    </div>
 
                     <div className="p-2">© InnoConsulting Solutions</div>
 
                 </Stack>
 
-            </footer>
+            </footer >
         </>
     )
 }

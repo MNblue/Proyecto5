@@ -62,6 +62,15 @@
       "price": 5,
       "description": "Hechos a mano, personalizados. Modelos únicos.",
       "file": "https://res.cloudinary.com/dgusxuq9j/image/upload/v1709417694/shacnsnoncfrajlk0dpi.png "
+    },
+    {
+      "id": "c020",
+      "name": "naranjas",
+      "stock": 4,
+      "category": "De la huerta a la mesa",
+      "price": 4,
+      "description": "lalas",
+      "file": "https://res.cloudinary.com/dgusxuq9j/image/upload/v1709557181/qtqv7aorto33tlgx66ng.png "
     }
   ],
   "users": [
