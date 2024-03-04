@@ -53,22 +53,22 @@ const [numItemsToShow, setNumItemsToShow] = useState(getNumItemsToShow());
         }
     }
 
-    // //para el boton izquierdo llevar la cuenta
-    // const handleClickLeft = () => {
-    //     setStartIndex(startIndex > 0 ? startIndex - 1 : startIndex);
-    // };
-    // //para el boton derecho llevar la cuenta
-    // const handleClickRight = () => {
-    //     setStartIndex(startIndex + 1);
-    // };
+    //para el boton izquierdo llevar la cuenta
+    const handleClickLeft = () => {
+        setStartIndex(startIndex > 0 ? startIndex - 1 : startIndex);
+    };
+    //para el boton derecho llevar la cuenta
+    const handleClickRight = () => {
+        setStartIndex(startIndex + 1);
+    };
 
-    // Llamo a getData() para traer los datos una vez que el componente se ha montado
-    // useEffect(() => {
-    //     getData();
+   // Llamo a getData() para traer los datos una vez que el componente se ha montado
+    useEffect(() => {
+        getData();
+    }, []); // Pasa un arreglo vacío como segundo argumento para asegurar que getData solo se ejecute una vez
 
-    getData();
-    // }, []); // Pasa un arreglo vacío como segundo argumento para asegurar que getData solo se ejecute una vez
 
+ // getData();
     useEffect(() => {
 
         filterData();
@@ -87,15 +87,14 @@ const [numItemsToShow, setNumItemsToShow] = useState(getNumItemsToShow());
             // Ahora actualizo el estado de userList con esta variable (usuarios)
             setProductList(products);
             setFilteredProductList(productList);
-            filterData();
+            setFilteredProductList(products);
+           // filterData();
         } catch (error) {
             console.error('Error al obtener los datos:', error);
         }
     };
 
     async function filterData() {
-
-
 
         if (selectOpt !== 'option1') {
             let auxSelectOpt;
