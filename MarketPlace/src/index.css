@@ -6,7 +6,10 @@ main{
     background-image: url('./img/marcaDeAgua.svg');
     background-repeat: no-repeat;
     background-position: center;
+    height: max-content;
   }
+
+ 
 
   nav{
     background-color: #293243 ;
