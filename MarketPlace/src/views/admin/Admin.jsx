@@ -22,14 +22,22 @@ function Admin() {
   };
   return (
     <>
-     <div style={{display:'flex',flexDirection:'column'}}>
-      <NavbarOne openModal={openModal} isLogged={isLogged} />
-      <FormAddProduct />
-      <Filter optionSelected={optionFilterM} />
-      <CardOne isLogged={isLogged} selectOpt={optionFilter} />
-     
-    
-      <Footer />
+      <div style={{ display: 'flex', flexDirection:'column' }}>
+        <div style={{backgroundColor:'blue'}}>
+          <NavbarOne openModal={openModal} isLogged={isLogged} />
+        </div>
+        <div style={{backgroundColor:'yellow'}}>
+          <FormAddProduct />
+        </div>
+        <div style={{backgroundColor:'green'}}>
+          <Filter optionSelected={optionFilterM} />
+        </div>
+        <div style={{backgroundColor:'pink'}}>
+          <CardOne isLogged={isLogged} selectOpt={optionFilter} />
+        </div>
+        <div style={{backgroundColor:'blue'}}>
+          <Footer />
+        </div>
       </div>
     </>
   );
