@@ -23,19 +23,19 @@ function Admin() {
   return (
     <>
       <div style={{ display: 'flex', flexDirection:'column' }}>
-        <div style={{backgroundColor:'blue'}}>
+        <div >
           <NavbarOne openModal={openModal} isLogged={isLogged} />
         </div>
-        <div style={{backgroundColor:'yellow'}}>
+        <div >
           <FormAddProduct />
         </div>
-        <div style={{backgroundColor:'green'}}>
+        <div >
           <Filter optionSelected={optionFilterM} />
         </div>
-        <div style={{backgroundColor:'pink'}}>
+        <div >
           <CardOne isLogged={isLogged} selectOpt={optionFilter} />
         </div>
-        <div style={{backgroundColor:'blue'}}>
+        <div >
           <Footer />
         </div>
       </div>

@@ -32,12 +32,12 @@ function User() {
   return (
     <>
       <div style={{ display: 'grid', height: '100%', gridTemplateRows: '7.8% 30% 10% 52% 6%', gap:'0' }}>
-        <div style={{backgroundColor:'blue'}}>
+        <div >
           <NavbarOne openModal={openModal} isLogged={isLogged} />
           {isModalOpen && <LoginPopUp closeModal={closeModal} />}
         </div>
 
-        <div className="image-container" style={{backgroundColor:'yellow'}}>
+        <div className="image-container" >
           <Container className="d-flex justify-content-center">
             <Row className="flex-column">
               <Col className="mt-5">
@@ -62,15 +62,15 @@ function User() {
             </Row>
           </Container>
         </div>
-        <div style={{backgroundColor:'green'}}>
+        <div >
           <Filter optionSelected={optionFilterM} />
         </div>
 
-        <div className="container-cards" style={{backgroundColor:'pink'}}>
+        <div className="container-cards" >
           <CardOne isLogged={isLogged} selectOpt={optionFilter} />
         </div>
 
-        <div style={{backgroundColor:'blue'}}>
+        <div >
           <Footer />
         </div>
       </div>
