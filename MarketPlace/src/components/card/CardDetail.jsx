@@ -175,13 +175,17 @@ function CardDetail() {
 </div>
 
 <div style={{ width: '100%', display: 'flex', justifyContent: 'space-between' }}>
-  <div className="boxSmallDetail" style={{ backgroundColor: '#EBE8E8', textAlign: 'center' }}>
+  <div className="boxSmallPriceDetail"
+
+   >
     <span className="precioDestacado">Precio:
       <input type="number" name="price" value={editedProduct.price} onChange={handleInputChange} disabled={!editable} style={{ border: 'none', outline: 'none' }} /> €
     </span>
   </div>
 
-  <div className="boxSmallStock" style={{ textAlign: 'center' }}>
+  <div className="boxSmallStock" 
+  
+  >
     Unidades disponibles:
     <span className="stock">
       <input type="number" name="stock" value={editedProduct.stock} onChange={handleInputChange} disabled={!editable} style={{ border: 'none', outline: 'none' }} />

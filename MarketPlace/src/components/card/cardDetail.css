@@ -35,7 +35,8 @@
   box-shadow: 2px 2px 5px 1px rgba(0, 0, 0, 0.2);
   border-radius: 4px;
   padding: 3px;
-  width: fit-content;
+  width: 200px;
+  height: 50px;
   background-color: #EBE8E8;
  
 }
@@ -59,10 +60,13 @@
   border-radius: 4px;
   padding: 3px;
   width: fit-content;
-  background-color: #EBE8E8;
+  background-color: #ebe8e8;
+  text-align: right;
 
 
 }
+
+
 
 
 .containerDetail {
