@@ -1,6 +1,7 @@
 import CardOne from '../../components/card/CardOne';
 import React, { useState } from 'react';
 import FormAddProduct from '../../components/formAddProduct/FormAddProduct'
+import Prueba from '../../components/prueba/prueba';
 
 
 
@@ -19,8 +20,8 @@ function Admin(){
 
    
       <FormAddProduct/>
-
       <CardOne isLogged={isLogged} selectOpt={'option1'} />
+      <Prueba />
 
 
     </main>

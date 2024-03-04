@@ -14,8 +14,6 @@ ReactDOM.createRoot(document.getElementById('root')).render(
     <BrowserRouter>
       <Routes>
         
-        
-
         <Route path="/" element={<User />} />
         <Route path="/admin" element={<Admin />} />
         <Route path="/CardOne" element={<CardOne/>} />

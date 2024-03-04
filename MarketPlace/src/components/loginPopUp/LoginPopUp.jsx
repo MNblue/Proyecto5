@@ -1,7 +1,8 @@
+import React, { useState } from 'react';
 import "../loginPopUp/loginPopUp.css"
 import Modal from 'react-bootstrap/Modal';
 import Button from 'react-bootstrap/Button';
-import React, { useState } from 'react';
+
 import { userService } from '../../service/userService';
 import { useNavigate } from 'react-router-dom';
 import Validate from './Validate';
