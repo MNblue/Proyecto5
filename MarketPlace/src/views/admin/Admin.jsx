@@ -4,6 +4,7 @@ import FormAddProduct from "../../components/formAddProduct/FormAddProduct";
 import NavbarOne from "../../components/navbar/NavbarOne";
 import Filter from '../../components/filter/Filter';
 import Footer from "../../components/footer/Footer";
+import "./admin.css"
 
 function Admin() {
   const [isLogged, setIsLogged] = useState(true);
@@ -22,7 +23,7 @@ function Admin() {
   };
   return (
     <>
-      <div style={{ display: 'flex', flexDirection:'column' }}>
+      <div className="containerMain">
         <div >
           <NavbarOne openModal={openModal} isLogged={isLogged} />
         </div>
@@ -32,10 +33,10 @@ function Admin() {
         <div >
           <Filter optionSelected={optionFilterM} />
         </div>
-        <div >
+        <div className="cardC">
           <CardOne isLogged={isLogged} selectOpt={optionFilter} />
         </div>
-        <div >
+        <div>
           <Footer />
         </div>
       </div>
