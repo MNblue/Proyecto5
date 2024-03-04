@@ -3,7 +3,7 @@
     {
       "id": "52c6",
       "name": "producto 4",
-      "stock": 5,
+      "stock": "4",
       "category": "De la huerta a la mesa",
       "price": 45,
       "description": "dfsdgadg",

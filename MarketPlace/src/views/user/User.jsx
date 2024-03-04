@@ -27,48 +27,54 @@ function User() {
     setOptionFilter(selectedOption);
   };
 
-  useEffect(() => {}, [optionFilter]); // Se ejecutará cada vez que optionFilter cambie, es decir que pinchemos en un radiobutton
+  useEffect(() => { }, [optionFilter]); // Se ejecutará cada vez que optionFilter cambie, es decir que pinchemos en un radiobutton
 
   return (
     <>
-    <div style={{display:'flex',flexDirection:'column', height:'100%'}}>
-      <NavbarOne openModal={openModal} isLogged={isLogged} />
-      {isModalOpen && <LoginPopUp closeModal={closeModal} />}
-      
-      <div className="image-container">
-        <Container className="d-flex justify-content-center">
-          <Row className="flex-column">
-            <Col className="mt-5">
-              <h1 className="title-home fs-2">
-                ¡Descubre el sabor auténtico del campo en Rincón Rural!
-                <br />
-                ¡Tu conexión con la frescura del valle!
-              </h1>
-            </Col>
-          </Row>
-        </Container>
-        <Container className="d-flex justify-content-center">
-          <Row>
-            <Col>
-              <h4 className="subtitle-home mt-3 text-center fs-6">
-                ¡Compra y vende tusproductos frescos, elaborados y artesanía
-                local... Disfruta de lo mejor de nuestra tierra <br />
-                ¡Además todos los productos son denominación de origen, ama tu
-                tierra!
-              </h4>
-            </Col>
-          </Row>
-        </Container>
-      </div>
-      <Filter optionSelected={optionFilterM} />
+      <div style={{ display: 'grid', height: '100%', gridTemplateRows: '7.8% 30% 10% 52% 6%', gap:'0' }}>
+        <div >
+          <NavbarOne openModal={openModal} isLogged={isLogged} />
+          {isModalOpen && <LoginPopUp closeModal={closeModal} />}
+        </div>
 
-      <div className="container-cards">
-        <CardOne isLogged={isLogged} selectOpt={optionFilter} />
+        <div className="image-container" >
+          <Container className="d-flex justify-content-center">
+            <Row className="flex-column">
+              <Col className="mt-5">
+                <h1 className="title-home fs-2">
+                  ¡Descubre el sabor auténtico del campo en Rincón Rural!
+                  <br />
+                  ¡Tu conexión con la frescura del valle!
+                </h1>
+              </Col>
+            </Row>
+          </Container>
+          <Container className="d-flex justify-content-center">
+            <Row>
+              <Col>
+                <h4 className="subtitle-home mt-3 text-center fs-6">
+                  ¡Compra y vende tusproductos frescos, elaborados y artesanía
+                  local... Disfruta de lo mejor de nuestra tierra <br />
+                  ¡Además todos los productos son denominación de origen, ama tu
+                  tierra!
+                </h4>
+              </Col>
+            </Row>
+          </Container>
+        </div>
+        <div >
+          <Filter optionSelected={optionFilterM} />
+        </div>
+
+        <div className="container-cards" >
+          <CardOne isLogged={isLogged} selectOpt={optionFilter} />
+        </div>
+
+        <div >
+          <Footer />
+        </div>
       </div>
 
-      
-      </div>
-      <Footer />
     </>
   );
 }
