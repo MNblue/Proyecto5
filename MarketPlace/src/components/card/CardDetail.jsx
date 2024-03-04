@@ -195,10 +195,10 @@ function CardDetail() {
 
 </Card.Body>
 
-<div className="editProduct" style={{ width: '100%', textAlign: 'center' }}>
+<div style={{ width: '100%', textAlign: 'center' }}>
 {editable
-  ? <Button variant="success" onClick={handleSaveClick} style={{ width: '100%' }}>Guardar</Button>
-  : <Button variant="primary" onClick={handleEditClick} style={{ display: isLogged ? 'inline' : 'none', width: '100%' }}>Editar producto</Button>
+  ? <Button className="editProduct" variant="success" onClick={handleSaveClick} style={{ width: '100%' }}>Guardar</Button>
+  : <Button className="editProduct" variant="primary" onClick={handleEditClick} style={{ display: isLogged ? 'inline' : 'none', width: '100%' }}>Editar producto</Button>
 }
 </div>
 
