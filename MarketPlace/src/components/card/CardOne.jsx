@@ -25,7 +25,7 @@ function CardOne({ isLogged, selectOpt }) {
     const [filteredProductList, setFilteredProductList] = useState([]);
 
 
-const [numItemsToShow, setNumItemsToShow] = useState(getNumItemsToShow());
+    const [numItemsToShow, setNumItemsToShow] = useState(getNumItemsToShow());
 
     useEffect(() => {
         function handleResize() {
@@ -50,7 +50,7 @@ const [numItemsToShow, setNumItemsToShow] = useState(getNumItemsToShow());
 
     useEffect(() => {
         getData();
-    }, []); 
+    }, []);
 
 
     useEffect(() => {
@@ -83,7 +83,7 @@ const [numItemsToShow, setNumItemsToShow] = useState(getNumItemsToShow());
             }
             let filteredList = productList.filter(product => product.category === auxSelectOpt);
             setFilteredProductList(filteredList);
-            setStartIndex(0); 
+            setStartIndex(0);
         } else {
             setFilteredProductList(productList);
         }
@@ -96,7 +96,7 @@ const [numItemsToShow, setNumItemsToShow] = useState(getNumItemsToShow());
     };
 
     const handleNext = () => {
-        if (startIndex < productList.length - 4) {
+        if (startIndex < productList.length - numItemsToShow) {
             setStartIndex(startIndex + 1);
         }
     };
@@ -201,7 +201,7 @@ const [numItemsToShow, setNumItemsToShow] = useState(getNumItemsToShow());
     };
 
     return (
-      
+
         <>
             <div className="containerA">
                 <Row className='rowContent'>
@@ -216,7 +216,7 @@ const [numItemsToShow, setNumItemsToShow] = useState(getNumItemsToShow());
                                         <Card.Text className='cardTextStyle' >
                                             <div className={isLogged ? 'btnDeleteDch' : 'btnDeleteDchUser'}>
                                                 <div className='textCategory'> {product.category}</div>
-                                                <div style={{ textAlign:'right'}}>
+                                                <div style={{ textAlign: 'right' }}>
                                                     {isLogged && (<button disabled={!isLogged} onClick={() => handleClickDelete(product.id)} className='btnDeleteStyle' ><img src='/src/components/card/delete.png' style={{ width: '16px', height: '18px', border: 'none' }} /></button>)}
                                                 </div>
                                             </div>
@@ -238,7 +238,7 @@ const [numItemsToShow, setNumItemsToShow] = useState(getNumItemsToShow());
                                                 </div>
                                                 <div className='containerBtn' >
                                                     {isLogged ? (
-                                                        <button disabled={!isLogged} className='btn3' onClick={() => handleClickUpdateStock(product)}><img className='imgBtnComprar' src='/src/components/card/carrito1.png'  /> Comprar</button>
+                                                        <button disabled={!isLogged} className='btn3' onClick={() => handleClickUpdateStock(product)}><img className='imgBtnComprar' src='/src/components/card/carrito1.png' /> Comprar</button>
                                                     ) : (
                                                         <OverlayTrigger
                                                             placement="top"
