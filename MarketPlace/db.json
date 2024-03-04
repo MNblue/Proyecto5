@@ -12,8 +12,8 @@
     {
       "id": "5c0c",
       "name": "producto 2",
-      "stock": "1",
-      "category": "Artesanía local",
+      "stock": "14",
+      "category": "artesanias",
       "price": 5,
       "description": "sadfasdf",
       "file": " https://res.cloudinary.com/dgusxuq9j/image/upload/v1709054693/oqtefqhrdxgvvpeyrcv2.png"

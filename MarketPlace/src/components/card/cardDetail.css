@@ -47,7 +47,7 @@
   border-radius: 4px;
   padding: 3px;
   width: fit-content;
-  background-color: #EBE8E8;
+  background-color: #918c8c;
   
 
 }
@@ -69,4 +69,74 @@
 
 .detail{
   background-color:#F5F5F5;
+}
+
+
+/*................*/
+
+.contenedorPpal{
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  
+}
+
+.item1, .item3 {
+  flex: 1; 
+}
+
+.item2 {
+  display: flex;
+  justify-content: center; 
+  align-items: center; 
+  flex-grow: 1; 
+  overflow: auto; 
+}
+
+.cardStyle{
+  box-shadow: 2px 2px 5px 1px rgba(0, 0, 0, 0.2);
+}
+
+.btn2 {
+  background-color: #3D5B81;
+  color: white;
+  border: 0;
+  border-radius: 4px;
+  font-size: 14px;
+  padding: 8px;
+  padding-right: 7px;
+  box-shadow: 2px 2px 5px 1px rgba(0, 0, 0, 0.534);;
+  /* display: flex;
+  align-items: center; */
+}
+
+.btn1 {
+  background-color: #194e94;
+  color: white;
+  border: 0;
+  border-radius: 4px;
+  font-size: 14px;
+  padding: 8px;
+  padding-right: 7px;
+  box-shadow: 2px 2px 5px 1px rgba(0, 0, 0, 0.534);
+}
+
+.btn1:hover{
+  background-color: #EE6B4D;
+}
+
+
+.btn3 {
+  background-color: #3d817e;
+  color: white;
+  border: 0;
+  border-radius: 4px;
+  font-size: 14px;
+  padding: 8px;
+  padding-right: 7px;
+  box-shadow: 2px 2px 5px 1px rgba(0, 0, 0, 0.534);
+}
+
+.btn3:hover{
+  background-color: #EE6B4D;
 }
