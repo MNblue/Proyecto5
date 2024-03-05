@@ -48,11 +48,11 @@ function CardOne({ isLogged, selectOpt }) {
         }
     }
 
-    useEffect(() => {
-        getData();
-    }, []);
+    // useEffect(() => {
+    //     getData();
+    // }, []);
 
-
+    getData();
     useEffect(() => {
         filterData();
     }, [selectOpt]);

@@ -12,10 +12,10 @@
     {
       "id": "5c0rc",
       "name": "producto 5",
-      "stock": 4,
-      "category": "Artesanía local",
+      "stock": "44",
+      "category": "artesanias",
       "price": 225,
-      "description": "sadfasdf",
+      "description": "sadfasdfhkhklhl",
       "file": " https://res.cloudinary.com/dgusxuq9j/image/upload/v1709054693/oqtefqhrdxgvvpeyrcv2.png"
     },
     {
@@ -35,6 +35,15 @@
       "price": 5,
       "description": "un producto casero rico rico",
       "file": " https://res.cloudinary.com/dgusxuq9j/image/upload/v1709600198/yenzdjsvsukhlel0sx9g.png"
+    },
+    {
+      "id": "9d05",
+      "name": "FemTech Innovations",
+      "stock": 9,
+      "category": "Elaborados",
+      "price": 8,
+      "description": "sdfsadf",
+      "file": " https://res.cloudinary.com/dgusxuq9j/image/upload/v1709626827/r1vofgbaqu1rl7oalclu.png"
     }
   ],
   "users": [

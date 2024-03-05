@@ -30,7 +30,7 @@ function Admin() {
         <div >
           <FormAddProduct />
         </div>
-        <div style={{backgroundColor:'pink'}}>
+        <div>
           <Filter optionSelected={optionFilterM} />
         </div>
         <div className="cardC">
