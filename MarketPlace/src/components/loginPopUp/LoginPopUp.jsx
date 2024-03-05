@@ -164,7 +164,7 @@ const LoginPopUp = ({ closeModal }) => {
         );
         console.log(res);
         setGoogleUserData(res.data);
-        navigate('/admin');l
+        navigate('/admin');
       } catch (err) {
         console.log('Error', err);
       };
