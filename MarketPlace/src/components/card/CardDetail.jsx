@@ -130,7 +130,7 @@ function CardDetail() {
           <Row>
             <Col>
               <Link
-                to="/"
+                to={isLogged ? "/admin" : "/"}
                 style={{
                   padding: "10px",
                   backgroundColor: "white",
@@ -271,7 +271,6 @@ function CardDetail() {
                     onChange={handleInputChange}
                     disabled={!editable}
                     style={{
-                      width: "200px",
                       border: "none",
                       outline: "none",
                       backgroundColor: "#EBE8E8",
@@ -290,7 +289,6 @@ function CardDetail() {
                     onChange={handleInputChange}
                     disabled={!editable}
                     style={{
-                      width: "200px",
                       border: "none",
                       outline: "none",
                       backgroundColor: "#EBE8E8",
