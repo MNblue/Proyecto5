@@ -2,35 +2,8 @@
   "products": [
     {
       "id": "52c6",
-      "name": "producto 4",
-      "stock": 5,
-      "category": "De la huerta a la mesa",
-      "price": 45,
-      "description": "dfsdgadg",
-      "file": " https://res.cloudinary.com/dgusxuq9j/image/upload/v1709054665/fbcjlik6pxn02vyj2ll9.png"
-    },
-    {
-      "id": "5c0c",
-      "name": "producto 5",
-      "stock": "1",
-      "category": "Artesanía local",
-      "price": 5,
-      "description": "sadfasdf",
-      "file": " https://res.cloudinary.com/dgusxuq9j/image/upload/v1709054693/oqtefqhrdxgvvpeyrcv2.png"
-    },
-    {
-      "id": "3r",
-      "name": "Product 6",
-      "price": "5.994",
-      "category": "Elaborados",
-      "file": "https://res.cloudinary.com/dgusxuq9j/image/upload/v1708955066/cck61ftl3ir8ifvbn4qt.png",
-      "description": "descripcion444 del producto primero bla bla bla bluuuuu",
-      "stock": "80"
-    },
-    {
-      "id": "52c6r",
-      "name": "producto 9",
-      "stock": 5,
+      "name": "producto 1",
+      "stock": "4",
       "category": "De la huerta a la mesa",
       "price": 45,
       "description": "dfsdgadg",
@@ -38,30 +11,39 @@
     },
     {
       "id": "5c0rc",
-      "name": "ksndflklsd",
-      "stock": 4,
-      "category": "Artesanía local",
+      "name": "producto 5",
+      "stock": "44",
+      "category": "artesanias",
       "price": 225,
-      "description": "sadfasdf",
+      "description": "sadfasdfhkhklhl",
       "file": " https://res.cloudinary.com/dgusxuq9j/image/upload/v1709054693/oqtefqhrdxgvvpeyrcv2.png"
     },
     {
       "id": "5ac7",
-      "name": "prueba 55",
-      "stock": 4,
+      "name": "producto 6",
+      "stock": "40",
       "category": "Elaborados",
-      "price": 1,
+      "price": "15",
       "description": "Las cards van adaptando su tamaño según el tamaño de las fotos o del largo de la descripción. Y las fotos al guardarlas ya modificadas se han hecho más pequeñas y no se porque",
-      "file": "https://res.cloudinary.com/dgusxuq9j/image/upload/v1709116940/cxumjmsav0idb3uie0g2.jpg "
+      "file": "https://res.cloudinary.com/dgusxuq9j/image/upload/v1709601778/snpquuxjrnjfcoaust0z.png"
     },
     {
-      "id": "eb7c",
-      "name": "Cuencos de Cerámica",
-      "stock": 10,
-      "category": "Artesanía local",
+      "id": "173e",
+      "name": "producto casero",
+      "stock": 25,
+      "category": "Elaborados",
       "price": 5,
-      "description": "Hechos a mano, personalizados. Modelos únicos.",
-      "file": "https://res.cloudinary.com/dgusxuq9j/image/upload/v1709417694/shacnsnoncfrajlk0dpi.png "
+      "description": "un producto casero rico rico",
+      "file": " https://res.cloudinary.com/dgusxuq9j/image/upload/v1709600198/yenzdjsvsukhlel0sx9g.png"
+    },
+    {
+      "id": "9d05",
+      "name": "FemTech Innovations",
+      "stock": 9,
+      "category": "Elaborados",
+      "price": 8,
+      "description": "sdfsadf",
+      "file": " https://res.cloudinary.com/dgusxuq9j/image/upload/v1709626827/r1vofgbaqu1rl7oalclu.png"
     }
   ],
   "users": [
