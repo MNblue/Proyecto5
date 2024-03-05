@@ -9,10 +9,22 @@
   border: 0px;
   padding: 5px;
   margin: 5px;
-  /* overflow: hidden;  */
   height: 370px;
-
   width: 13rem;
+  display: inline-flex;
+  justify-content: center;
+
+  display: flex;
+  flex-direction: column;
+  box-shadow: 1px 12px 16px -1px rgba(174, 187, 209, 0.81);
+}
+
+.imgCarrito {
+  width: 18px;
+  height: 18px;
+  vertical-align: middle;
+  margin-right: 5px;
+  margin-top: -2px;
 }
 
 .descripcion {
@@ -22,32 +34,34 @@
 }
 
 
-/*Estilos para el scrollbar que nos aparece en el overflow de la descripcion*/
+
 ::-webkit-scrollbar {
   width: 5px;
-  /* Ancho del scrollbar */
 }
 
 ::-webkit-scrollbar-track {
   background: #f1f1f1;
-  /* Color del track */
 }
 
-/* el color de la barra de desplazamiento */
 ::-webkit-scrollbar-thumb {
   background: #3D5B81;
 }
 
-/* Cambiar el color cuando pasas el mouse sobre el scrollbar */
 ::-webkit-scrollbar-thumb:hover {
   background: #a0c0eb;
 }
 
 .text1 {
   font-size: 12px;
-  /* font-family: 'Fredoka One', sans-serif; */
 }
 
+.imgMas {
+  width: 13px;
+  height: 13px;
+  vertical-align: middle;
+  margin-right: 5px;
+  margin-top: -2px;
+}
 
 .imgCard {
   width: auto;
@@ -65,7 +79,6 @@
   margin-right: 6px;
   background-color: #ffffff;
   font-size: 11px;
-  /* font-family: 'Fredoka One', sans-serif; */
 }
 
 .boxSmallPrice {
@@ -78,7 +91,6 @@
   padding: 3px;
   padding-right: 5px;
   font-size: 11px;
-  /* font-family: 'Fredoka One', sans-serif; */
 }
 
 .btn2 {
@@ -87,10 +99,11 @@
   border: 0;
   border-radius: 4px;
   font-size: 12px;
-  /* font-family: 'Fredoka One', sans-serif; */
   padding: 4px;
   padding-right: 7px;
   box-shadow: 2px 2px 5px 1px rgba(0, 0, 0, 0.2);
+  display: flex;
+  align-items: center;
 }
 
 .btn2:hover {
@@ -104,7 +117,6 @@
   border: 0;
   border-radius: 4px;
   font-size: 12px;
-  /* font-family: 'Fredoka One', sans-serif; */
   padding: 4px;
   padding-right: 7px;
   box-shadow: 2px 2px 5px 1px rgba(0, 0, 0, 0.2);
@@ -112,7 +124,6 @@
 
 .btn3 {
   background-color: #3D5B81;
-  /* opacity: 50%; */
   color: white;
   border: 0;
   border-radius: 4px;
@@ -137,6 +148,16 @@ div.tooltip-inner {
   background-color: rgba(255, 255, 255, 0);
 }
 
+.arrowBackImg {
+  width: 35px;
+  height: 35px;
+}
+
+.arrowNextImg {
+  width: 35px;
+  height: 35px;
+}
+
 .btnDeleteDch {
   display: grid;
   grid-template-columns: 90% 10%;
@@ -147,8 +168,92 @@ div.tooltip-inner {
   grid-template-columns: 100% 10%;
 }
 
+.colCenterSmall {
+  justify-content: center;
+  width: 95%;
+  display: flex;
+  justify-content: center;
+}
+
+.centralCol {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.rowContent {
+  width: 99%;
+}
+
+.colBtnA1 {
+  width: 60px;
+  margin: 1px;
+  padding: 0;
+}
+
+
+.cardTextStyle {
+  text-align: center;
+  margin-top: 5px;
+  padding-bottom: 0px;
+  margin-bottom: 0px;
+  font-size: 12px;
+}
+
+.btnDeleteStyle {
+  border: none;
+  background: none;
+  padding: 0;
+  cursor: pointer;
+  outline: none;
+  margin-Left: auto;
+}
+
+.containerPrice {
+  display: flex;
+  flex-direction: column;
+  padding-Top: 0px;
+  gap: 20px;
+  text-align: center;
+  position: relative;
+}
+
+.cardBody {
+  flex: 1;
+  padding: 0px;
+}
+
+.containerStock {
+  text-align: right;
+  padding-bottom: 5px;
+}
+
+.containerMiddle {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.containerBtn {
+  margin-top: auto;
+  display: flex;
+  justify-content: center;
+  gap: 27px;
+}
+
+.imgBtnComprar {
+  width: 18px;
+  height: 18px;
+  vertical-align: middle;
+  margin-right: 5px;
+  margin-top: -2px;
+}
+
+
+/* ..................................................... Responsive ................................................*/
+
 /* Media query para pantallas más pequeñas */
-@media screen and (max-width: 920px) {
+@media screen and (max-width: 1043px) {
   .classCategory {
     width: 12rem;
     height: auto;
@@ -167,10 +272,14 @@ div.tooltip-inner {
   .btn2 {
     display: flex;
     flex-direction: row;
-
   }
 
   .btn1 {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .btn3 {
     display: flex;
     flex-direction: row;
   }
@@ -180,7 +289,7 @@ div.tooltip-inner {
   }
 }
 
-@media screen and (max-width: 876px) {
+@media screen and (max-width: 978px) {
   .classCategory {
     width: 13rem;
     height: auto;
@@ -193,7 +302,6 @@ div.tooltip-inner {
   }
 
   .colContent {
-    /* background-color: rgb(200, 50, 205); */
     display: flex;
     flex-direction: row;
     width: 250px;
@@ -219,7 +327,6 @@ div.tooltip-inner {
   }
 
   .colContent {
-    /* background-color: rgb(242, 235, 139); */
     display: flex;
     flex-direction: row;
     width: 230px;
@@ -229,7 +336,6 @@ div.tooltip-inner {
   .btn2 {
     display: flex;
     flex-direction: row;
-
   }
 
   .btn1 {
@@ -237,101 +343,20 @@ div.tooltip-inner {
     flex-direction: row;
   }
 
-  .colCenterSmall {
-    justify-content: center;
-  }
-}
-
-@media screen and (max-width: 768px) {
-  .classCategory {
-    width: 13rem;
-    height: auto;
-  }
-
-  .imgCard {
-    width: 100%;
-    height: 173px;
-    margin: 0;
-  }
-
-  .descripcion {
-    font-size: 90%;
-  }
-
-
-  .colContent {
-    /* background-color: rgb(246, 11, 128); */
+  .btn3 {
     display: flex;
     flex-direction: row;
-    width: 230px;
-    justify-content: center;
-  }
-}
-
-
-@media screen and (max-width: 708px) {
-  .classCategory {
-    width: 13rem;
-    height: auto;
-  }
-
-  .colContent {
-    /* background-color: rgb(205, 50, 50); */
-    display: flex;
-    flex-direction: row;
-    width: 300px;
-    justify-content: center;
-  }
-
-
-}
-
-
-
-@media screen and (max-width: 678px) {
-  .classCategory {
-    width: 13rem;
-    height: auto;
-  }
-
-  .colContent {
-    /* background-color: rgb(205, 146, 50); */
-    display: flex;
-    flex-direction: row;
-    width: 290px;
-    justify-content: center;
-  }
-}
-
-@media screen and (max-width: 658px) {
-  .classCategory {
-    width: 13rem;
-    height: auto;
-  }
-
-  .imgCard {
-    width: 100%;
-    height: 143px;
-    margin: 0;
-  }
-
-  .colContent {
-    /* background-color: rgb(55, 50, 205); */
-    display: flex;
-    flex-direction: row;
-    width: 230px;
-    justify-content: center;
-    align-items: center;
   }
 
   .colCenterSmall {
     justify-content: center;
   }
 }
+
 
 @media screen and (max-width: 477px) {
   .classCategory {
-    width: 16rem;
+    width: 13rem;
     height: auto;
   }
 
@@ -341,11 +366,213 @@ div.tooltip-inner {
     margin: 0;
   }
 
-  .colContent {
-    /* background-color: rgb(50, 205, 177); */
+  .btn2 {
     display: flex;
     flex-direction: row;
-    width: 390px;
+    justify-content: center;
+  }
+
+  .btn1 {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  .btn3 {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  .containerBtn {
+    gap: 3px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .colContent {
+    display: flex;
+    flex-direction: row;
+    width: 230px;
+    justify-content: center;
+  }
+}
+
+@media screen and (max-width: 389px) {
+  .classCategory {
+    width: 13rem;
+    height: auto;
+  }
+
+  .imgCard {
+    width: 100%;
+    height: 170px;
+    margin: 0;
+  }
+
+  .btn2 {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  .btn1 {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  .btn3 {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  .containerBtn {
+    gap: 3px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .colContent {
+    display: flex;
+    flex-direction: row;
+    width: 240px;
+    justify-content: center;
+  }
+}
+
+
+@media screen and (max-width: 373px) {
+  .classCategory {
+    width: 13rem;
+    height: auto;
+  }
+
+  .imgCard {
+    width: 100%;
+    height: 170px;
+    margin: 0;
+  }
+
+  .btn2 {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  .btn1 {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  .btn3 {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  .containerBtn {
+    gap: 3px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .colContent {
+    display: flex;
+    flex-direction: row;
+    width: 230px;
+    justify-content: center;
+  }
+}
+
+
+@media screen and (max-width: 365px) {
+  .classCategory {
+    width: 13rem;
+    height: auto;
+  }
+
+  .imgCard {
+    width: 100%;
+    height: 170px;
+    margin: 0;
+  }
+
+  .btn2 {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  .btn1 {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  .btn3 {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  .containerBtn {
+    gap: 3px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .colContent {
+    display: flex;
+    flex-direction: row;
+    width: 220px;
+    justify-content: center;
+  }
+}
+
+
+@media screen and (max-width: 357px) {
+  .classCategory {
+    width: 13rem;
+    height: auto;
+  }
+
+  .imgCard {
+    width: 100%;
+    height: 170px;
+    margin: 0;
+  }
+
+  .btn2 {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  .btn1 {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  .btn3 {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  .containerBtn {
+    gap: 3px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .colContent {
+    display: flex;
+    flex-direction: row;
+    width: 210px;
     justify-content: center;
   }
 }

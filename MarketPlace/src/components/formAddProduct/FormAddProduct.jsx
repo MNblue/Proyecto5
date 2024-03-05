@@ -62,7 +62,7 @@ function FormAddProduct() {
 
   return (
 <>
-<p className="headTextForm">¡Sube tu producto para compartirlo con tus vecinos!</p>
+{/* <p className="headTextForm">¡Sube tu producto para compartirlo con tus vecinos!</p> */}
     <Container className="d-flex justify-content-center mt-5 mb-5">
       <Row >
         <Col >
