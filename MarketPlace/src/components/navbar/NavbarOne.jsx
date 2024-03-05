@@ -11,6 +11,7 @@ import shoppingIcon from "../../img/shoppingIcon.svg";
 import logIn from "../../img/logIn.svg";
 import logOutIcon from "../../img/logoutIcon.svg";
 
+
 function NavbarOne({ openModal ,isLogged}) {
   const navigate = useNavigate();
 
