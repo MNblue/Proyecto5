@@ -1,15 +1,6 @@
 {
   "products": [
     {
-      "id": "9087",
-      "name": "Platos artesanales",
-      "stock": 6,
-      "category": "artesanias",
-      "price": 4,
-      "description": "Bonitos platos coloridos pintados a mano, muy duraderos y aptos para microondas, se admiten peticiones en el diseño.",
-      "file": " https://res.cloudinary.com/dgusxuq9j/image/upload/v1709637526/jm1t7spnkrbsd1kvxbxf.png"
-    },
-    {
       "id": "491d",
       "name": "Verduras y frutas",
       "stock": "56",
@@ -28,31 +19,67 @@
       "file": " https://res.cloudinary.com/dgusxuq9j/image/upload/v1709642669/zqfabdhdy0gk457y3gdf.png"
     },
     {
-      "id": "c3db",
+      "id": "1535",
       "name": "Mermeladas",
-      "stock": 56,
-      "category": "elaborados",
-      "price": "3",
-      "description": "Mermeladas de frutas recolectadas en nuestra comarca, realizadas por el hogar del jubilado.",
-      "file": "https://res.cloudinary.com/dgusxuq9j/image/upload/v1709645766/tczqfzqcgeudtv0napny.png"
+      "stock": 27,
+      "category": "Elaborados",
+      "price": 3.5,
+      "description": "Mermeladas elaboradas por doña Gregoria, de sabores variados, fresa, melocotón, arándanos, tomate.",
+      "file": " https://res.cloudinary.com/dgusxuq9j/image/upload/v1709646549/geowkopfxir69uczasi9.png"
     },
     {
-      "id": "6db5",
-      "name": "Jarapas",
-      "stock": 7,
-      "category": "artesanias",
-      "price": "58",
-      "description": "Jarapas de varias medidas, realizadas con lana del rebaño de doña Rucula.",
-      "file": "https://res.cloudinary.com/dgusxuq9j/image/upload/v1709645927/nxcjz5pourundamyxk8m.png"
-    },
-    {
-      "id": "5739",
-      "name": "aaa",
-      "stock": 55,
+      "id": "d28a",
+      "name": "Jabones",
+      "stock": 126,
       "category": "Artesanía local",
-      "price": 4,
-      "description": "dsfadf",
-      "file": " https://res.cloudinary.com/dgusxuq9j/image/upload/v1709646193/g2vy9fc15pmmk2fjwbqd.png"
+      "price": 5,
+      "description": "Jabones naturales sin aditivos, elaborados con los productos de nuestra tierra y con aceites esenciales naturales, elaborados por la cooperativa \"amigos de la Comarca\"",
+      "file": " https://res.cloudinary.com/dgusxuq9j/image/upload/v1709646711/rb3lyzqc2qdioe21hknq.png"
+    },
+    {
+      "id": "2a51",
+      "name": "Quesos",
+      "stock": 541,
+      "category": "Elaborados",
+      "price": 12,
+      "description": "Quesos elaborados en colaboración de la granja de don Ramón y el rebaño de ovejas de doña Espátula, con la ayuda de la asociación \"espabila chiquillo\"",
+      "file": " https://res.cloudinary.com/dgusxuq9j/image/upload/v1709646826/rjxghjo2efrhqf1amb3o.png"
+    },
+    {
+      "id": "1870",
+      "name": "Miel",
+      "stock": 245,
+      "category": "De la huerta a la mesa",
+      "price": 9,
+      "description": "Miel de flor de Azahar del colmenar de nuestra región gestionado por la señora Maya, sin aditivos y recolección semi-manual sin dañar la colmena y sus panales.",
+      "file": " https://res.cloudinary.com/dgusxuq9j/image/upload/v1709646954/orsxefhce0rsblt4vh5t.png"
+    },
+    {
+      "id": "48e9",
+      "name": "Pan cateto",
+      "stock": 126,
+      "category": "Elaborados",
+      "price": 1.2,
+      "description": "Panadería hermanos Zape te ofrece pan cateto, amplia gama, pan blanco, integral, de semillas variadas etc.",
+      "file": " https://res.cloudinary.com/dgusxuq9j/image/upload/v1709647148/r0xjdw5got2r4c9lrn0v.png"
+    },
+    {
+      "id": "45fa",
+      "name": "Cuencos de barro",
+      "stock": 78,
+      "category": "Artesanía local",
+      "price": 5,
+      "description": "cuencos de barros con diseños coloridos, muy resistentes.",
+      "file": " https://res.cloudinary.com/dgusxuq9j/image/upload/v1709647493/guszx2phbgqlbgalbjdw.png"
+    },
+    {
+      "id": "e2ab",
+      "name": "Jarapas",
+      "stock": 12,
+      "category": "Artesanía local",
+      "price": 8,
+      "description": "jarapas de colores en varios tamaños, tejidas por las abuelitas del rincón del carajillo.",
+      "file": " https://res.cloudinary.com/dgusxuq9j/image/upload/v1709647548/ynqffwgguyoiejaqy0qz.png"
     }
   ],
   "users": [
