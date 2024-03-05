@@ -142,6 +142,21 @@ const LoginPopUp = ({ closeModal }) => {
   };
 
   ///////////Google-Sing-In//////////
+
+  ///Cookies///
+
+  function setCookie(name, value, days) {
+    let expires = "";
+    if (days) {
+        let date = new Date();
+        date.setTime(date.getTime() + (minutes * 60 * 1000)); //(days * 24 * 60 * 60 * 1000)
+        expires = "; expires=" + date.toUTCString();
+    }
+    document.cookie = name + "=" + (value || "") + expires + "; path=/";
+}
+  ///////////////
+
+
   const [googleUserData, setGoogleUserData] = useState(null);
 
   const login = useGoogleLogin({
@@ -163,6 +178,8 @@ const LoginPopUp = ({ closeModal }) => {
         );
         console.log(res);
         setGoogleUserData(res.data);
+        setCookie("userName", res.data.given_name); 
+        setCookie("userImage", res.data.picture); 
         navigate('/admin');
       } catch (err) {
         console.log('Error', err);

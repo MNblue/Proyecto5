@@ -11,9 +11,11 @@ import React, { useState } from "react";
 import { productService } from "../../service/productService";
 import Swal from "sweetalert2";
 import plusIconForm from '/src/components/formAddProduct/images/plusIconForm.svg';
-
+import { useCookies } from "react-cookie";
 
 function FormAddProduct() {
+  const [cookies] = useCookies(["userName"]);
+
   const { Formik } = formik;
 
   const schema = yup.object().shape({
@@ -62,7 +64,10 @@ function FormAddProduct() {
 
   return (
 <>
-<p className="headTextForm">¡Sube tu producto para compartirlo con tus vecinos!</p>
+<div className="hello-box">
+{cookies.userName && <p>Hola, {cookies.userName}!</p>}
+  <p>¡Sube tu producto para compartirlo con tus vecinos!</p> 
+  </div>
     <Container className="d-flex justify-content-center mt-5 mb-5">
       <Row >
         <Col >
