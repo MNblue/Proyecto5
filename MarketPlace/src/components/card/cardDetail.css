@@ -92,7 +92,8 @@
   justify-content: center;
   align-items: center;
   flex-grow: 1;
-  overflow: auto;
+  padding-bottom: 50px;
+
 }
 
 .cardStyle {
@@ -109,8 +110,9 @@
   padding-right: 7px;
   box-shadow: 2px 2px 5px 1px rgba(0, 0, 0, 0.534);
   ;
-  /* display: flex;
-    align-items: center; */
+}
+.btn2a:hover{
+  background-color: #EE6B4D;
 }
 
 .btn1a {
