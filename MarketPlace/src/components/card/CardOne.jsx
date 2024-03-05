@@ -27,6 +27,11 @@ function CardOne({ isLogged, selectOpt }) {
 
     const [numItemsToShow, setNumItemsToShow] = useState(getNumItemsToShow());
 
+    getData();
+    useEffect(() => {
+        filterData();
+    }, [selectOpt]);
+
     useEffect(() => {
         function handleResize() {
             setNumItemsToShow(getNumItemsToShow());
@@ -52,10 +57,7 @@ function CardOne({ isLogged, selectOpt }) {
     //     getData();
     // }, []);
 
-    getData();
-    useEffect(() => {
-        filterData();
-    }, [selectOpt]);
+
 
 
     async function getData() {
@@ -63,8 +65,9 @@ function CardOne({ isLogged, selectOpt }) {
             const products = await productService.getAllProducts();
 
             setProductList(products);
-            setFilteredProductList(productList);
-            setFilteredProductList(products);
+            // setFilteredProductList(productList);
+           // setFilteredProductList(products);
+           filterData();
         } catch (error) {
             console.error('Error al obtener los datos:', error);
         }
