@@ -238,9 +238,9 @@ function CardDetail() {
                       width: "90%",
                     }}
                   >
-                    <option value="huerta">De la huerta a la mesa</option>
-                    <option value="artesanias">Artesanías Locales</option>
-                    <option value="elaborados">Productos Elaborados</option>
+                    <option value="De la huerta a la mesa">De la huerta a la mesa</option>
+                    <option value="Artesanías">Artesanías Locales</option>
+                    <option value="Elaborados">Productos Elaborados</option>
                   </select>
                 </div>
               </div>

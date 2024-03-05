@@ -2,48 +2,57 @@
   "products": [
     {
       "id": "9087",
-      "name": "sadf",
+      "name": "Platos artesanales",
       "stock": 6,
-      "category": "Elaborados",
+      "category": "artesanias",
       "price": 4,
-      "description": "dsfasdf",
+      "description": "Bonitos platos coloridos pintados a mano, muy duraderos y aptos para microondas, se admiten peticiones en el diseño.",
       "file": " https://res.cloudinary.com/dgusxuq9j/image/upload/v1709637526/jm1t7spnkrbsd1kvxbxf.png"
     },
     {
       "id": "491d",
-      "name": "miau",
-      "stock": 5,
+      "name": "Verduras y frutas",
+      "stock": "56",
       "category": "De la huerta a la mesa",
-      "price": 4,
-      "description": "mammamamamamammamamaiaiamamamamiaiam",
+      "price": "9",
+      "description": "Verduras y frutas frescas, se venden por kilos, de la huerta de Manolito, disponemos de manzanas, tomates, fresas, melocotones, disponibilidad según temporada.",
       "file": " https://res.cloudinary.com/dgusxuq9j/image/upload/v1709640627/cx9oxzpxr0njcyzzrncz.png"
     },
     {
       "id": "b942",
-      "name": "sfdadf",
-      "stock": 5,
+      "name": "Frutillas",
+      "stock": "6",
       "category": "De la huerta a la mesa",
-      "price": 4,
-      "description": "5555453665",
+      "price": "23",
+      "description": "Bolsas con frutillas variadas, moras, arándanos y fresas, cultivadas por la asociación juvenil, \"comarca joven\".",
       "file": " https://res.cloudinary.com/dgusxuq9j/image/upload/v1709642669/zqfabdhdy0gk457y3gdf.png"
     },
     {
       "id": "c3db",
-      "name": "test",
+      "name": "Mermeladas",
       "stock": 56,
-      "category": "Elaborados",
-      "price": 5,
-      "description": "tttt",
-      "file": "https://res.cloudinary.com/dgusxuq9j/image/upload/v1709642898/n0bzu0beztvae3fqnbjz.png"
+      "category": "elaborados",
+      "price": "3",
+      "description": "Mermeladas de frutas recolectadas en nuestra comarca, realizadas por el hogar del jubilado.",
+      "file": "https://res.cloudinary.com/dgusxuq9j/image/upload/v1709645766/tczqfzqcgeudtv0napny.png"
     },
     {
       "id": "6db5",
-      "name": "dgsfg",
+      "name": "Jarapas",
       "stock": 7,
-      "category": "Elaborados",
-      "price": 5,
-      "description": "dfgdsfg",
-      "file": " https://res.cloudinary.com/dgusxuq9j/image/upload/v1709643048/cbdfitlo74cqi60zv69d.png"
+      "category": "artesanias",
+      "price": "58",
+      "description": "Jarapas de varias medidas, realizadas con lana del rebaño de doña Rucula.",
+      "file": "https://res.cloudinary.com/dgusxuq9j/image/upload/v1709645927/nxcjz5pourundamyxk8m.png"
+    },
+    {
+      "id": "5739",
+      "name": "aaa",
+      "stock": 55,
+      "category": "Artesanía local",
+      "price": 4,
+      "description": "dsfadf",
+      "file": " https://res.cloudinary.com/dgusxuq9j/image/upload/v1709646193/g2vy9fc15pmmk2fjwbqd.png"
     }
   ],
   "users": [
