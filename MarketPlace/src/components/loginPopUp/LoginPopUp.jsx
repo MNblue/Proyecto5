@@ -272,7 +272,10 @@ const LoginPopUp = ({ closeModal }) => {
                     onChange={handleAgreeChange}
 
                   /> Acepto la <Link href="#">Política de privacidad</Link>
+                  {error && 
                   <p style={{ color: error ? 'red' : 'initial' }}>(por favor, lee y acepta la política de privacidad antes de iniciar la sesión. <strong>Es obligatorio!</strong>)</p>
+                  }
+                  
                 </label>
               </div>
 
@@ -295,7 +298,7 @@ const LoginPopUp = ({ closeModal }) => {
 
               </div>
               <div className="register-link">
-                <p>¿Todavía no tienes cuentas?
+                <p>¿Todavía no tienes cuenta?
                   <Link to='#'> Regístrate ahora</Link></p>
               </div>
             </form>
