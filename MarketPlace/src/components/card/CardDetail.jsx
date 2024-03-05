@@ -121,7 +121,7 @@ function CardDetail() {
         {isModalOpen && <LoginPopUp closeModal={closeModal} />}
       </div>
       <div className='item2'>
-      <Card className="cardStyle" style={{ width: '28rem', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', marginTop:'200px',marginBottom:'100px' }}>
+      <Card className="cardStyle" style={{ width: '28rem', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', marginTop:'300px',marginBottom:'100px' }}>
 
           <div style={{ position: 'relative'}}>
           <Card.Img variant="top" src={imageUrl} style={{ width: '400px', height: '400px',marginTop:'10px', borderRadius: '8px', borderColor: '#aca6a6', border: '1px solid' }} />
