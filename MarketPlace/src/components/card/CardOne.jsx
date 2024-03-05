@@ -102,6 +102,7 @@ function CardOne({ isLogged, selectOpt }) {
     };
 
 
+    
     function handleClick(id) {
         const findedProduct = productList.find(product => product.id === id);
         setProductSelected(findedProduct);
