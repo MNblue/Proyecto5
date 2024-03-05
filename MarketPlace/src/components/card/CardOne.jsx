@@ -114,6 +114,7 @@ function CardOne({ isLogged, selectOpt }) {
             const products = await productService.deleteProduct(id);
             const newList = productList.filter(producto => producto.id !== id);
             setProductList(newList);
+            setFilteredProductList(newList);
         } catch (error) {
             console.error('Error al eliminar los datos:', error);
         }
