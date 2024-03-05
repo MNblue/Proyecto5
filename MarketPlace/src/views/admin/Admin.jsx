@@ -36,7 +36,7 @@ function Admin() {
         <div className="cardC">
           <CardOne isLogged={isLogged} selectOpt={optionFilter} />
         </div>
-        <div >
+        <div>
           <Footer />
         </div>
       </div>
