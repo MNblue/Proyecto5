@@ -1,22 +1,24 @@
-.btn{
+.btn {
     border: none;
     background-color: none;
 }
-.btn .btn:focus-visible {
 
-        color: inherit;
-        background-color: inherit;
-        border-color: inherit;
-        outline: inherit;
-        box-shadow: none;
+.btn .btn:focus-visible {
+    color: inherit;
+    background-color: inherit;
+    border-color: inherit;
+    outline: inherit;
+    box-shadow: none;
 }
+
 .button-style {
     border: none;
     padding: 0;
     background: none;
     cursor: pointer;
-  }
-.button-style:hover{
+}
+
+.button-style:hover {
     cursor: pointer;
 }
 
@@ -30,7 +32,8 @@
     border-radius: var(--bs-navbar-toggler-border-radius);
     transition: var(--bs-navbar-toggler-transition);
 }
-.navbar>.container-fluid{
+
+.navbar>.container-fluid {
     display: flex;
     align-items: center;
     justify-content: space-between;

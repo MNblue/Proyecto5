@@ -1,17 +1,15 @@
-
-
-.styleFilter{
+.styleFilter {
 
     font-size: 12px;
     font-family: 'Fredoka One', sans-serif;
     display: flex;
-    justify-content:center;
-    gap:25px;
+    justify-content: center;
+    gap: 25px;
 }
 
-.radioB{
+.radioB {
     display: flex;
-    gap:3px;
+    gap: 3px;
     margin-top: 30px;
     margin-bottom: 30px;
 }
@@ -21,4 +19,3 @@ input[type="radio"] {
     width: 20px;
     height: 20px;
 }
-

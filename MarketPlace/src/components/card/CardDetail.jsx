@@ -1,7 +1,7 @@
 import "./cardDetail.css";
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
-import { useState, useEffect } from "react"; // Importa useEffect para llamar a getData una vez que el componente se ha montado
+import { useState, useEffect } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
@@ -37,18 +37,18 @@ function CardDetail() {
     setIsModalOpen(false);
   };
 
-  //si hacemos clic en el boton de editar entonces la variable editable es true para que se pueda editar ya que al inicio es false
+
   const handleEditClick = () => {
     setEditable(true);
   };
 
-  //cuando hagamos cambios en cualquier campo, que esto se indica por name, cambiamos su value asi tomamos el nuevo valor
+
   const handleInputChange = (event) => {
     const { name, value } = event.target;
     setEditedProduct({ ...editedProduct, [name]: value });
   };
 
-  //cuando hacemos clic en el boton guardar, actualizamos los datos en el json y luego la vble editable a false para que se pongan los campos como No editables otra vez
+
   const handleSaveClick = () => {
     updateData();
     setEditable(false);
@@ -66,11 +66,7 @@ function CardDetail() {
     }
   }
 
-  // Función para cambiar la imagen
-  const changeImage = () => {
-    // const newImageUrl = 'nueva/ruta/imagen.jpg';
-    // setImageUrl(newImageUrl);
-  };
+
 
   const handleUploadClick = (setFieldValue, setFieldTouched) => {
     const widget = window.cloudinary.createUploadWidget(
@@ -79,19 +75,13 @@ function CardDetail() {
         uploadPreset: "nfmirk0o",
       },
       (error, result) => {
-        // Comprobar si el widget se cerró sin cargar una imagen
         if (error && error.event === "widget.closed") {
-          // Marcar el campo como tocado para mostrar el error de validación
-          // setFieldTouched ('file', true);
           console.log("error al cargar la imagen");
         }
-        // Comprueba si el evento es 'success'
         if (result.event === "success") {
           console.log("La imagen se ha cargado con éxito");
           const url = result.info.secure_url;
           setImageUrl(url);
-          // formik.setFieldValue("file", imageUrl);
-          // setFieldTouched ('file', true);
           setEditedProduct({ ...editedProduct, file: url });
           updateData();
         }
@@ -110,14 +100,6 @@ function CardDetail() {
       confirmButtonText: "Ok",
     });
   };
-
-  // const ImageUpload = () => {
-  //   const handleSubmit = async (values) => {
-  //     // Obtener la URL de la imagen del estado
-  //     const imageUrl = values.file;
-  //     // Hacer algo con la URL, como enviarla a otro servicio o mostrarla en la interfaz
-  //   };
-  // }
 
   return (
     <>

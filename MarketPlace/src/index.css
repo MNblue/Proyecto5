@@ -1,23 +1,22 @@
 * {
-    font-family: "Fredoka", sans-serif;
-    box-sizing: border-box;
+  font-family: "Fredoka", sans-serif;
+  box-sizing: border-box;
 
 }
-main{
-    background-image: url('./img/marcaDeAgua.svg');
-    background-repeat: no-repeat;
-    background-position: center;
-    height: max-content;
-  }
 
- 
+main {
+  background-image: url('./img/marcaDeAgua.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+  height: max-content;
+}
 
-  nav{
-    background-color: #293243 ;
-    width: auto;
-    height: 74px;
-  }
-  
-  footer{
-    background-color: #293243 ;
-  }
+nav {
+  background-color: #293243;
+  width: auto;
+  height: 74px;
+}
+
+footer {
+  background-color: #293243;
+}

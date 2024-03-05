@@ -18,7 +18,7 @@ function User() {
   const openModal = () => {
     setIsModalOpen(true);
   };
-  
+
 
   const closeModal = () => {
     setIsModalOpen(false);
@@ -28,11 +28,11 @@ function User() {
     setOptionFilter(selectedOption);
   };
 
-  useEffect(() => { }, [optionFilter]); // Se ejecutará cada vez que optionFilter cambie, es decir que pinchemos en un radiobutton
+  useEffect(() => { }, [optionFilter]);
 
   return (
     <>
-      <div style={{ display: 'grid', height: '100%', gridTemplateRows: '7.8% 30% 10% 52% 6%', gap:'0' }}>
+      <div style={{ display: 'grid', height: '100%', gridTemplateRows: '7.8% 30% 10% 52% 6%', gap: '0' }}>
         <div >
           <NavbarOne openModal={openModal} isLogged={isLogged} />
           {isModalOpen && <LoginPopUp closeModal={closeModal} />}
@@ -66,16 +66,13 @@ function User() {
         <div >
           <Filter optionSelected={optionFilterM} />
         </div>
-
         <div className="container-cards" >
           <CardOne isLogged={isLogged} selectOpt={optionFilter} />
         </div>
-
         <div >
           <Footer />
         </div>
       </div>
-
     </>
   );
 }

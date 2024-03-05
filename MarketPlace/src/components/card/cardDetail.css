@@ -72,7 +72,6 @@
   background-color: #F5F5F5;
 }
 
-/*................*/
 
 .contenedorPpal {
   display: flex;
@@ -111,7 +110,8 @@
   box-shadow: 2px 2px 5px 1px rgba(0, 0, 0, 0.534);
   ;
 }
-.btn2a:hover{
+
+.btn2a:hover {
   background-color: #EE6B4D;
 }
 

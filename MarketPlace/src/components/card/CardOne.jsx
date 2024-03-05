@@ -1,7 +1,7 @@
 import './cardOne.css';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
-import { useState, useEffect } from 'react'; // Importa useEffect para llamar a getData una vez que el componente se ha montado
+import { useState, useEffect } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
@@ -53,21 +53,12 @@ function CardOne({ isLogged, selectOpt }) {
         }
     }
 
-    // useEffect(() => {
-    //     getData();
-    // }, []);
-
-
-
-
     async function getData() {
         try {
             const products = await productService.getAllProducts();
 
             setProductList(products);
-            // setFilteredProductList(productList);
-           // setFilteredProductList(products);
-           filterData();
+            filterData();
         } catch (error) {
             console.error('Error al obtener los datos:', error);
         }
@@ -104,8 +95,6 @@ function CardOne({ isLogged, selectOpt }) {
         }
     };
 
-
-    
     function handleClick(id) {
         const findedProduct = productList.find(product => product.id === id);
         setProductSelected(findedProduct);
@@ -122,7 +111,6 @@ function CardOne({ isLogged, selectOpt }) {
             console.error('Error al eliminar los datos:', error);
         }
     };
-
 
     function handleClickUpdateStock(product) {
 
@@ -186,7 +174,6 @@ function CardOne({ isLogged, selectOpt }) {
             });
         });
     }
-
 
     const handleClickDelete = async (id) => {
         const result = await Swal.fire({
@@ -263,12 +250,10 @@ function CardOne({ isLogged, selectOpt }) {
                         </Row>
                     </Col>
                     <Col xs="auto" className="d-flex align-items-center justify-content-center colBtnA1" >
-                        {/* <button onClick={handleNext} disabled={startIndex >= filteredProductList.length - 4} className='btnArrow' style={{ visibility: startIndex === filteredProductList.length - 4 ? 'hidden' : 'visible' }}><img src='/src/components/card/sig.png' className='arrowNextImg' /></button> */}
                         <button onClick={handleNext} disabled={startIndex >= filteredProductList.length - numItemsToShow} className='btnArrow' style={{ visibility: startIndex === filteredProductList.length - numItemsToShow ? 'hidden' : 'visible' }}><img src='/src/components/card/sig.png' className='arrowNextImg' /></button>
                     </Col>
                 </Row>
             </div>
-
         </>
     );
 

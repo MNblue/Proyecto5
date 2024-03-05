@@ -44,25 +44,23 @@ function NavbarOne({ openModal, isLogged }) {
                     </button>
                     <button className="button-style">
                       {cookies.userImage ? (
-                        <img src={cookies.userImage} alt="User" 
-                        style={{ width: '50px', 
-                        height: '50px', 
-                        borderRadius: '50%', 
-                        boxShadow: '0 0 5px rgba(225, 225, 225)' }} />
+                        <img src={cookies.userImage} alt="User"
+                          style={{
+                            width: '50px',
+                            height: '50px',
+                            borderRadius: '50%',
+                            boxShadow: '0 0 5px rgba(225, 225, 225)'
+                          }} />
                       ) : (
                         <img src={logOutIcon} alt="Logout" />
                       )}
                     </button>
-
-
-                    {/* Aquí puedes agregar más íconos para cuando el usuario esté logueado */}
                   </>
                 ) : (
                   <>
                     <button className="button-style">
                       <img src={logIn} onClick={openModal} alt="Login" />
                     </button>
-                    {/* Aquí puedes agregar más íconos para cuando el usuario no esté logueado */}
                   </>
                 )}
               </Col>
@@ -71,7 +69,6 @@ function NavbarOne({ openModal, isLogged }) {
         </Navbar.Collapse>
       </Container>
     </Navbar>
-
   );
 }
 export default NavbarOne;

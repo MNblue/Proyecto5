@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import "../loginPopUp/loginPopUp.css"
 import Modal from 'react-bootstrap/Modal';
 import Button from 'react-bootstrap/Button';
-
 import { userService } from '../../service/userService';
 import { useNavigate } from 'react-router-dom';
 import Validate from './Validate';
@@ -33,9 +32,7 @@ const HoverModal = styled.div`
 
 const LoginPopUp = ({ closeModal }) => {
 
-  ////////////////-STYLE-///////////////////
   const styleModalShow = {
-
     display: 'block',
     backgroundColor: 'rgba(0, 0, 0, 0.700)',
     position: 'fixed',
@@ -79,8 +76,6 @@ const LoginPopUp = ({ closeModal }) => {
     color: '#3D5B81',
     boxShadow: '0 4px 4px rgba(0, 0, 0, 0.25)',
   };
-  ///////////////////////////////////
-
 
   const [user, setUser] = useState({
     useremail: '',
@@ -92,13 +87,11 @@ const LoginPopUp = ({ closeModal }) => {
   const [isHovered, setIsHovered] = useState(false);
   const [error, setError] = useState(false);
 
-
   const handleLogin = async () => {
 
     let flag = Validate(user);
     if (!flag) {
       setError(true);
-
       return;
     }
 
@@ -108,7 +101,6 @@ const LoginPopUp = ({ closeModal }) => {
 
       if (!foundUser) {
         setError(true);
-
         Swal.fire({
           imageUrl: 'https://media.tenor.com/TWMxi0kGDTgAAAAi/hmm.gif',
           title: 'Login o contraseña no esta correcta',
@@ -118,7 +110,6 @@ const LoginPopUp = ({ closeModal }) => {
 
       if (!agree) {
         setError(true);
-
         Swal.fire({
           title: 'Acepta la política de privacidad',
           icon: 'warning',
@@ -126,37 +117,29 @@ const LoginPopUp = ({ closeModal }) => {
         return;
       }
       setError(false);
-
       navigate('/admin');
-
     } catch (error) {
       console.error('Error:', error);
       alert('Hubo un error al intentar loguearte');
     }
   };
 
-  /////////////Password visibility///////////////
   const [showPassword, setShowPassword] = useState(false);
 
   const handleTogglePassword = () => {
     setShowPassword(!showPassword);
   };
 
-  ///////////Google-Sing-In//////////
-
-  ///Cookies///
 
   function setCookie(name, value, days) {
     let expires = "";
     if (days) {
-        let date = new Date();
-        date.setTime(date.getTime() + (minutes * 60 * 1000)); //(days * 24 * 60 * 60 * 1000)
-        expires = "; expires=" + date.toUTCString();
+      let date = new Date();
+      date.setTime(date.getTime() + (minutes * 60 * 1000));
+      expires = "; expires=" + date.toUTCString();
     }
     document.cookie = name + "=" + (value || "") + expires + "; path=/";
-}
-  ///////////////
-
+  }
 
   const [googleUserData, setGoogleUserData] = useState(null);
 
@@ -179,8 +162,8 @@ const LoginPopUp = ({ closeModal }) => {
         );
         console.log(res);
         setGoogleUserData(res.data);
-        setCookie("userName", res.data.given_name); 
-        setCookie("userImage", res.data.picture); 
+        setCookie("userName", res.data.given_name);
+        setCookie("userImage", res.data.picture);
         navigate('/admin');
       } catch (err) {
         console.log('Error', err);
@@ -188,39 +171,6 @@ const LoginPopUp = ({ closeModal }) => {
     },
   });
 
-  ////////////////////////////////////////
-  // const handleLogin = async () => {
-
-  //   let flag = Validate(user);
-  //   if (!flag) { return }
-
-  //   if (!agree) {
-  //     Swal.fire({
-  //       title: 'Погодьтесь з політикою конфіденційності',
-  //       icon: 'warning',
-  //     });
-  //     return}
-
-  //   else {
-  //     try {
-  //       const allUsers = await userService.getAllUser();
-  //       const foundUser = allUsers.find(u => u.useremail === user.useremail && u.userpassword === user.userpassword);
-  //       if (foundUser) {
-  //         navigate('/admin');
-  //       } else {
-  //         Swal.fire({
-  //           imageUrl: 'https://media.tenor.com/TWMxi0kGDTgAAAAi/hmm.gif',
-  //           title: 'Login o contraseña no esta correcta',
-  //       })
-  //     }
-
-  //     } catch (error) {
-  //       console.error('Error:', error);
-  //       alert('Hubo un error al intentar loguearte');
-  //     }
-  //   }
-
-  // };
 
   function handleUserChange(e) {
     setUser({ ...user, [e.target.name]: e.target.value })
@@ -237,17 +187,14 @@ const LoginPopUp = ({ closeModal }) => {
 
       <Modal.Dialog style={stylesModalDialog}>
         <Modal.Header style={{ justifyContent: "center", position: "relative", }}>
-        
+
           <Modal.Title style={{ letterSpacing: "0.84px", fontSize: "26px" }}>Iniciar Sesión</Modal.Title>
-       
-       
+
           <Button style={stylesCloseBtn} variant="secondary" onClick={closeModal}>X</Button>
         </Modal.Header>
 
         <Modal.Body style={stylesModalDialog}>
           <div className='wrapper'>
-            
-           
             <form action="" >
               <div className='input-box'>
                 <input type='email'
@@ -257,7 +204,6 @@ const LoginPopUp = ({ closeModal }) => {
                   placeholder='Email: ejemplo@gmail.com'
                   required
                   style={{ borderColor: error ? 'red' : 'initial' }} />
-
                 <div className='icon'> <RiUserLine /></div>
               </div>
               <div className='input-box'>
@@ -266,33 +212,26 @@ const LoginPopUp = ({ closeModal }) => {
                   value={user.userpassword}
                   onChange={handleUserChange}
                   placeholder='Contraseña'
-
                   required
                   style={{ borderColor: error ? 'red' : 'initial' }} />
-
-
                 <div className='icon' onClick={handleTogglePassword}>
                   {showPassword ? <FiUnlock /> : <FiLock />}
                 </div>
               </div>
-
               <div className="remember-forgot">
                 <label><input type="checkbox" /> Recuérdame</label>
                 <Link to="#">¿No recuerdas tu contraseña?</Link>
               </div>
-
               <div className="privacy-policy">
                 <label>
                   <input type="checkbox"
                     id="agree"
                     name="agree" defaultChecked={agree}
                     onChange={handleAgreeChange}
-
                   /> Acepto la <Link href="#">Política de privacidad</Link>
-                  {error && 
-                  <p style={{ color: error ? 'red' : 'initial' }}>(por favor, lee y acepta la política de privacidad antes de iniciar la sesión. <strong>Es obligatorio!</strong>)</p>
+                  {error &&
+                    <p style={{ color: error ? 'red' : 'initial' }}>(por favor, lee y acepta la política de privacidad antes de iniciar la sesión. <strong>Es obligatorio!</strong>)</p>
                   }
-                  
                 </label>
               </div>
 
@@ -312,26 +251,16 @@ const LoginPopUp = ({ closeModal }) => {
                   <p>Acepta la política de privacidad si aún no lo ha hecho</p>
                 </HoverModal>
 
-
               </div>
               <div className="register-link">
                 <p>¿Todavía no tienes cuenta?
                   <Link to='#'> Regístrate ahora</Link></p>
               </div>
             </form>
-            
-            {/* {googleUserData &&
-                <div>
-                  <img src={googleUserData.picture} alt="user avatar" />
-                  <h1>Hola, {googleUserData.given_name}!</h1>
-                </div>
-              } */}
           </div>
 
         </Modal.Body>
       </Modal.Dialog>
-
-
     </div>
 
   );

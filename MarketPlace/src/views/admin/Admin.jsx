@@ -17,7 +17,6 @@ function Admin() {
     setIsModalOpen(true);
   };
 
-
   const closeModal = () => {
     setIsModalOpen(false);
   };
