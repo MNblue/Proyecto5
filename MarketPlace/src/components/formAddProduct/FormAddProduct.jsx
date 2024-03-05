@@ -54,15 +54,12 @@ function FormAddProduct() {
 
   const ImageUpload = () => {
     const handleSubmit = async (values) => {
-      // Obtener la URL de la imagen del estado
       const imageUrl = values.file;
-      // Hacer algo con la URL, como enviarla a otro servicio o mostrarla en la interfaz
     };
   }
 
   return (
 <>
-{/* <p className="headTextForm">¡Sube tu producto para compartirlo con tus vecinos!</p> */}
     <Container className="d-flex justify-content-center mt-5 mb-5">
       <Row >
         <Col >
@@ -71,7 +68,6 @@ function FormAddProduct() {
               <Card.Title className="text-center">Rincón Rural · Valle de la Comarca</Card.Title>
               <Formik
                 onSubmit={(values, { setSubmitting, resetForm }) => {
-                  // Aquí debes manejar la subida del producto
                   productService.submitProduct(values);
                   setSubmitting(false);
                   resetForm();
@@ -96,7 +92,6 @@ function FormAddProduct() {
                   handleChange,
                   handleBlur,
                   setFieldValue,
-                  setFieldTouched,
                   values,
                   touched,
                   errors,
@@ -107,7 +102,6 @@ function FormAddProduct() {
                       <Form.Group
                         as={Col}
                         md="6"
-                        // sm="4"
                         controlId="validationFormik101"
                         className="position-relative"
                       >
@@ -149,7 +143,6 @@ function FormAddProduct() {
                       <Form.Group
                         as={Col}
                         md="3"
-                        // sm="4"
                         controlId="validationFormik102"
                         className="position-relative"
                       >
@@ -175,7 +168,6 @@ function FormAddProduct() {
                         <Form.Group
                           as={Col}
                           md= "12"
-                          // sm="4"
                           controlId="validationFormik103"
                           className="position-relative"
                         >
@@ -202,16 +194,12 @@ function FormAddProduct() {
                         </Form.Group>
 
                         <Form.Group className="position-relative mb-3"
-                          // as={Col}
-                          // md="6"
                           >
                           <Form.Label className="imageField">Imagen </Form.Label>
                           <Form.Control
-                            //type="file
                             value={imageUrl}
                             name="file"
                             onChange={(event) => {
-                              // Asegúrate de que el evento esté configurado para actualizar imageUrl
                               const newImageUrl = event.target.value;
                               setFieldValue('file', newImageUrl);
                             }}
@@ -230,7 +218,6 @@ function FormAddProduct() {
                           </Form.Control.Feedback>
                         </Form.Group>
                       </Col>
-
 
                      <Col md={6}>
                         <Form.Group
@@ -254,24 +241,21 @@ function FormAddProduct() {
                             {errors.description}
                           </Form.Control.Feedback>
                         </Form.Group>
-                    
-                  
+          
                     <Button type="submit" disabled={isSubmitting} className="formButton">
                       <img src={plusIconForm} />
                       Subir Producto
                     </Button>
                   </Col>
                   </Row> 
-                </Form>
-               
-                  
+                </Form>            
                 )}
             </Formik>
           </Card.Body>
         </Card>
       </Col>
     </Row>
-    </Container >
+  </Container >
     </>
   );
 }

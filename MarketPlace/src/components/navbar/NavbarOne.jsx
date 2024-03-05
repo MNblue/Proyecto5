@@ -41,7 +41,7 @@ function NavbarOne({ openModal ,isLogged}) {
                     <button className="button-style" >
                         <img src={shoppingIcon} alt="Logout" />
                       </button>
-                      <button className="button-style">
+                      <button className="button-style" onClick={() => navigate('/')}>
                         <img src={logOutIcon} alt="Logout" />
                       </button>
                       
