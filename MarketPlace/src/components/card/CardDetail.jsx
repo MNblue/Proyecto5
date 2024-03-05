@@ -121,10 +121,10 @@ function CardDetail() {
         {isModalOpen && <LoginPopUp closeModal={closeModal} />}
       </div>
       <div className='item2'>
-        <Card className="cardStyle" style={{ width: '55rem', display: 'flex', flexDirection: 'row' }}>
+      <Card className="cardStyle" style={{ width: '28rem', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', marginTop:'200px',marginBottom:'100px' }}>
 
-          <div style={{ position: 'relative', display: 'inline-block' }}>
-            <Card.Img variant="top" src={imageUrl} style={{ width: '400px', height: '400px', marginLeft: '10px', marginBottom: '10px', marginTop: '10px', borderRadius: '8px', borderColor: '#aca6a6', border: '1px solid' }} />
+          <div style={{ position: 'relative'}}>
+          <Card.Img variant="top" src={imageUrl} style={{ width: '400px', height: '400px',marginTop:'10px', borderRadius: '8px', borderColor: '#aca6a6', border: '1px solid' }} />
             {editable && <button className='btn3a' onClick={handleUploadClick} style={{ position: 'absolute', bottom: '18px', right: '10px' }}>Cambiar imagen</button>}
           </div>
 

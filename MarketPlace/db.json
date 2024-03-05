@@ -21,11 +21,20 @@
     {
       "id": "5ac7",
       "name": "producto 6",
-      "stock": 4,
+      "stock": "41",
       "category": "Elaborados",
-      "price": 1,
+      "price": "15",
       "description": "Las cards van adaptando su tamaño según el tamaño de las fotos o del largo de la descripción. Y las fotos al guardarlas ya modificadas se han hecho más pequeñas y no se porque",
       "file": "https://res.cloudinary.com/dgusxuq9j/image/upload/v1709116940/cxumjmsav0idb3uie0g2.jpg "
+    },
+    {
+      "id": "173e",
+      "name": "producto casero",
+      "stock": 25,
+      "category": "Elaborados",
+      "price": 5,
+      "description": "un producto casero rico rico",
+      "file": " https://res.cloudinary.com/dgusxuq9j/image/upload/v1709600198/yenzdjsvsukhlel0sx9g.png"
     }
   ],
   "users": [
